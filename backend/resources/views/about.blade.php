@@ -15,7 +15,7 @@
             </p>
         </div>
         <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl skew-y-1">
-            <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHJZcBtI9-JtTJTLzVhz_dDHMCuiY7yNqnXNs3RGkSXF9kIt8dPKnKDEjByKlElXCAXfSqIj-rjEFSZ7esYPR4xwTbc_NRwnerYVywrr1YZfx7hoKp0s5GiQ5lkpTcrgfVML-etAzEXGPity0nBUK0SyQGCGKcpT1zDVerHj7_FcSiyJ2tCwb64HDS0w06ZgC4miSIBXaEECxF2GGl4AuTdW0pt39Rcsdo6lA8dSxjwYGUATO4DJN1sIWoxVujbKKgOz8Xs2aXMa4"/>
+            <img class="w-full h-full object-cover" src="https://arteproduct.com/wp-content/uploads/2023/08/nen-thom-arte-tron.jpg"/>
         </div>
     </div>
 

@@ -14,9 +14,15 @@ class AddToCartButton extends Component
 
     public int $quantity = 1;
 
+    public bool $showQuantityControls = false;
+
     public string $label = 'Add to Cart';
 
     public string $buttonClass = '';
+
+    public bool $justAdded = false;
+
+    public ?string $successMessage = null;
 
     public function addToCart(CartService $cartService): void
     {
@@ -31,12 +37,30 @@ class AddToCartButton extends Component
         try {
             $cartService->addProduct($product, $this->quantity);
         } catch (InvalidArgumentException $exception) {
+            $this->justAdded = false;
+            $this->successMessage = null;
             throw ValidationException::withMessages([
                 'product' => $exception->getMessage(),
             ]);
         }
 
+        $this->justAdded = true;
+        $this->successMessage = 'Đã thêm ' . $this->quantity . ' sản phẩm vào giỏ hàng.';
         $this->dispatch('cart-updated');
+    }
+
+    public function increment(): void
+    {
+        $this->quantity++;
+    }
+
+    public function decrement(): void
+    {
+        if ($this->quantity <= 1) {
+            return;
+        }
+
+        $this->quantity--;
     }
 
     public function render()

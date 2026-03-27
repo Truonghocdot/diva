@@ -13,12 +13,13 @@ class Product extends Model
 
     protected $fillable = [
         'category_id', 'name', 'slug', 'description', 'price', 'sale_price',
-        'stock', 'image', 'wax_type', 'burn_time', 'weight',
+        'stock', 'image', 'images', 'wax_type', 'burn_time', 'weight',
         'scent_top_notes', 'scent_middle_notes', 'scent_base_notes',
         'is_featured', 'is_new'
     ];
 
     protected $casts = [
+        'images' => 'array',
         'scent_top_notes' => 'array',
         'scent_middle_notes' => 'array',
         'scent_base_notes' => 'array',
@@ -36,5 +37,18 @@ class Product extends Model
     public function orderItems()
     {
         return $this->hasMany(OrderItem::class);
+    }
+
+    public function getGalleryImagesAttribute(): array
+    {
+        $images = is_array($this->images) ? $this->images : [];
+
+        if ($this->image) {
+            array_unshift($images, $this->image);
+        }
+
+        $images = array_values(array_filter($images, fn ($url) => is_string($url) && trim($url) !== ''));
+
+        return array_values(array_unique($images));
     }
 }

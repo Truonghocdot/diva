@@ -7,6 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Testimonial;
+use App\Models\Banner;
 
 class ProductSeeder extends Seeder
 {
@@ -158,6 +159,18 @@ class ProductSeeder extends Seeder
         Testimonial::updateOrCreate(
             ['user_name' => 'Hoàng Nam', 'content' => 'Giao hàng nhanh và đóng gói rất cẩn thận. Chắc chắn sẽ ủng hộ thêm.'],
             ['location' => 'Đà Nẵng', 'rating' => 4]
+        );
+
+        Banner::updateOrCreate(
+            ['title' => 'The Tactile Sanctuary'],
+            [
+                'subtitle' => 'Autumn / Winter 2024',
+                'image' => 'https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?q=80&w=2070&auto=format&fit=crop',
+                'link' => '/shop',
+                'button_text' => 'Khám phá ngay',
+                'is_active' => true,
+                'sort_order' => 1
+            ]
         );
     }
 }

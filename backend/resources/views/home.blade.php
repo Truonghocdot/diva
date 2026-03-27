@@ -1,42 +1,67 @@
 @extends('layouts.app')
 
-@section('title', 'The Tactile Sanctuary | Cánh Cửa Bước Vào Thế Giới Hương Thơm')
+@section('title', 'Diva | Cánh Cửa Bước Vào Thế Giới Hương Thơm')
 @section('meta_description', 'Khám phá bộ sưu tập nến thơm thủ công cao cấp với hương thơm tinh tế, thiết kế tối giản và trải nghiệm thư giãn cho không gian sống.')
 @section('canonical_url', url('/'))
 
 @section('content')
     <!-- Hero Section -->
     <section class="relative h-screen min-h-[800px] flex items-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img alt="Warm aesthetic candle" class="w-full h-full object-cover brightness-[0.85]"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9Q-7mWSkr_UMFReTXhRMxqjsw8MmdHOZhPPfJ03SJzMGajAR9d0OHfQ_VcLLFAXqGozvTx6yhzHovxlLEiV8Rexd1Os8jdRgkTlwcmgU1fBjAnC49wxs4DRvxop2uHRTszHHYG8lpw7rf-cyqAmzZ9trQHHI5WMJmkBrBqmxps_cvVLhEfdybAWxCHFAb9KEOp3QV-NERErsPC0PeNIh07_55xWYi7uhqvYdr4abpLl6mLyUQD1VrxPctVV4LMaw_rq4VAyv0QX8" />
-        </div>
-        <div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full">
-            <div class="max-w-3xl space-y-8">
-                <p class="text-on-primary font-label uppercase tracking-[0.2em] text-sm animate-fade-in">Bộ Sưu Tập Thu
-                    Đông {{ date('Y') }}</p>
-                <h1 class="text-7xl md:text-8xl font-headline font-light text-on-primary leading-[1.1] -ml-1">
-                    Cánh Cửa Bước Vào<br />
-                    <span class="italic font-normal">Thế Giới Hương Thơm</span>
-                </h1>
-                <p class="text-xl text-on-primary/90 font-light max-w-lg leading-relaxed font-headline">
-                    Nơi sự tĩnh lặng được hữu hình hóa qua ánh lửa và mùi hương. Khám phá những nốt hương được chế tác
-                    thủ công để vỗ về tâm hồn.
-                </p>
-                <div class="flex items-center gap-6 pt-4">
-                    <button
-                        class="bg-primary text-on-primary px-10 py-5 rounded-lg text-lg font-medium hover:bg-primary-dim transition-all duration-300 flex items-center gap-3 group">
-                        Khám phá ngay
-                        <span
-                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
-                    </button>
-                    <button
-                        class="bg-white/10 backdrop-blur-md border border-white/20 text-on-primary px-10 py-5 rounded-lg text-lg font-medium hover:bg-white/20 transition-all duration-300">
-                        Xem Video
-                    </button>
+        @if($banners->count() > 0)
+            @php $currentBanner = $banners->first(); @endphp
+            <div class="absolute inset-0 z-0">
+                <img alt="{{ $currentBanner->title }}" class="w-full h-full object-cover brightness-[0.85] transition-transform duration-[10s] hover:scale-110"
+                    src="{{ $currentBanner->image }}" />
+                <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full">
+                <div class="max-w-3xl space-y-8">
+                    <p class="text-on-primary font-label uppercase tracking-[0.2em] text-sm animate-fade-in">
+                        {{ $currentBanner->subtitle }}
+                    </p>
+                    <h1 class="text-7xl md:text-8xl font-headline font-light text-on-primary leading-[1.1] -ml-1">
+                        @php
+                            $titleParts = explode('<br />', str_replace('<br>', '<br />', $currentBanner->title));
+                        @endphp
+                        @foreach($titleParts as $part)
+                            {!! $part !!}@if(!$loop->last)<br />@endif
+                        @endforeach
+                    </h1>
+                    <div class="flex items-center gap-6 pt-4">
+                        <a href="{{ $currentBanner->link ?? url('/shop') }}"
+                            class="bg-primary text-on-primary px-10 py-5 rounded-lg text-lg font-medium hover:bg-primary-dim transition-all duration-300 flex items-center gap-3 group">
+                            {{ $currentBanner->button_text ?? 'Khám phá ngay' }}
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                        <button class="bg-white/10 backdrop-blur-md border border-white/20 text-on-primary px-10 py-5 rounded-lg text-lg font-medium hover:bg-white/20 transition-all duration-300">
+                            Our Story
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
+        @else
+            <!-- Fallback Static Hero -->
+            <div class="absolute inset-0 z-0">
+                <img alt="Warm aesthetic candle" class="w-full h-full object-cover brightness-[0.85]"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9Q-7mWSkr_UMFReTXhRMxqjsw8MmdHOZhPPfJ03SJzMGajAR9d0OHfQ_VcLLFAXqGozvTx6yhzHovxlLEiV8Rexd1Os8jdRgkTlwcmgU1fBjAnC49wxs4DRvxop2uHRTszHHYG8lpw7rf-cyqAmzZ9trQHHI5WMJmkBrBqmxps_cvVLhEfdybAWxCHFAb9KEOp3QV-NERErsPC0PeNIh07_55xWYi7uhqvYdr4abpLl6mLyUQD1VrxPctVV4LMaw_rq4VAyv0QX8" />
+            </div>
+            <div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full">
+                <div class="max-w-3xl space-y-8">
+                    <p class="text-on-primary font-label uppercase tracking-[0.2em] text-sm animate-fade-in">Bộ Sưu Tập Thu Đông {{ date('Y') }}</p>
+                    <h1 class="text-7xl md:text-8xl font-headline font-light text-on-primary leading-[1.1] -ml-1">
+                        Cánh Cửa Bước Vào<br />
+                        <span class="italic font-normal">Thế Giới Hương Thơm</span>
+                    </h1>
+                    <div class="flex items-center gap-6 pt-4">
+                        <a href="{{ url('/shop') }}"
+                            class="bg-primary text-on-primary px-10 py-5 rounded-lg text-lg font-medium hover:bg-primary-dim transition-all duration-300 flex items-center gap-3 group">
+                            Khám phá ngay
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endif
         <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
             <span class="text-on-primary/60 text-[10px] tracking-widest uppercase">Scroll</span>
             <div class="w-px h-12 bg-gradient-to-b from-white/60 to-transparent"></div>

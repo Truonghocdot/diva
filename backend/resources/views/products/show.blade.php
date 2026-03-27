@@ -46,6 +46,7 @@
 
 @php
     $header_class = 'fixed top-0 w-full z-50 bg-[#f8faf9]/60 backdrop-blur-md';
+    $galleryImages = $product->gallery_images;
 @endphp
 
 @section('content')
@@ -54,9 +55,27 @@
         <!-- Left: Gallery Section -->
         <div class="lg:col-span-7 space-y-8">
             <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low group">
-                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ $product->image }}"/>
+                <img
+                    id="product-main-image"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    src="{{ $galleryImages[0] ?? $product->image }}"
+                    alt="{{ $product->name }}"
+                />
             </div>
-            <!-- Thumbnails ... -->
+            @if(count($galleryImages) > 1)
+                <div class="grid grid-cols-4 sm:grid-cols-6 gap-3" id="product-gallery-thumbnails">
+                    @foreach($galleryImages as $index => $imageUrl)
+                        <button
+                            type="button"
+                            class="aspect-square rounded-lg overflow-hidden border {{ $index === 0 ? 'border-primary' : 'border-outline-variant/30' }} transition-colors"
+                            data-image="{{ $imageUrl }}"
+                            aria-label="Ảnh sản phẩm {{ $index + 1 }}"
+                        >
+                            <img src="{{ $imageUrl }}" alt="{{ $product->name }} - {{ $index + 1 }}" class="w-full h-full object-cover" />
+                        </button>
+                    @endforeach
+                </div>
+            @endif
         </div>
         <!-- Right: Product Info Section -->
         <div class="lg:col-span-5 flex flex-col space-y-10">
@@ -120,6 +139,7 @@
                 <livewire:add-to-cart-button
                     :product-id="$product->id"
                     label="Add to Bag"
+                    :show-quantity-controls="true"
                     button-class="w-full py-4 bg-primary text-on-primary font-body font-bold rounded-lg hover:shadow-lg transition-all"
                     :key="'detail-add-'.$product->id"
                 />
@@ -147,4 +167,41 @@
     </section>
     @endif
 </main>
+@endsection
+
+@section('extra_js')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const mainImage = document.getElementById('product-main-image');
+        const thumbnailWrapper = document.getElementById('product-gallery-thumbnails');
+
+        if (!mainImage || !thumbnailWrapper) {
+            return;
+        }
+
+        thumbnailWrapper.addEventListener('click', function (event) {
+            const target = event.target.closest('button[data-image]');
+
+            if (!target) {
+                return;
+            }
+
+            const nextImage = target.getAttribute('data-image');
+
+            if (!nextImage) {
+                return;
+            }
+
+            mainImage.setAttribute('src', nextImage);
+
+            thumbnailWrapper.querySelectorAll('button[data-image]').forEach(function (button) {
+                button.classList.remove('border-primary');
+                button.classList.add('border-outline-variant/30');
+            });
+
+            target.classList.remove('border-outline-variant/30');
+            target.classList.add('border-primary');
+        });
+    });
+</script>
 @endsection

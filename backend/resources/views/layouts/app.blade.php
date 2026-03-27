@@ -2,7 +2,7 @@
 <html class="light" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @php
-        $defaultTitle = 'The Tactile Sanctuary | Cánh Cửa Bước Vào Thế Giới Hương Thơm';
+        $defaultTitle = 'Diva | Cánh Cửa Bước Vào Thế Giới Hương Thơm';
         $defaultDescription = 'Nến thơm thủ công cao cấp với hồ sơ mùi hương tinh tế, giúp không gian sống thư thái và sang trọng.';
         $seoTitle = trim($__env->yieldContent('title', $defaultTitle));
         $seoDescription = trim($__env->yieldContent('meta_description', $defaultDescription));

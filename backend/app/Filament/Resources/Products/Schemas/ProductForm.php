@@ -53,6 +53,10 @@ class ProductForm
                         TextInput::make('image')
                             ->label('URL Hình ảnh')
                             ->columnSpanFull(),
+                        TagsInput::make('images')
+                            ->label('Gallery URLs')
+                            ->placeholder('Nhập URL và nhấn Enter')
+                            ->columnSpanFull(),
                     ]),
 
                 Section::make('Thông số kỹ thuật')
