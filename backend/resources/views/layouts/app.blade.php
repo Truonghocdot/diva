@@ -11,7 +11,7 @@
     $seoCanonical = trim($__env->yieldContent('canonical_url', request()->fullUrl()));
     $seoRobots = trim($__env->yieldContent('meta_robots', 'index,follow,max-image-preview:large'));
     $ogType = trim($__env->yieldContent('og_type', 'website'));
-    $ogImage = trim($__env->yieldContent('og_image', asset('favicon.ico')));
+    $ogImage = trim($__env->yieldContent('og_image', asset('og-image.jpg')));
     $twitterCard = trim($__env->yieldContent('twitter_card', 'summary_large_image'));
     $gaId = config('services.google.analytics_id');
     $adsId = config('services.google.ads_id');
@@ -29,12 +29,21 @@
     <meta property="og:title" content="{{ $seoTitle }}" />
     <meta property="og:description" content="{{ $seoDescription }}" />
     <meta property="og:url" content="{{ $seoCanonical }}" />
-    <meta property="og:site_name" content="Diva - Diva" />
+    <meta property="og:site_name" content="Diva - The Tactile Sanctuary" />
     <meta property="og:image" content="{{ $ogImage }}" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="{{ $twitterCard }}" />
     <meta name="twitter:title" content="{{ $seoTitle }}" />
     <meta name="twitter:description" content="{{ $seoDescription }}" />
     <meta name="twitter:image" content="{{ $ogImage }}" />
+    <meta name="theme-color" content="#53644d" />
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}" />
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}" />
 
     @if($gaId || $adsId)
     @php
