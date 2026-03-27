@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Diva | Curated Collections')
+@section('title', 'Diva | Bộ Sưu Tập Tuyển Chọn')
 @section('meta_description', 'Mua nến thơm, starter kits và candle supplies với nhiều nhóm mùi hương được tuyển chọn thủ công.')
 @section('canonical_url', request('category') ? url('/shop?category=' . request('category')) : url('/shop'))
 
@@ -13,16 +13,16 @@ $header_class = 'fixed top-0 w-full z-50 glass-nav';
     <!-- Header & Sort -->
     <header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div class="max-w-2xl">
-            <h1 class="text-5xl lg:text-6xl font-headline font-light tracking-tight mb-4 leading-tight">Artisan Vessels & <br /><span class="italic text-primary">Ephemeral Scents</span></h1>
-            <p class="text-on-surface-variant leading-relaxed max-w-lg">Discover our curated collection of hand-poured vessels and refined fragrance oils, designed to transform your space into a sensory refuge.</p>
+            <h1 class="text-5xl lg:text-6xl font-headline font-light tracking-tight mb-4 leading-tight">Hũ nến thủ công & <br /><span class="italic text-primary">Mùi hương tinh tuyển</span></h1>
+            <p class="text-on-surface-variant leading-relaxed max-w-lg">Khám phá bộ sưu tập nến rót tay và tinh dầu hương cao cấp, giúp không gian của bạn trở nên thư thái và giàu cảm xúc.</p>
         </div>
         <div class="flex items-center gap-4">
-            <span class="font-label text-xs uppercase tracking-[0.15em] text-outline">Sort by:</span>
+            <span class="font-label text-xs uppercase tracking-[0.15em] text-outline">Sắp xếp:</span>
             <select class="bg-transparent border-none focus:ring-0 font-body text-sm text-primary font-medium cursor-pointer py-1 pl-0 pr-8">
-                <option>Most Popular</option>
-                <option>Newest</option>
-                <option>Price Low to High</option>
-                <option>Price High to Low</option>
+                <option>Phổ biến nhất</option>
+                <option>Mới nhất</option>
+                <option>Giá thấp đến cao</option>
+                <option>Giá cao đến thấp</option>
             </select>
         </div>
     </header>
@@ -31,7 +31,7 @@ $header_class = 'fixed top-0 w-full z-50 glass-nav';
         <!-- Sidebar Filters -->
         <aside class="w-full lg:w-64 flex-shrink-0 space-y-12">
             <section>
-                <h3 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface mb-6 font-bold">Scent Family</h3>
+                <h3 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface mb-6 font-bold">Nhóm hương</h3>
                 <div class="space-y-3">
                     @foreach($categories as $category)
                     <label class="flex items-center group cursor-pointer">
@@ -53,7 +53,7 @@ $header_class = 'fixed top-0 w-full z-50 glass-nav';
                     <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ $product->image }}" />
                     <livewire:add-to-cart-button
                         :product-id="$product->id"
-                        label="Add to Cart"
+                        label="Thêm vào giỏ"
                         button-class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2"
                         :key="'shop-add-'.$product->id" />
                 </div>

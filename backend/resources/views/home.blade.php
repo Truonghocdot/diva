@@ -34,7 +34,7 @@
                             <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                         </a>
                         <button class="bg-white/10 backdrop-blur-md border border-white/20 text-on-primary px-10 py-5 rounded-lg text-lg font-medium hover:bg-white/20 transition-all duration-300">
-                            Our Story
+                            Câu chuyện của chúng tôi
                         </button>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
             </div>
         @endif
         <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-            <span class="text-on-primary/60 text-[10px] tracking-widest uppercase">Scroll</span>
+            <span class="text-on-primary/60 text-[10px] tracking-widest uppercase">Cuộn xuống</span>
             <div class="w-px h-12 bg-gradient-to-b from-white/60 to-transparent"></div>
         </div>
     </section>
@@ -112,7 +112,7 @@
         <div class="max-w-screen-2xl mx-auto px-8">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div class="space-y-4">
-                    <span class="text-primary font-label uppercase tracking-widest text-sm">Best Sellers</span>
+                    <span class="text-primary font-label uppercase tracking-widest text-sm">Bán chạy</span>
                     <h2 class="text-5xl font-headline font-light">Bán Chạy Nhất</h2>
                 </div>
                 <div class="flex items-center gap-4">
@@ -142,7 +142,7 @@
                             </button>
                         </div>
                         @if($product->is_new)
-                        <div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 text-[10px] font-bold rounded-full uppercase tracking-wider">New</div>
+                        <div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 text-[10px] font-bold rounded-full uppercase tracking-wider">Mới</div>
                         @endif
                     </div>
                     <div class="flex gap-2 mb-3">

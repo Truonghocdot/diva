@@ -1,4 +1,4 @@
-<!-- Top Navigation Bar -->
+<!-- Thanh điều hướng trên cùng -->
 @php
     $isLoggedIn = auth()->check();
     $user = auth()->user();
@@ -10,13 +10,13 @@
             <a class="text-2xl font-headline italic text-[#2d3434] dark:text-[#f8faf9]" href="{{ url('/') }}">Diva</a>
             <div class="hidden md:flex items-center gap-8">
                 <a class="{{ request()->is('shop*') ? 'text-[#53644d] dark:text-[#ecffe1] border-b border-[#53644d] pb-1' : 'text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d]' }} font-headline font-light tracking-tight transition-all duration-300"
-                    href="{{ url('/shop') }}">Shop Candles</a>
+                    href="{{ url('/shop') }}">Cửa hàng</a>
                  <a class="text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d] transition-colors font-headline font-light tracking-tight transition-all duration-300"
-                    href="{{ url('/shop?category=starter-kits') }}">Kits</a>
+                    href="{{ url('/shop?category=starter-kits') }}">Bộ kit</a>
                 <a class="text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d] transition-colors font-headline font-light tracking-tight transition-all duration-300"
-                    href="{{ url('/shop?category=candle-supplies') }}">Supplies</a>
+                    href="{{ url('/shop?category=candle-supplies') }}">Nguyên liệu</a>
                 <a class="{{ request()->is('about') ? 'text-[#53644d] dark:text-[#ecffe1] border-b border-[#53644d] pb-1' : 'text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d]' }} font-headline font-light tracking-tight transition-all duration-300"
-                    href="{{ url('/about') }}">About Us</a>
+                    href="{{ url('/about') }}">Về chúng tôi</a>
             </div>
         </div>
         <div class="flex items-center gap-6">
@@ -37,7 +37,7 @@
                 >person</a>
             @endif -->
 
-            <a href="{{ url('/shop') }}" class="relative group" title="Wishlist">
+            <a href="{{ url('/shop') }}" class="relative group" title="Yêu thích">
                 <span
                     class="material-symbols-outlined text-[#53644d] dark:text-[#ecffe1] hover:opacity-80 transition-all duration-300 active:scale-95"
                 >favorite</span>

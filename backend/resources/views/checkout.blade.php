@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Checkout | Diva')
+@section('title', 'Thanh Toán | Diva')
 @section('meta_robots', 'noindex,nofollow')
 @section('canonical_url', url('/checkout'))
 

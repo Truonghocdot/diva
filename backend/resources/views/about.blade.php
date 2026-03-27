@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'About Us | Diva')
+@section('title', 'Về Chúng Tôi | Diva')
 @section('meta_description', 'Câu chuyện thương hiệu nến thơm Diva: nguyên liệu tự nhiên, quy trình thủ công và trải nghiệm đa giác quan.')
 @section('canonical_url', url('/about'))
 

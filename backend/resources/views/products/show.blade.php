@@ -87,11 +87,11 @@ $galleryImages = $product->gallery_images;
             </header>
 
             <section class="p-8 bg-surface-container-low rounded-xl space-y-6">
-                <h3 class="text-xs font-label uppercase tracking-[0.2em] text-on-surface-variant">Scent Profile</h3>
+                <h3 class="text-xs font-label uppercase tracking-[0.2em] text-on-surface-variant">Tầng hương</h3>
                 <div class="space-y-4">
                     @if($product->scent_top_notes)
                     <div class="flex items-start gap-4">
-                        <span class="text-[10px] font-label uppercase tracking-widest text-primary mt-1 w-20">Top</span>
+                        <span class="text-[10px] font-label uppercase tracking-widest text-primary mt-1 w-20">Hương đầu</span>
                         <div class="flex flex-wrap gap-2">
                             @foreach($product->scent_top_notes as $note)
                             <span class="px-3 py-1 bg-white text-on-surface text-[10px] rounded-full ghost-border">{{ $note }}</span>
@@ -101,7 +101,7 @@ $galleryImages = $product->gallery_images;
                     @endif
                     @if($product->scent_middle_notes)
                     <div class="flex items-start gap-4">
-                        <span class="text-[10px] font-label uppercase tracking-widest text-primary mt-1 w-20">Middle</span>
+                        <span class="text-[10px] font-label uppercase tracking-widest text-primary mt-1 w-20">Hương giữa</span>
                         <div class="flex flex-wrap gap-2">
                             @foreach($product->scent_middle_notes as $note)
                             <span class="px-3 py-1 bg-white text-on-surface text-[10px] rounded-full ghost-border">{{ $note }}</span>
@@ -111,7 +111,7 @@ $galleryImages = $product->gallery_images;
                     @endif
                     @if($product->scent_base_notes)
                     <div class="flex items-start gap-4">
-                        <span class="text-[10px] font-label uppercase tracking-widest text-primary mt-1 w-20">Base</span>
+                        <span class="text-[10px] font-label uppercase tracking-widest text-primary mt-1 w-20">Hương cuối</span>
                         <div class="flex flex-wrap gap-2">
                             @foreach($product->scent_base_notes as $note)
                             <span class="px-3 py-1 bg-white text-on-surface text-[10px] rounded-full ghost-border">{{ $note }}</span>
@@ -124,15 +124,15 @@ $galleryImages = $product->gallery_images;
 
             <div class="grid grid-cols-3 gap-8 py-8 border-y border-outline-variant/10">
                 <div class="text-center">
-                    <span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant block mb-1">Wax</span>
+                    <span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant block mb-1">Loại sáp</span>
                     <span class="text-sm font-medium">{{ $product->wax_type }}</span>
                 </div>
                 <div class="text-center">
-                    <span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant block mb-1">Burn Time</span>
+                    <span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant block mb-1">Thời gian cháy</span>
                     <span class="text-sm font-medium">{{ $product->burn_time }}</span>
                 </div>
                 <div class="text-center">
-                    <span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant block mb-1">Weight</span>
+                    <span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant block mb-1">Khối lượng</span>
                     <span class="text-sm font-medium">{{ $product->weight }}</span>
                 </div>
             </div>
@@ -140,7 +140,7 @@ $galleryImages = $product->gallery_images;
             <div class="space-y-4">
                 <livewire:add-to-cart-button
                     :product-id="$product->id"
-                    label="Add to Bag"
+                    label="Thêm vào giỏ"
                     :show-quantity-controls="true"
                     button-class="w-full py-4 bg-primary text-on-primary font-body font-bold rounded-lg hover:shadow-lg transition-all"
                     :key="'detail-add-'.$product->id" />
