@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Tactile Sanctuary | Curated Collections</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-tint": "#53644d",
+              "inverse-on-surface": "#9b9d9d",
+              "on-error-container": "#6e1400",
+              "tertiary-fixed": "#fffbff",
+              "surface-container-lowest": "#ffffff",
+              "background": "#f8faf9",
+              "error-container": "#fd795a",
+              "primary-fixed-dim": "#c7dabe",
+              "on-primary-fixed": "#34432f",
+              "outline-variant": "#adb3b3",
+              "tertiary-container": "#fffbff",
+              "on-primary-container": "#465640",
+              "surface-container-low": "#f1f4f4",
+              "inverse-surface": "#0c0f0f",
+              "on-background": "#2d3434",
+              "secondary-fixed": "#f0e0d1",
+              "tertiary": "#615f5a",
+              "on-surface-variant": "#5a6060",
+              "on-tertiary-fixed": "#504e4a",
+              "surface-dim": "#d5dbdb",
+              "surface-container-highest": "#dde4e3",
+              "outline": "#757c7c",
+              "inverse-primary": "#e1f4d7",
+              "surface-variant": "#dde4e3",
+              "on-secondary-container": "#5a5044",
+              "secondary-container": "#f0e0d1",
+              "on-error": "#fff7f6",
+              "on-secondary-fixed": "#473e33",
+              "on-tertiary-container": "#62605b",
+              "on-tertiary-fixed-variant": "#6d6b66",
+              "secondary": "#685d51",
+              "surface": "#f8faf9",
+              "error": "#a73b21",
+              "on-primary-fixed-variant": "#4f604a",
+              "surface-container": "#eaefee",
+              "on-tertiary": "#fdf8f1",
+              "tertiary-dim": "#54534e",
+              "on-surface": "#2d3434",
+              "primary-fixed": "#d5e8cc",
+              "error-dim": "#791903",
+              "surface-bright": "#f8faf9",
+              "surface-container-high": "#e4e9e9",
+              "on-primary": "#ecffe1",
+              "secondary-fixed-dim": "#e1d2c3",
+              "primary-dim": "#475842",
+              "primary": "#53644d",
+              "on-secondary-fixed-variant": "#655a4e",
+              "tertiary-fixed-dim": "#f1ede6",
+              "secondary-dim": "#5c5146",
+              "on-secondary": "#fff7f3",
+              "primary-container": "#d5e8cc"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Manrope"],
+              "label": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .scent-gradient {
+            background: linear-gradient(135deg, #53644d 0%, #d5e8cc 100%);
+        }
+        .glass-nav {
+            background-color: rgba(248, 250, 249, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-container">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 glass-nav">
+<div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-headline italic text-[#2d3434] tracking-tight">The Tactile Sanctuary</div>
+<div class="hidden md:flex items-center space-x-10 font-headline font-light tracking-tight text-[#2d3434]/70">
+<a class="text-[#53644d] border-b border-[#53644d] pb-1" href="#">Shop Candles</a>
+<a class="hover:text-[#53644d] transition-colors" href="#">Kits</a>
+<a class="hover:text-[#53644d] transition-colors" href="#">Supplies</a>
+<a class="hover:text-[#53644d] transition-colors" href="#">About Us</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="hover:opacity-80 transition-all duration-300">
+<span class="material-symbols-outlined text-[#53644d]" data-icon="person">person</span>
+</button>
+<button class="hover:opacity-80 transition-all duration-300">
+<span class="material-symbols-outlined text-[#53644d]" data-icon="favorite">favorite</span>
+</button>
+<button class="hover:opacity-80 transition-all duration-300 relative">
+<span class="material-symbols-outlined text-[#53644d]" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-2 -right-2 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center font-bold">2</span>
+</button>
+</div>
+</div>
+<div class="h-[1px] w-full bg-gradient-to-r from-transparent via-[#dde4e3]/30 to-transparent"></div>
+</nav>
+<main class="pt-32 pb-24 max-w-screen-2xl mx-auto px-8 lg:px-12">
+<!-- Header & Sort -->
+<header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h1 class="text-5xl lg:text-6xl font-headline font-light tracking-tight mb-4 leading-tight">Artisan Vessels &amp; <br/><span class="italic text-primary">Ephemeral Scents</span></h1>
+<p class="text-on-surface-variant leading-relaxed max-w-lg">Discover our curated collection of hand-poured vessels and refined fragrance oils, designed to transform your space into a sensory refuge.</p>
+</div>
+<div class="flex items-center gap-4">
+<span class="font-label text-xs uppercase tracking-[0.15em] text-outline">Sort by:</span>
+<select class="bg-transparent border-none focus:ring-0 font-body text-sm text-primary font-medium cursor-pointer py-1 pl-0 pr-8">
+<option>Most Popular</option>
+<option>Newest</option>
+<option>Price Low to High</option>
+<option>Price High to Low</option>
+</select>
+</div>
+</header>
+<div class="flex flex-col lg:flex-row gap-16">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-12">
+<section>
+<h3 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface mb-6 font-bold">Scent Family</h3>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20 bg-transparent transition-all" type="checkbox"/>
+<span class="ml-3 text-sm text-on-surface-variant group-hover:text-primary transition-colors">Woody</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20 bg-transparent transition-all" type="checkbox"/>
+<span class="ml-3 text-sm text-on-surface-variant group-hover:text-primary transition-colors">Floral</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20 bg-transparent transition-all" type="checkbox"/>
+<span class="ml-3 text-sm text-primary font-medium">Fresh</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20 bg-transparent transition-all" type="checkbox"/>
+<span class="ml-3 text-sm text-on-surface-variant group-hover:text-primary transition-colors">Spicy</span>
+</label>
+</div>
+</section>
+<section>
+<h3 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface mb-6 font-bold">Product Type</h3>
+<div class="space-y-3">
+<label class="flex items-center group cursor-pointer">
+<input checked="" class="w-4 h-4 border-outline-variant text-primary focus:ring-primary/20 bg-transparent" name="type" type="radio"/>
+<span class="ml-3 text-sm text-primary font-medium">Candles</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary/20 bg-transparent" name="type" type="radio"/>
+<span class="ml-3 text-sm text-on-surface-variant group-hover:text-primary transition-colors">Wax</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary/20 bg-transparent" name="type" type="radio"/>
+<span class="ml-3 text-sm text-on-surface-variant group-hover:text-primary transition-colors">Wicks</span>
+</label>
+<label class="flex items-center group cursor-pointer">
+<input class="w-4 h-4 border-outline-variant text-primary focus:ring-primary/20 bg-transparent" name="type" type="radio"/>
+<span class="ml-3 text-sm text-on-surface-variant group-hover:text-primary transition-colors">Fragrance Oils</span>
+</label>
+</div>
+</section>
+<section>
+<h3 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface mb-6 font-bold">Price Range</h3>
+<div class="px-2">
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="200" min="10" type="range" value="120"/>
+<div class="flex justify-between mt-4 font-label text-[10px] text-outline">
+<span>$10</span>
+<span>$200</span>
+</div>
+</div>
+</section>
+<div class="pt-8 border-t border-outline-variant/10">
+<button class="w-full py-4 text-sm font-label uppercase tracking-widest text-primary hover:bg-surface-container-low transition-colors rounded-lg">Clear All</button>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Card 1 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="minimalist white ceramic candle on a raw wooden table with soft morning light and shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd2hQDpLpoP0HAuSJf3eXzslQpu-mCIolxKr1yFB-MydtX3d6SAP2QnkzCWQf9Iw-lbQElWcUEwMdpd7UeTrBTdb_bP3sqeC9tK5mwSIVaRnj6OPhmDv1ZnlQ1sCdFDQ6eeosnETxuYa3DlHemCzITSkrx-4tomf8h4qNUhDIi97XWo3qsX9rO9QKqJ-ZghckhQqKilohne-ua2V7icW33vFEDKrg2LxqyhID_EiWJ5DWsvE52cNg-F1slyTifCNmZOb0669EmcQw"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">The Nordic Dusk</h3>
+<span class="font-body text-sm font-bold text-primary">$48.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Sandalwood &amp; Vanilla Bourbon</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Woody</span>
+<span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] font-label uppercase tracking-wider rounded-full italic">Limited</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="amber glass jar candle with cork lid on a linen cloth background with dried wildflowers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdUNV-r-zC0rY2dDgI7I9ypMqTl4rMQKoTeb5r71sEsC0CbepIwRQxu-5q_bYRPaHgOF6w3rFjZpFNZtYUy-M09YrVuWJ932sidO52oXJb2OvZi6QvCcU0W1ZFY6wBDvMLOCoH6eJP3VOeNMIs7IJfyqDC6IouwhWGdblG2AewiVlHPekCXU1oQeQhFb89MF46AwVem6L1xdzNi7ZYnkq-Nhn00R33TK8_988WcVvML2FOiuftiIEuCoEQm_qk1uYYZu63xg2SUX4"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Oasis Morning</h3>
+<span class="font-body text-sm font-bold text-primary">$42.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Bergamot &amp; Sea Salt Spray</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Fresh</span>
+</div>
+</div>
+<!-- Card 3 (Asymmetric size hint) -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="black textured candle jar on a dark slate surface with smoke wisps rising elegantly" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHopfc59YjLKlDld0-Vu7k1ezOUialm-zm6DKcFZjqXBenE_rdO5hAXw83nq4qD_UL8Iyk5jznfun58NgWA06BFZbMw8orWANRxzVbdlwIhVM1JKsC43LuZl3QS3h6toyiGEJjE8_-MCBSyn7CJINAeiweZy_Pead8VWdxQUWrwDzhUCMh0GToVhyUJ-I-lwdLMxayAjgqN3buqusSabN8FByG14BRAQUxMUNSknjSZMA0rUF1FPuRAKa7YlatchCOVxSQxhjQJ58"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Midnight Hearth</h3>
+<span class="font-body text-sm font-bold text-primary">$56.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Smoked Cedar &amp; Juniper</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Spicy</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="sculptural white candle in an irregular shape on a marble pedestal surrounded by beige tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaM6LiFFd5m6Q_HkJtzqG55-9nlF3XBidOxH5UeoO5Qan-QW48HxpRXtRROD0ClWi8YCEaTDWT-KfSayUR5KZ0NNrSAL--_nYX40Izpfl1mJcA-5frbc_RGIeLxQ4ONIjxrrgZjy832FiUu7cP-WAJeOgxjk2msVb8uLNdfZghhPJ1qqmOgpqzZswNLnL7YdSt28AhbaKvoV5fq_K2-zso9TvCpNJcUYTAjp_sBDZmyoYdKDfPtlhkkguwleEZtznPNIXoxw3PWuA"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Ethereal Bloom</h3>
+<span class="font-body text-sm font-bold text-primary">$45.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">White Peony &amp; Lychee</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Floral</span>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close-up of melting wax on a textured surface with soft golden hour lighting and macro detail" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVIL-f_Davig0B9FFzXGdZYTYpAYpvx-5dM5XGVmIL9WTrAFbwXcINtQyeGHpB6zsQ4Ffajc2vhUPlDWsuU32-h4M3YGPjABpge8KxsdM829JkkiTcxywa57opofygdw8xXczVpGeyxm89afXQ3BA-9aOXe5uBU_S6u3avKVUuHXTesUAABuVhRXzje9xJyfG6izlSzdCYyUdujwm1DuUrTJHlfakaK5IYKYdQcBgmLTz_Cwbg8U4MF6s3OdGCErlKMI15sAH6QOg"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Sun-Drenched Hay</h3>
+<span class="font-body text-sm font-bold text-primary">$38.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Dried Herbs &amp; Wild Honey</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Fresh</span>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="group">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="collection of aesthetic ceramic candles in various earth tones stacked artfully on a concrete shelf" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgtO4WvWMVZZH_y0-bsEemjKvjmDDbzM-1oFFz4RK4tFRzu08UVX-1kDGYgad-T-ZQlXCH8ahuMx6wtxqzpAN9u1qJMn9e74yidTIpTsOx6FZGesjJc-GqaC6zB_CEvPggIHQ6Wu5o8F6omUyb4aJcOMeWUI8CQTDdgnnEGRxCnGYNPiu6u-8FoGxSvEk2RE_9d0vxd9a5E96UmcdCabhh1DngO_qxO-vaXkdZrazQy3hzwII-f9Cowf7hCzB7Npeu4oBsNhLoMYo"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Terra Incognita</h3>
+<span class="font-body text-sm font-bold text-primary">$52.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Damp Earth &amp; Patchouli Leaf</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Woody</span>
+</div>
+</div>
+<!-- Repeat for 12 cards (simplified for space) -->
+<!-- Card 7-12... -->
+<div class="group hidden md:block">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="artisanal candle with a wooden wick flickering in a dimly lit cozy library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6E2M3XpUkaqcJlUoEYFcXrlMeQe4qIxL0gAWGXAGOyChNA8jf2X4bav7NiIqvrnR0U-10c6Bz5H4aSFs7il3We8l6Ukel4SKz9_Roabt50aU51Jl2Msasq8XQXsf2OPpaJK9A2Iilqo_r-a383F3FkS1pnN8Nd5uHrT1jvSsm1yRvvptVvXL3xEqQWk6Nc6NIIbu3MttZIT8crpvuhijVzJCGCoFfygG19jQrE-ASGR9zNCHCRt4xvM1-uSRT4iHD5Mn3hyqYdGQ"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Paper Archive</h3>
+<span class="font-body text-sm font-bold text-primary">$44.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Old Book Pages &amp; Oakmoss</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Woody</span>
+</div>
+</div>
+<div class="group hidden md:block">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="delicate glass perfume bottle on a mirrored surface with soft pastel reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB5n3_p0Hb9jtwINdBL9sGPGjJJYV1GIqE9ekbOxBzH87zAHEmq1X8-O3acvT9TXCYQUNJfr0YR-k4xcdFgRjgB7qhwdppR0qNIqcSrUqElqb1-wuAShGm7Pjky9peeWrhYhH5RJbsUdmA6qUlLqKL-Od9MzgTqHyZXQy8LlC7Ru98KjgfMoxe2b7LBDr5EuPnGQHoOKWvJH6wcVwTtRBOlPvSbjKVeRlfjKmzuVv3uEFpH_PatSDoSUdiOJoK5yYhpmye2go9JR4"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Velvet Rose</h3>
+<span class="font-body text-sm font-bold text-primary">$36.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Damask Rose &amp; Warm Saffron</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Floral</span>
+</div>
+</div>
+<div class="group hidden md:block">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="vibrant orange and ginger notes represented by sliced citrus on a rustic stone background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo5WiPssFNjbI8bKpXl7Ab6KC2itJcNR9SFZQS21hXbXa4YrbfeDaDv9Q--mjJWNaAtW7uL9iM7fcYcN_8j4TjOtatY9qEziZpRagvhZuYTExPOuCyqMu0JSmttAH22Yp40R3i_2HGoUQMYwv-iMHXTYizp1WUOm6RNmSv5BARldH2oOOSTqMC11IYVP9kyPftv6x_ONYzgsUdq6AHxR1RLP5126poV2pwnnc-VNbULqzwFjL8wk94S51vJla3972K8c7g8y3kTdA"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Spiced Clementine</h3>
+<span class="font-body text-sm font-bold text-primary">$40.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Blood Orange &amp; Fresh Ginger</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Spicy</span>
+</div>
+</div>
+<div class="group hidden xl:block">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="morning dew on a green leaf with soft focus garden background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWVmovB0MePFnGqsy8nAEv37BfWxXpuCwtGqFi-0WozWbAaiywqxfNMu6TZswzD-IaQJlz1M2bQIK5U_QHWGSNjcAqA1c_McN_qdyN333eXQSJpf8lqjzUygKiSc9bQQxvOFnt1zH9ArSHJALw4OzqmN6sIgfWYAnSTvWHrIYvWhpwCY9J9GqCtNKu07cmxchzaVAY3MIgExqJ2ogTxGqbMKreSQXbP2If6Eiv8YA0VfGByoKVNGo3uI_zZ57boktkGrS-ndjOuD8"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Garden Mist</h3>
+<span class="font-body text-sm font-bold text-primary">$42.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Cucumber &amp; Rain Water</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Fresh</span>
+</div>
+</div>
+<div class="group hidden xl:block">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="artisan clay vessel with a simple minimalist design on a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOmc_ZPzL4kzJEPWxFSl3Iu42JaGNCwNWq6kF84CZgHtwR5ng5-FZs4e6Mm0KEw8GgPFt3gT4ilsvw9eDwwN8OvZEBFIktDcwAdkJVpQ-jLYJ9aAD2I0WhwMehJDqkQfeBvcACJH5TzEAogsG5KJW_TZG2M3VCfgTDuET_007XP7D5__7UcUX0shAp3SLFR_wnzryE9SIXad2VHFM45Hdrl7AwJUpll0ldeLbGrEW-pA1qoP3nSBDSvbKlojOFJOgMeuPHuTaU_dY"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Clay &amp; Sage</h3>
+<span class="font-body text-sm font-bold text-primary">$50.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Clary Sage &amp; White Thyme</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Fresh</span>
+</div>
+</div>
+<div class="group hidden xl:block">
+<div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="glowing candle flame with soft bokeh lights in a warm cozy living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbQ6buKdxNITc19QixH184BSkki--KMgI1pHFnN8Fjzo4dEbh6I8vIwHTze4YGBcVuigEonx1QX2zVhGs2A7fwiUSQKGyZk9sJNIwQbgkJCrHTLZ0C9UOOTWOsfuwgbBK-u_DvmFOtOv7e_dO7Ska-gPTiMPdNKNSmDn3vtUHZ8PS9w8Dz5GBDKa4Js4FkolIRI3VPERfLUU4zWXTAH4gYJPzwNQ5SZSDqJQZZoloJsBAV6AFTIZ0497RQc4zQjjawNVOqKPLaCNY"/>
+<button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="shopping_bag">shopping_bag</span>
+                            Add to Cart
+                        </button>
+</div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline text-xl text-on-surface">Fireside Glow</h3>
+<span class="font-body text-sm font-bold text-primary">$46.00</span>
+</div>
+<p class="text-sm text-on-surface-variant mb-4 leading-relaxed">Cinnamon Bark &amp; Toasted Pine</p>
+<div class="flex gap-2">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Spicy</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-24 flex justify-center items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant/30 text-outline hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<span class="font-label text-xs tracking-widest text-on-surface font-bold">Page 01 of 03</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-full border border-outline-variant/30 text-outline hover:border-primary hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-24 bg-surface-container-low">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline text-lg text-on-surface mb-6">The Tactile Sanctuary</div>
+<p class="text-on-surface-variant text-sm leading-loose max-w-xs">Crafting sensory experiences through artisanal candle making and curated botanical scents.</p>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface font-bold mb-2">Explore</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm underline decoration-outline-variant/30 underline-offset-4" href="#">Scent Guide</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm underline decoration-outline-variant/30 underline-offset-4" href="#">Wholesale</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm underline decoration-outline-variant/30 underline-offset-4" href="#">Shipping &amp; Returns</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors text-sm underline decoration-outline-variant/30 underline-offset-4" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface font-bold mb-2">Studio</h4>
+<p class="text-on-surface-variant text-sm leading-loose">
+                    124 Artisan Row<br/>
+                    Copenhagen, DK 2200<br/>
+                    hello@tactilesanctuary.com
+                </p>
+</div>
+<div class="flex flex-col space-y-6">
+<h4 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface font-bold">Newsletter</h4>
+<div class="relative">
+<input class="w-full bg-transparent border-b border-outline-variant/50 py-2 focus:ring-0 focus:border-primary placeholder:text-outline/50 text-sm" placeholder="YOUR EMAIL" type="email"/>
+<button class="absolute right-0 top-1/2 -translate-y-1/2 text-primary">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<div class="flex space-x-4">
+<a class="text-on-surface-variant hover:text-primary transition-all" href="#"><span class="material-symbols-outlined" data-icon="public">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-all" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
+</div>
+</div>
+</div>
+<div class="px-12 py-8 max-w-screen-2xl mx-auto border-t border-outline-variant/10 text-center">
+<p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">© 2024 The Tactile Sanctuary. Crafted for Calm.</p>
+</div>
+</footer>
+<!-- Side Shopping Bag (Contextual Sidebar) -->
+<aside class="fixed right-0 top-0 h-full w-[400px] bg-white shadow-2xl z-[60] translate-x-full transition-transform duration-500 hidden lg:flex flex-col p-8">
+<div class="flex justify-between items-center mb-12">
+<div>
+<h2 class="font-headline text-2xl text-on-surface">Your Sanctuary</h2>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-1">Manage your curated collection</p>
+</div>
+<button class="p-2 hover:bg-surface-container-low rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+<div class="flex-1 overflow-y-auto space-y-8 no-scrollbar">
+<!-- Example Item -->
+<div class="flex gap-4 group">
+<div class="w-20 h-24 bg-surface-container-low rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="small thumbnail of artisan candle jar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkUwLFOanRi2n7lnsXNsJmiZAqO9SrqY2eRhWIHr8Nzfm6C8tENiHp-6m2TLlhi_7GjB-Eldnl6Rdeb0u3t1DWyjI5lECkwgWH74wnlFs42UEgCA1s80SHhb9lFCOH7N55vFqoSgKNgbXYbN2YUEPeITJm6axwgEljIRI4Pl1IZjRi8TBmepirsvMBk6bSW-lvhOQpLBZN2JNY5CrkZZg3u1RXilNne62DbmlDK4xx_ET7OA1Zi1KyuEY1CddIivcuY2bQAbaDt6E"/>
+</div>
+<div class="flex-1">
+<h4 class="font-headline text-lg text-on-surface">The Nordic Dusk</h4>
+<p class="text-xs text-on-surface-variant mb-2">12oz • Hand-poured Soy</p>
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold text-primary">$48.00</span>
+<div class="flex items-center gap-3">
+<button class="text-outline hover:text-primary"><span class="material-symbols-outlined text-sm" data-icon="remove">remove</span></button>
+<span class="text-xs font-bold">1</span>
+<button class="text-outline hover:text-primary"><span class="material-symbols-outlined text-sm" data-icon="add">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-auto pt-8 border-t border-outline-variant/10">
+<div class="flex justify-between items-center mb-6">
+<span class="font-label text-xs uppercase tracking-widest text-outline">Subtotal</span>
+<span class="font-body text-lg font-bold text-on-surface">$48.00</span>
+</div>
+<button class="w-full py-5 bg-primary text-on-primary font-label uppercase tracking-[0.2em] rounded-lg hover:bg-primary-dim transition-all active:scale-[0.98]">
+                Checkout Now
+            </button>
+</div>
+</aside>
+</body></html>

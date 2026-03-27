@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Tactile Sanctuary | Cánh Cửa Bước Vào Thế Giới Hương Thơm</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;500;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#53644d",
+                        "inverse-on-surface": "#9b9d9d",
+                        "on-error-container": "#6e1400",
+                        "tertiary-fixed": "#fffbff",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f8faf9",
+                        "error-container": "#fd795a",
+                        "primary-fixed-dim": "#c7dabe",
+                        "on-primary-fixed": "#34432f",
+                        "outline-variant": "#adb3b3",
+                        "tertiary-container": "#fffbff",
+                        "on-primary-container": "#465640",
+                        "surface-container-low": "#f1f4f4",
+                        "inverse-surface": "#0c0f0f",
+                        "on-background": "#2d3434",
+                        "secondary-fixed": "#f0e0d1",
+                        "tertiary": "#615f5a",
+                        "on-surface-variant": "#5a6060",
+                        "on-tertiary-fixed": "#504e4a",
+                        "surface-dim": "#d5dbdb",
+                        "surface-container-highest": "#dde4e3",
+                        "outline": "#757c7c",
+                        "inverse-primary": "#e1f4d7",
+                        "surface-variant": "#dde4e3",
+                        "on-secondary-container": "#5a5044",
+                        "secondary-container": "#f0e0d1",
+                        "on-error": "#fff7f6",
+                        "on-secondary-fixed": "#473e33",
+                        "on-tertiary-container": "#62605b",
+                        "on-tertiary-fixed-variant": "#6d6b66",
+                        "secondary": "#685d51",
+                        "surface": "#f8faf9",
+                        "error": "#a73b21",
+                        "on-primary-fixed-variant": "#4f604a",
+                        "surface-container": "#eaefee",
+                        "on-tertiary": "#fdf8f1",
+                        "tertiary-dim": "#54534e",
+                        "on-surface": "#2d3434",
+                        "primary-fixed": "#d5e8cc",
+                        "error-dim": "#791903",
+                        "surface-bright": "#f8faf9",
+                        "surface-container-high": "#e4e9e9",
+                        "on-primary": "#ecffe1",
+                        "secondary-fixed-dim": "#e1d2c3",
+                        "primary-dim": "#475842",
+                        "primary": "#53644d",
+                        "on-secondary-fixed-variant": "#655a4e",
+                        "tertiary-fixed-dim": "#f1ede6",
+                        "secondary-dim": "#5c5146",
+                        "on-secondary": "#fff7f3",
+                        "primary-container": "#d5e8cc"
+                    },
+                    fontFamily: {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .bg-glass {
+            backdrop-filter: blur(20px);
+            background-color: rgba(221, 228, 227, 0.6);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation Bar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-[#f8faf9]/60 dark:bg-[#2d3434]/60 backdrop-blur-md bg-gradient-to-b from-[#dde4e3]/20 to-transparent">
+        <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+            <div class="flex items-center gap-12">
+                <a class="text-2xl font-headline italic text-[#2d3434] dark:text-[#f8faf9]" href="#">The Tactile
+                    Sanctuary</a>
+                <div class="hidden md:flex items-center gap-8">
+                    <a class="text-[#53644d] dark:text-[#ecffe1] border-b border-[#53644d] pb-1 font-headline font-light tracking-tight transition-all duration-300"
+                        href="#">Shop Candles</a>
+                    <a class="text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d] transition-colors font-headline font-light tracking-tight transition-all duration-300"
+                        href="#">Kits</a>
+                    <a class="text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d] transition-colors font-headline font-light tracking-tight transition-all duration-300"
+                        href="#">Supplies</a>
+                    <a class="text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d] transition-colors font-headline font-light tracking-tight transition-all duration-300"
+                        href="#">About Us</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <button
+                    class="material-symbols-outlined text-[#53644d] dark:text-[#ecffe1] hover:opacity-80 transition-all duration-300 active:scale-95">person</button>
+                <button
+                    class="material-symbols-outlined text-[#53644d] dark:text-[#ecffe1] hover:opacity-80 transition-all duration-300 active:scale-95">favorite</button>
+                <div class="relative group">
+                    <button
+                        class="material-symbols-outlined text-[#53644d] dark:text-[#ecffe1] hover:opacity-80 transition-all duration-300 active:scale-95">shopping_bag</button>
+                    <span
+                        class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] text-on-primary font-bold">2</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[800px] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="Warm aesthetic candle" class="w-full h-full object-cover brightness-[0.85]"
+                data-alt="Close-up of a hand lighting a luxury wooden wick candle with a long match in a cozy, sunlit minimalist room with soft beige walls."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9Q-7mWSkr_UMFReTXhRMxqjsw8MmdHOZhPPfJ03SJzMGajAR9d0OHfQ_VcLLFAXqGozvTx6yhzHovxlLEiV8Rexd1Os8jdRgkTlwcmgU1fBjAnC49wxs4DRvxop2uHRTszHHYG8lpw7rf-cyqAmzZ9trQHHI5WMJmkBrBqmxps_cvVLhEfdybAWxCHFAb9KEOp3QV-NERErsPC0PeNIh07_55xWYi7uhqvYdr4abpLl6mLyUQD1VrxPctVV4LMaw_rq4VAyv0QX8" />
+        </div>
+        <div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full">
+            <div class="max-w-3xl space-y-8">
+                <p class="text-on-primary font-label uppercase tracking-[0.2em] text-sm animate-fade-in">Bộ Sưu Tập Thu
+                    Đông 2024</p>
+                <h1 class="text-7xl md:text-8xl font-headline font-light text-on-primary leading-[1.1] -ml-1">
+                    Cánh Cửa Bước Vào<br />
+                    <span class="italic font-normal">Thế Giới Hương Thơm</span>
+                </h1>
+                <p class="text-xl text-on-primary/90 font-light max-w-lg leading-relaxed font-headline">
+                    Nơi sự tĩnh lặng được hữu hình hóa qua ánh lửa và mùi hương. Khám phá những nốt hương được chế tác
+                    thủ công để vỗ về tâm hồn.
+                </p>
+                <div class="flex items-center gap-6 pt-4">
+                    <button
+                        class="bg-primary text-on-primary px-10 py-5 rounded-lg text-lg font-medium hover:bg-primary-dim transition-all duration-300 flex items-center gap-3 group">
+                        Khám phá ngay
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                    <button
+                        class="bg-white/10 backdrop-blur-md border border-white/20 text-on-primary px-10 py-5 rounded-lg text-lg font-medium hover:bg-white/20 transition-all duration-300">
+                        Xem Video
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+            <span class="text-on-primary/60 text-[10px] tracking-widest uppercase">Scroll</span>
+            <div class="w-px h-12 bg-gradient-to-b from-white/60 to-transparent"></div>
+        </div>
+    </section>
+    <!-- Featured Categories - Bento Grid -->
+    <section class="py-32 px-8 max-w-screen-2xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 h-[700px]">
+            <div
+                class="md:col-span-7 relative group overflow-hidden rounded-xl bg-surface-container-low transition-transform duration-700 hover:scale-[0.99]">
+                <img alt="Nến Thơm Cao Cấp"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    data-alt="A high-quality, professional product photography of a premium scented candle in a minimalist dark glass jar with a wooden lid, placed on a textured stone surface with some dried lavender and botanicals around it."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOig4HPxH5t3K9Qpico_WppDfCLI9sQtK18ZEgc5g5nEEAZsvgj_7T16MCZz8Wj130pZba3gs_yNbvOda_FMJvjdnBqJ3Y0qXPpkn0QFGhcWzFY4Buh-MMNSOUhhDKuPUdhpXu62dhMXKJrVDy2OjFWP0CjuaRdXb0YU2aovNc3Se-GR5eyqX9RJBuqjsLnzZ6qT1yx0QdgJOfuoC0imNM9FieUM67ftQ2dWQKY4qeuL5Pv0ztTRxIEvMJKg7mT5cptKWUrYCxf9Q" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-12 left-12">
+                    <h3 class="text-4xl font-headline text-white mb-4">Nến Thơm Cao Cấp</h3>
+                    <p class="text-white/80 max-w-xs mb-6">Sáp đậu nành tự nhiên và tinh dầu nhập khẩu từ Grasse, Pháp.
+                    </p>
+                    <a class="inline-flex items-center gap-2 text-white font-medium border-b border-white/30 pb-1 hover:border-white transition-all"
+                        href="#">Xem tất cả</a>
+                </div>
+            </div>
+            <div class="md:col-span-5 grid grid-rows-2 gap-8">
+                <div
+                    class="relative group overflow-hidden rounded-xl bg-surface-container-low transition-transform duration-700 hover:scale-[0.99]">
+                    <img alt="Dụng Cụ Làm Nến"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="A collection of candle making supplies: natural soy wax flakes in a wooden bowl, small amber glass bottles of essential oils, and organic cotton wicks."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe4HsWdK-eMRsfZ0oeLCTOCCenFGOrFSwBcYYKp_SRcNqgoikCLoYfwSgqLim5WLZnnIQf1X4ry1YhUCxXKDH1BV6LC1A80pLbccrAINpCLEkwILWn7X0FRuMTWwOxbjAEh_kwY3wXpQ2g1vVK1IdteVw308yeK8BD7OTAuFi2DaDWXRRwGvX3PU5kH8kl0YA1wLwsxOC2-DSEkLMtik9sHNiq-foeQo-I9VTUQheHICGsZiYubXqojMnWXn7xpP600CAw-_2auC0" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl font-headline text-white mb-2">Dụng Cụ Làm Nến</h3>
+                        <a class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-all"
+                            href="#">Khám phá</a>
+                    </div>
+                </div>
+                <div
+                    class="relative group overflow-hidden rounded-xl bg-surface-container-low transition-transform duration-700 hover:scale-[0.99]">
+                    <img alt="Tinh Dầu Tự Nhiên"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        data-alt="A close-up of various essential oils and dried botanicals used for scenting candles on a rustic wooden table."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJkMHzEQjtxuI3etEsfxqB5yld1rY8Ci4MhIducXB7FSsPWfvbMyXjo5TsSQtaxj79afXEStTL9DmhLKNz7REhKRigjnB6Lzy5JJ7-HDXtc8sIsWuPFR88MyREzWwztxOwTtMdIxj1NG3rEQfY3h0-dDR4vYmB22qGSUpdiGv8lwu-kZr2C-dc4uW26uDMg6qEqCzFbJjCQ99Wm2z7bfitlLdPWTEIRrNpIBx0wYPEUclaSSsIwfn-NIc_-j5JPj0cahEBlLRAkUA" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-8 left-8">
+                        <h3 class="text-2xl font-headline text-white mb-2">Tinh Dầu Tự Nhiên</h3>
+                        <a class="inline-flex items-center gap-2 text-white text-sm font-medium border-b border-white/30 pb-1 hover:border-white transition-all"
+                            href="#">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Bán Chạy Nhất Section -->
+    <section class="bg-surface-container-low py-32">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div class="space-y-4">
+                    <span class="text-primary font-label uppercase tracking-widest text-sm">Best Sellers</span>
+                    <h2 class="text-5xl font-headline font-light">Bán Chạy Nhất</h2>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button
+                        class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product Card 1 -->
+                <div class="group">
+                    <div class="aspect-[4/5] bg-surface-container-lowest rounded-xl overflow-hidden mb-6 relative">
+                        <img alt="Velvet Woods Candle"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Minimalist white ceramic candle on a wooden coaster, soft morning light hitting the side, warm botanical vibe."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAuubyEC49TdhWDKnG-Uhc7LV6yRcPNEQVonDM3wYlqvE5EzXvG6voYpY0FL5rmCkXzogpMLP2GJV8Jgsm10MKXKd4QvxMnF86PxnFx5Hok91_evw59BttZZFpGKvJb0Lp00LbLspz5ndElqEsCdgyNCRh5GUlcMWklRcv_iEHt-52-18f2nnlcfwojST2_9D_SoY38hsS-1ruI1z43QvFTQiojM1D_XTv2NZJrAmGy9ZQLnGKIWKzCUCbMOSzIV3ncZ9S-xUpwmI" />
+                        <div
+                            class="absolute top-4 right-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            <button
+                                class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors">
+                                <span class="material-symbols-outlined text-xl">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-3">
+                        <span
+                            class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Sandalwood</span>
+                        <span
+                            class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Amber</span>
+                    </div>
+                    <h3 class="text-xl font-headline font-medium mb-1">Velvet Woods</h3>
+                    <p class="text-on-surface-variant font-light mb-4">Sự ấm áp của gỗ thông và hổ phách.</p>
+                    <p class="text-primary font-bold">450,000đ</p>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="group">
+                    <div class="aspect-[4/5] bg-surface-container-lowest rounded-xl overflow-hidden mb-6 relative">
+                        <img alt="Morning Dew Candle"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Handcrafted green glass candle jar with a cork lid, surrounded by subtle green leaves, high-end studio lighting."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmSidg_hs81kzapDUFk21hy9pdAhen0PZpNKY0fybjQKBUerwBhbm_pQDbgOMnxD3broxZVBZPILq_LwU-QI1U9gPRmT-wzj6XI5yibp7-PV4FRcUGbt1YM27kkMmqDuhsqWrAp39nm18Kz-9gQAsR9odJCACCD08Z6ko-HRuJVST-vYkCz9M3w2GWxJE3nVw1Lny_KgVX4MFPVHoVM0xD9NB29cNfBqi3RBhufWojgjkLDp2VPLs8LklAtYvWylY4D5tBu6Pdv_o" />
+                        <div
+                            class="absolute top-4 right-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            <button
+                                class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors">
+                                <span class="material-symbols-outlined text-xl">favorite</span>
+                            </button>
+                        </div>
+                        <span
+                            class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 text-[10px] font-bold rounded-full uppercase tracking-wider">New</span>
+                    </div>
+                    <div class="flex gap-2 mb-3">
+                        <span
+                            class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Bergamot</span>
+                        <span
+                            class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Sea
+                            Salt</span>
+                    </div>
+                    <h3 class="text-xl font-headline font-medium mb-1">Morning Dew</h3>
+                    <p class="text-on-surface-variant font-light mb-4">Hơi thở trong lành của sớm mai.</p>
+                    <p class="text-primary font-bold">480,000đ</p>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="group">
+                    <div class="aspect-[4/5] bg-surface-container-lowest rounded-xl overflow-hidden mb-6 relative">
+                        <img alt="Smoked Tea Candle"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Dark charcoal colored candle jar on a slate base, elegant and sophisticated, moody lighting."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVcFcaQjLMHAvjv30R06y1Y9CjRtkLSpTnZtBuqgTTJ3VPI4OFzp-xSaK_Pz6xEcSaxyExHQMBDI8cDYpYiju_7lZMzG-iowh4kE94XtMN1__nV_68C-9jwaTgdwyFZNPK0f8wEsnJ3sWSrHoKI0HRvPX40Ydhq6X23FQo48aVoFvUzjeOyTwKbehdgoJ6wbxfqVNMktDhY2gnNIOG93B9Y91NvKICnj12PQsQZi_4PaNAIQ09utLnndmwF2dtRB3YTjmXi1fIAyk" />
+                        <div
+                            class="absolute top-4 right-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            <button
+                                class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors">
+                                <span class="material-symbols-outlined text-xl">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-3">
+                        <span
+                            class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Oolong</span>
+                        <span
+                            class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Leather</span>
+                    </div>
+                    <h3 class="text-xl font-headline font-medium mb-1">Smoked Tea</h3>
+                    <p class="text-on-surface-variant font-light mb-4">Ghi chú sâu lắng và bí ẩn.</p>
+                    <p class="text-primary font-bold">520,000đ</p>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="group">
+                    <div class="aspect-[4/5] bg-surface-container-lowest rounded-xl overflow-hidden mb-6 relative">
+                        <img alt="Lavender Dreams Candle"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            data-alt="Matte lavender colored candle tin with a minimalist label, surrounded by dried lavender flowers on a white linen."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQN2zBd6s7aNTjsmlvYUn-GLSTCxWGp8xph49KkSv9Dj6uCjC19w3jB721LQQTA86OwDTSDkwwe-2aq6sgFIVDFOfTR0dwc2hNaSLgBG6v1WIQqTUT2X6AdOSpg4EZJVSpsdsB6xWROwpWIIYbEKdAZxeMy4gTylAXMyYlJzpB5Hjmro-5EjhBV8a3puy_aHtFfQ7XcPUAYCTGB5la9cxgKFBipV7MJKBUiayasMkrBdy_zmxY9CJPx8fgx_Dz3AxbvJCgrsbhoNg" />
+                        <div
+                            class="absolute top-4 right-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity translate-y-2 group-hover:translate-y-0 duration-300">
+                            <button
+                                class="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors">
+                                <span class="material-symbols-outlined text-xl">favorite</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 mb-3">
+                        <span
+                            class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Lavender</span>
+                        <span
+                            class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">Vanilla</span>
+                    </div>
+                    <h3 class="text-xl font-headline font-medium mb-1">Lavender Dreams</h3>
+                    <p class="text-on-surface-variant font-light mb-4">Thoải mái và vỗ về giấc ngủ.</p>
+                    <p class="text-primary font-bold">420,000đ</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Testimonial Section -->
+    <section class="py-32 px-8">
+        <div class="max-w-screen-xl mx-auto text-center">
+            <h2 class="text-4xl font-headline font-light mb-24">Khách hàng nói về chúng tôi</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="space-y-6">
+                    <div class="flex justify-center gap-1 text-[#d4af37]">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <blockquote class="text-xl font-headline italic leading-relaxed text-on-surface">
+                        "Mùi hương của The Tactile Sanctuary không chỉ là mùi hương, đó là một trải nghiệm. Tôi cảm thấy
+                        như đang ở trong một spa cao cấp ngay tại nhà."
+                    </blockquote>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-sm tracking-widest uppercase">Linh Chi</span>
+                        <span class="text-xs text-on-surface-variant uppercase mt-1">Hà Nội</span>
+                    </div>
+                </div>
+                <div class="space-y-6 md:border-x border-outline-variant/20 px-8">
+                    <div class="flex justify-center gap-1 text-[#d4af37]">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <blockquote class="text-xl font-headline italic leading-relaxed text-on-surface">
+                        "Nến cháy rất sạch, không có khói đen và hũ sứ sau khi dùng xong tôi có thể tái sử dụng để trồng
+                        cây rất xinh."
+                    </blockquote>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-sm tracking-widest uppercase">Minh Quân</span>
+                        <span class="text-xs text-on-surface-variant uppercase mt-1">TP. Hồ Chí Minh</span>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="flex justify-center gap-1 text-[#d4af37]">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <blockquote class="text-xl font-headline italic leading-relaxed text-on-surface">
+                        "Dịch vụ chăm sóc khách hàng cực kỳ tận tâm. Hộp quà đóng gói rất tinh tế, phù hợp để làm quà
+                        tặng cho những người thân yêu."
+                    </blockquote>
+                    <div class="flex flex-col items-center">
+                        <span class="font-bold text-sm tracking-widest uppercase">Hoàng Yến</span>
+                        <span class="text-xs text-on-surface-variant uppercase mt-1">Đà Nẵng</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Newsletter Section -->
+    <section class="py-32 bg-surface-container-highest">
+        <div class="max-w-screen-md mx-auto px-8 text-center">
+            <h2 class="text-3xl font-headline font-light mb-4">Đăng ký nhận bản tin Sanctuary</h2>
+            <p class="text-on-surface-variant mb-10">Nhận ưu đãi 10% cho đơn hàng đầu tiên và cập nhật sớm nhất về các
+                bộ sưu tập mới.</p>
+            <form class="flex flex-col sm:flex-row gap-4">
+                <input class="flex-grow bg-white border-none rounded-lg px-6 py-4 focus:ring-1 focus:ring-primary"
+                    placeholder="Địa chỉ email của bạn" type="email" />
+                <button
+                    class="bg-primary text-on-primary px-8 py-4 rounded-lg font-medium hover:bg-primary-dim transition-all"
+                    type="submit">Đăng ký</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-[#f1f4f4] dark:bg-[#1a1e1e] w-full">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+            <div class="space-y-6">
+                <span class="font-headline text-lg text-[#2d3434] dark:text-[#f8faf9]">The Tactile Sanctuary</span>
+                <p
+                    class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 text-xs leading-relaxed font-body uppercase tracking-[0.1em]">
+                    Nơi nghệ thuật và mùi hương hòa quyện để tạo nên không gian sống bình yên.</p>
+                <div class="flex gap-4">
+                    <a class="text-[#53644d] hover:opacity-80 transition-all" href="#"><span
+                            class="material-symbols-outlined">public</span></a>
+                    <a class="text-[#53644d] hover:opacity-80 transition-all" href="#"><span
+                            class="material-symbols-outlined">camera</span></a>
+                    <a class="text-[#53644d] hover:opacity-80 transition-all" href="#"><span
+                            class="material-symbols-outlined">mail</span></a>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <span class="font-label text-xs uppercase tracking-[0.1em] text-[#53644d]">Khám Phá</span>
+                <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
+                    href="#">Scent Guide</a>
+                <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
+                    href="#">Wholesale</a>
+                <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
+                    href="#">Shipping &amp; Returns</a>
+                <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
+                    href="#">Privacy Policy</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <span class="font-label text-xs uppercase tracking-[0.1em] text-[#53644d]">Tài Khoản</span>
+                <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
+                    href="#">Đăng nhập</a>
+                <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
+                    href="#">Đơn hàng</a>
+                <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
+                    href="#">Wishlist</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <span class="font-label text-xs uppercase tracking-[0.1em] text-[#53644d]">Liên Hệ</span>
+                <p class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 text-xs leading-relaxed uppercase tracking-[0.1em]">
+                    123 Đường Sáng Tạo, Quận 1<br />TP. Hồ Chí Minh, Việt Nam</p>
+                <p class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 text-xs leading-relaxed uppercase tracking-[0.1em]">
+                    hello@tactilesanctuary.com</p>
+            </div>
+        </div>
+        <div
+            class="border-t border-outline-variant/10 px-12 py-8 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <span class="font-body text-xs uppercase tracking-[0.1em] text-[#2d3434]/50 dark:text-[#f8faf9]/50">© 2024
+                The Tactile Sanctuary. Crafted for Calm.</span>
+            <div class="flex gap-8">
+                <img alt="PayPal" class="h-4 grayscale opacity-50" data-alt="PayPal payment logo in grayscale."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPc8t2CO9PfrngCihp2nRCFq_SHFV4h0v0WW_KPbBpYYs8PhqGclHMH3pUWHR34lqNiTYnHN6yXDcGfzi4lhxyp-CzKmAI4LVoqFeUDvHpQG0HdZBv6gLBHpVKzJRqduh4Ep5z_YrvihXd4n5yVMCrQmYHM0Eps3y_7-NcoMiIRSvVzUiIVJPzp84HWbxyaL6cuFlQ8X2D009iUMEIV-Xo-nGt1RWXjaP-MKwDy91bXqcM2AJ7816VjhUcC7VTg3xBBeVFmbh7Uq4" />
+                <img alt="Visa" class="h-4 grayscale opacity-50" data-alt="Visa payment logo in grayscale."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3TtI4h972YY5hEj7C9OF7X0LjRSekk8UVeH6mBmRcaYJ7eV8JQwBXET8bGdcaKBbxasnoHFgt-032LDVVV7EsXZXUmuF6U7bTr7cYBEeKcPHuu5zY6zP7il_-rhat2lav099LC1mcK4OhuwcUQNk8qEXnXcoRRD5NkKUb1yGpdWPfyM-VMJvCPkbI9JWoDquPXU84GuUuYv2uEjnePTHQpQlmO31_mF-xbT3lA3-3N9bV5nan89cLdEmzdaz5Ho5Woij8uGuVxvQ" />
+                <img alt="Mastercard" class="h-6 grayscale opacity-50" data-alt="Mastercard payment logo in grayscale."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNcWSj5sagbwSBdzBvPoWW6F1kRm0h4loyye98UR37t6PeFVPqPQ2adohJJSaQqjDwsuIAZxw0rj6r8l0drjLusqvIabaVuY7gUH9kbMC3T3xechqyPR88DfhbwHR-1GiYhDZsivMAslPrMyTqjAEjFtiJWlAWifC7bbQKsXUGX_RgG5Z1jiQfIReb0Rc6mB2av3ouJlvLTCHy-pmca0nUXXuMfFPn2_Nj0c2utYScnwPLg3wm_KGmcHu0NaAHK7519FJZ8zQZoqg" />
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
