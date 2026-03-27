@@ -1,6 +1,48 @@
 @extends('layouts.app')
 
 @section('title', $product->name . ' | The Tactile Sanctuary')
+@section('meta_description', \Illuminate\Support\Str::limit(strip_tags($product->description ?? ''), 155, '...'))
+@section('meta_keywords', implode(', ', array_filter([
+    'nến thơm',
+    $product->name,
+    $product->wax_type,
+    is_array($product->scent_top_notes) ? implode(', ', $product->scent_top_notes) : null,
+    is_array($product->scent_middle_notes) ? implode(', ', $product->scent_middle_notes) : null,
+    is_array($product->scent_base_notes) ? implode(', ', $product->scent_base_notes) : null,
+])))
+@section('canonical_url', url('/products/' . $product->slug))
+@section('og_type', 'product')
+@section('og_image', $product->image)
+@section('twitter_card', 'summary_large_image')
+
+@section('structured_data')
+@php
+    $productSchema = [
+        '@context' => 'https://schema.org',
+        '@type' => 'Product',
+        'name' => $product->name,
+        'description' => strip_tags($product->description ?? ''),
+        'image' => [$product->image],
+        'sku' => 'DIVA-' . $product->id,
+        'brand' => [
+            '@type' => 'Brand',
+            'name' => 'Diva',
+        ],
+        'offers' => [
+            '@type' => 'Offer',
+            'url' => url('/products/' . $product->slug),
+            'priceCurrency' => 'VND',
+            'price' => (string) ($product->sale_price ?: $product->price),
+            'priceValidUntil' => now()->addYear()->format('Y-m-d'),
+            'availability' => $product->stock > 0
+                ? 'https://schema.org/InStock'
+                : 'https://schema.org/OutOfStock',
+            'itemCondition' => 'https://schema.org/NewCondition',
+        ],
+    ];
+@endphp
+<script type="application/ld+json">{!! json_encode($productSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
+@endsection
 
 @php
     $header_class = 'fixed top-0 w-full z-50 bg-[#f8faf9]/60 backdrop-blur-md';
@@ -75,9 +117,12 @@
             </div>
 
             <div class="space-y-4">
-                <button class="w-full py-4 bg-primary text-on-primary font-body font-bold rounded-lg hover:shadow-lg transition-all">
-                    Add to Bag
-                </button>
+                <livewire:add-to-cart-button
+                    :product-id="$product->id"
+                    label="Add to Bag"
+                    button-class="w-full py-4 bg-primary text-on-primary font-body font-bold rounded-lg hover:shadow-lg transition-all"
+                    :key="'detail-add-'.$product->id"
+                />
             </div>
         </div>
     </div>

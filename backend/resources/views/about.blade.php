@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'About Us | The Tactile Sanctuary')
+@section('meta_description', 'Câu chuyện thương hiệu nến thơm Diva: nguyên liệu tự nhiên, quy trình thủ công và trải nghiệm đa giác quan.')
+@section('canonical_url', url('/about'))
 
 @section('content')
 <main class="pt-48 pb-32 px-8 max-w-screen-xl mx-auto">
@@ -9,7 +11,7 @@
             <h2 class="text-xs font-label uppercase tracking-[0.3em] text-primary font-bold">Câu chuyện của chúng tôi</h2>
             <h1 class="text-5xl md:text-7xl font-headline font-light leading-tight italic">Nơi mùi hương <br/> chạm đến linh hồn.</h1>
             <p class="text-xl text-on-surface-variant font-light leading-relaxed">
-                Được thành lập vào năm 2024, The Tactile Sanctuary khởi đầu từ mong muốn tạo ra một không gian bình yên trong tâm trí mỗi người giữa nhịp sống hối hả.
+                Được thành lập vào năm {{ date('Y') }}, The Tactile Sanctuary khởi đầu từ mong muốn tạo ra một không gian bình yên trong tâm trí mỗi người giữa nhịp sống hối hả.
             </p>
         </div>
         <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl skew-y-1">

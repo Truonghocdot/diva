@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'The Tactile Sanctuary | Cánh Cửa Bước Vào Thế Giới Hương Thơm')
+@section('meta_description', 'Khám phá bộ sưu tập nến thơm thủ công cao cấp với hương thơm tinh tế, thiết kế tối giản và trải nghiệm thư giãn cho không gian sống.')
+@section('canonical_url', url('/'))
 
 @section('content')
     <!-- Hero Section -->
@@ -12,7 +14,7 @@
         <div class="relative z-10 max-w-screen-2xl mx-auto px-8 w-full">
             <div class="max-w-3xl space-y-8">
                 <p class="text-on-primary font-label uppercase tracking-[0.2em] text-sm animate-fade-in">Bộ Sưu Tập Thu
-                    Đông 2024</p>
+                    Đông {{ date('Y') }}</p>
                 <h1 class="text-7xl md:text-8xl font-headline font-light text-on-primary leading-[1.1] -ml-1">
                     Cánh Cửa Bước Vào<br />
                     <span class="italic font-normal">Thế Giới Hương Thơm</span>

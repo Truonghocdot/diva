@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'The Tactile Sanctuary | Curated Collections')
+@section('meta_description', 'Mua nến thơm, starter kits và candle supplies với nhiều nhóm mùi hương được tuyển chọn thủ công.')
+@section('canonical_url', request('category') ? url('/shop?category=' . request('category')) : url('/shop'))
 
 @php
     $header_class = 'fixed top-0 w-full z-50 glass-nav';
@@ -49,10 +51,12 @@
             <div class="group cursor-pointer" onclick="window.location='{{ url('/products/' . $product->slug) }}'">
                 <div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
                     <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ $product->image }}"/>
-                    <button class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined text-sm">shopping_bag</span>
-                        Add to Cart
-                    </button>
+                    <livewire:add-to-cart-button
+                        :product-id="$product->id"
+                        label="Add to Cart"
+                        button-class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2"
+                        :key="'shop-add-'.$product->id"
+                    />
                 </div>
                 <div class="flex justify-between items-start mb-2">
                     <h3 class="font-headline text-xl text-on-surface">{{ $product->name }}</h3>
