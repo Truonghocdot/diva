@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
-@section('title', $product->name . ' | The Tactile Sanctuary')
+@section('title', $product->name . ' | Diva')
 @section('meta_description', \Illuminate\Support\Str::limit(strip_tags($product->description ?? ''), 155, '...'))
 @section('meta_keywords', implode(', ', array_filter([
-    'nến thơm',
-    $product->name,
-    $product->wax_type,
-    is_array($product->scent_top_notes) ? implode(', ', $product->scent_top_notes) : null,
-    is_array($product->scent_middle_notes) ? implode(', ', $product->scent_middle_notes) : null,
-    is_array($product->scent_base_notes) ? implode(', ', $product->scent_base_notes) : null,
+'nến thơm',
+$product->name,
+$product->wax_type,
+is_array($product->scent_top_notes) ? implode(', ', $product->scent_top_notes) : null,
+is_array($product->scent_middle_notes) ? implode(', ', $product->scent_middle_notes) : null,
+is_array($product->scent_base_notes) ? implode(', ', $product->scent_base_notes) : null,
 ])))
 @section('canonical_url', url('/products/' . $product->slug))
 @section('og_type', 'product')
@@ -17,36 +17,40 @@
 
 @section('structured_data')
 @php
-    $productSchema = [
-        '@context' => 'https://schema.org',
-        '@type' => 'Product',
-        'name' => $product->name,
-        'description' => strip_tags($product->description ?? ''),
-        'image' => [$product->image],
-        'sku' => 'DIVA-' . $product->id,
-        'brand' => [
-            '@type' => 'Brand',
-            'name' => 'Diva',
-        ],
-        'offers' => [
-            '@type' => 'Offer',
-            'url' => url('/products/' . $product->slug),
-            'priceCurrency' => 'VND',
-            'price' => (string) ($product->sale_price ?: $product->price),
-            'priceValidUntil' => now()->addYear()->format('Y-m-d'),
-            'availability' => $product->stock > 0
-                ? 'https://schema.org/InStock'
-                : 'https://schema.org/OutOfStock',
-            'itemCondition' => 'https://schema.org/NewCondition',
-        ],
-    ];
+$productSchema = [
+'@context' => 'https://schema.org',
+'@type' => 'Product',
+'name' => $product->name,
+'description' => strip_tags($product->description ?? ''),
+'image' => [$product->image],
+'sku' => 'DIVA-' . $product->id,
+'brand' => [
+'@type' => 'Brand',
+'name' => 'Diva',
+],
+'offers' => [
+'@type' => 'Offer',
+'url' => url('/products/' . $product->slug),
+'priceCurrency' => 'VND',
+'price' => (string) ($product->sale_price ?: $product->price),
+'priceValidUntil' => now()->addYear()->format('Y-m-d'),
+'availability' => $product->stock > 0
+? 'https://schema.org/InStock'
+: 'https://schema.org/OutOfStock',
+'itemCondition' => 'https://schema.org/NewCondition',
+],
+];
 @endphp
-<script type="application/ld+json">{!! json_encode($productSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
+<script type="application/ld+json">
+    {
+        !!json_encode($productSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!
+    }
+</script>
 @endsection
 
 @php
-    $header_class = 'fixed top-0 w-full z-50 bg-[#f8faf9]/60 backdrop-blur-md';
-    $galleryImages = $product->gallery_images;
+$header_class = 'fixed top-0 w-full z-50 bg-[#f8faf9]/60 backdrop-blur-md';
+$galleryImages = $product->gallery_images;
 @endphp
 
 @section('content')
@@ -59,22 +63,20 @@
                     id="product-main-image"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     src="{{ $galleryImages[0] ?? $product->image }}"
-                    alt="{{ $product->name }}"
-                />
+                    alt="{{ $product->name }}" />
             </div>
             @if(count($galleryImages) > 1)
-                <div class="grid grid-cols-4 sm:grid-cols-6 gap-3" id="product-gallery-thumbnails">
-                    @foreach($galleryImages as $index => $imageUrl)
-                        <button
-                            type="button"
-                            class="aspect-square rounded-lg overflow-hidden border {{ $index === 0 ? 'border-primary' : 'border-outline-variant/30' }} transition-colors"
-                            data-image="{{ $imageUrl }}"
-                            aria-label="Ảnh sản phẩm {{ $index + 1 }}"
-                        >
-                            <img src="{{ $imageUrl }}" alt="{{ $product->name }} - {{ $index + 1 }}" class="w-full h-full object-cover" />
-                        </button>
-                    @endforeach
-                </div>
+            <div class="grid grid-cols-4 sm:grid-cols-6 gap-3" id="product-gallery-thumbnails">
+                @foreach($galleryImages as $index => $imageUrl)
+                <button
+                    type="button"
+                    class="aspect-square rounded-lg overflow-hidden border {{ $index === 0 ? 'border-primary' : 'border-outline-variant/30' }} transition-colors"
+                    data-image="{{ $imageUrl }}"
+                    aria-label="Ảnh sản phẩm {{ $index + 1 }}">
+                    <img src="{{ $imageUrl }}" alt="{{ $product->name }} - {{ $index + 1 }}" class="w-full h-full object-cover" />
+                </button>
+                @endforeach
+            </div>
             @endif
         </div>
         <!-- Right: Product Info Section -->
@@ -83,7 +85,7 @@
                 <h1 class="text-5xl font-headline font-light tracking-tight text-on-surface italic">{{ $product->name }}</h1>
                 <p class="text-2xl font-light text-primary">{{ number_format($product->price) }} VND</p>
             </header>
-            
+
             <section class="p-8 bg-surface-container-low rounded-xl space-y-6">
                 <h3 class="text-xs font-label uppercase tracking-[0.2em] text-on-surface-variant">Scent Profile</h3>
                 <div class="space-y-4">
@@ -141,8 +143,7 @@
                     label="Add to Bag"
                     :show-quantity-controls="true"
                     button-class="w-full py-4 bg-primary text-on-primary font-body font-bold rounded-lg hover:shadow-lg transition-all"
-                    :key="'detail-add-'.$product->id"
-                />
+                    :key="'detail-add-'.$product->id" />
             </div>
         </div>
     </div>
@@ -171,7 +172,7 @@
 
 @section('extra_js')
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         const mainImage = document.getElementById('product-main-image');
         const thumbnailWrapper = document.getElementById('product-gallery-thumbnails');
 
@@ -179,7 +180,7 @@
             return;
         }
 
-        thumbnailWrapper.addEventListener('click', function (event) {
+        thumbnailWrapper.addEventListener('click', function(event) {
             const target = event.target.closest('button[data-image]');
 
             if (!target) {
@@ -194,7 +195,7 @@
 
             mainImage.setAttribute('src', nextImage);
 
-            thumbnailWrapper.querySelectorAll('button[data-image]').forEach(function (button) {
+            thumbnailWrapper.querySelectorAll('button[data-image]').forEach(function(button) {
                 button.classList.remove('border-primary');
                 button.classList.add('border-outline-variant/30');
             });

@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html class="light" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     @php
-        $defaultTitle = 'Diva | Cánh Cửa Bước Vào Thế Giới Hương Thơm';
-        $defaultDescription = 'Nến thơm thủ công cao cấp với hồ sơ mùi hương tinh tế, giúp không gian sống thư thái và sang trọng.';
-        $seoTitle = trim($__env->yieldContent('title', $defaultTitle));
-        $seoDescription = trim($__env->yieldContent('meta_description', $defaultDescription));
-        $seoKeywords = trim($__env->yieldContent('meta_keywords', 'nến thơm, nến thơm cao cấp, nến thủ công, candle, scented candle'));
-        $seoCanonical = trim($__env->yieldContent('canonical_url', request()->fullUrl()));
-        $seoRobots = trim($__env->yieldContent('meta_robots', 'index,follow,max-image-preview:large'));
-        $ogType = trim($__env->yieldContent('og_type', 'website'));
-        $ogImage = trim($__env->yieldContent('og_image', asset('favicon.ico')));
-        $twitterCard = trim($__env->yieldContent('twitter_card', 'summary_large_image'));
-        $gaId = config('services.google.analytics_id');
-        $adsId = config('services.google.ads_id');
-        $adsConversionLabel = config('services.google.ads_conversion_label');
+    $defaultTitle = 'Diva | Cánh Cửa Bước Vào Thế Giới Hương Thơm';
+    $defaultDescription = 'Nến thơm thủ công cao cấp với hồ sơ mùi hương tinh tế, giúp không gian sống thư thái và sang trọng.';
+    $seoTitle = trim($__env->yieldContent('title', $defaultTitle));
+    $seoDescription = trim($__env->yieldContent('meta_description', $defaultDescription));
+    $seoKeywords = trim($__env->yieldContent('meta_keywords', 'nến thơm, nến thơm cao cấp, nến thủ công, candle, scented candle'));
+    $seoCanonical = trim($__env->yieldContent('canonical_url', request()->fullUrl()));
+    $seoRobots = trim($__env->yieldContent('meta_robots', 'index,follow,max-image-preview:large'));
+    $ogType = trim($__env->yieldContent('og_type', 'website'));
+    $ogImage = trim($__env->yieldContent('og_image', asset('favicon.ico')));
+    $twitterCard = trim($__env->yieldContent('twitter_card', 'summary_large_image'));
+    $gaId = config('services.google.analytics_id');
+    $adsId = config('services.google.ads_id');
+    $adsConversionLabel = config('services.google.ads_conversion_label');
     @endphp
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -28,7 +29,7 @@
     <meta property="og:title" content="{{ $seoTitle }}" />
     <meta property="og:description" content="{{ $seoDescription }}" />
     <meta property="og:url" content="{{ $seoCanonical }}" />
-    <meta property="og:site_name" content="Diva - The Tactile Sanctuary" />
+    <meta property="og:site_name" content="Diva - Diva" />
     <meta property="og:image" content="{{ $ogImage }}" />
     <meta name="twitter:card" content="{{ $twitterCard }}" />
     <meta name="twitter:title" content="{{ $seoTitle }}" />
@@ -36,37 +37,40 @@
     <meta name="twitter:image" content="{{ $ogImage }}" />
 
     @if($gaId || $adsId)
-        @php
-            $primaryTagId = $gaId ?: $adsId;
-        @endphp
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{ $primaryTagId }}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            @if($gaId)
-            gtag('config', '{{ $gaId }}');
-            @endif
-            @if($adsId)
-            gtag('config', '{{ $adsId }}');
-            @endif
-            @if($adsId && $adsConversionLabel)
-            window.trackAdsConversion = function (callbackUrl) {
-                const callback = function () {
-                    if (typeof callbackUrl !== 'undefined') {
-                        window.location = callbackUrl;
-                    }
-                };
+    @php
+    $primaryTagId = $gaId ?: $adsId;
+    @endphp
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ $primaryTagId }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-                gtag('event', 'conversion', {
-                    'send_to': '{{ $adsId }}/{{ $adsConversionLabel }}',
-                    'event_callback': callback
-                });
-
-                return false;
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        @if($gaId)
+        gtag('config', '{{ $gaId }}');
+        @endif
+        @if($adsId)
+        gtag('config', '{{ $adsId }}');
+        @endif
+        @if($adsId && $adsConversionLabel)
+        window.trackAdsConversion = function(callbackUrl) {
+            const callback = function() {
+                if (typeof callbackUrl !== 'undefined') {
+                    window.location = callbackUrl;
+                }
             };
-            @endif
-        </script>
+
+            gtag('event', 'conversion', {
+                'send_to': '{{ $adsId }}/{{ $adsConversionLabel }}',
+                'event_callback': callback
+            });
+
+            return false;
+        };
+        @endif
+    </script>
     @endif
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -136,7 +140,12 @@
                         "body": ["Manrope"],
                         "label": ["Manrope"]
                     },
-                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
                 },
             },
         }
@@ -174,19 +183,24 @@
         }
     </style>
     @php
-        $organizationSchema = [
-            '@context' => 'https://schema.org',
-            '@type' => 'Organization',
-            'name' => 'Diva - The Tactile Sanctuary',
-            'url' => url('/'),
-            'logo' => asset('favicon.ico'),
-        ];
+    $organizationSchema = [
+    '@context' => 'https://schema.org',
+    '@type' => 'Organization',
+    'name' => 'Diva - Diva',
+    'url' => url('/'),
+    'logo' => asset('favicon.ico'),
+    ];
     @endphp
-    <script type="application/ld+json">{!! json_encode($organizationSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}</script>
+    <script type="application/ld+json">
+        {
+            !!json_encode($organizationSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!
+        }
+    </script>
     @yield('structured_data')
     @livewireStyles
     @yield('extra_css')
 </head>
+
 <body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
     @include('partials.header')
 
@@ -199,4 +213,5 @@
     @livewireScripts
     @yield('extra_js')
 </body>
+
 </html>

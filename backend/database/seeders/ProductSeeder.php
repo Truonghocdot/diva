@@ -147,7 +147,7 @@ class ProductSeeder extends Seeder
         );
 
         Testimonial::updateOrCreate(
-            ['user_name' => 'Linh Chi', 'content' => 'Mùi hương của The Tactile Sanctuary không chỉ là mùi hương, đó là một trải nghiệm.'],
+            ['user_name' => 'Linh Chi', 'content' => 'Mùi hương của Diva không chỉ là mùi hương, đó là một trải nghiệm.'],
             ['location' => 'Hà Nội', 'rating' => 5]
         );
 
@@ -162,7 +162,7 @@ class ProductSeeder extends Seeder
         );
 
         Banner::updateOrCreate(
-            ['title' => 'The Tactile Sanctuary'],
+            ['title' => 'Diva'],
             [
                 'subtitle' => 'Autumn / Winter 2024',
                 'image' => 'https://images.unsplash.com/photo-1602874801007-bd458bb1b8b6?q=80&w=2070&auto=format&fit=crop',

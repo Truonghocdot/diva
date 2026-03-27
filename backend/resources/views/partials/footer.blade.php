@@ -2,7 +2,7 @@
 <footer class="bg-[#f1f4f4] dark:bg-[#1a1e1e] w-full">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
         <div class="space-y-6">
-            <span class="font-headline text-lg text-[#2d3434] dark:text-[#f8faf9]">The Tactile Sanctuary</span>
+            <span class="font-headline text-lg text-[#2d3434] dark:text-[#f8faf9]">Diva</span>
             <p
                 class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 text-xs leading-relaxed font-body uppercase tracking-[0.1em]">
                 Nơi nghệ thuật và mùi hương hòa quyện để tạo nên không gian sống bình yên.</p>
@@ -46,7 +46,7 @@
     <div
         class="border-t border-outline-variant/10 px-12 py-8 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <span class="font-body text-xs uppercase tracking-[0.1em] text-[#2d3434]/50 dark:text-[#f8faf9]/50">© 2024
-            The Tactile Sanctuary. Crafted for Calm.</span>
+            Diva. Crafted for Calm.</span>
         <div class="flex gap-8">
             <img alt="PayPal" class="h-4 grayscale opacity-50"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPc8t2CO9PfrngCihp2nRCFq_SHFV4h0v0WW_KPbBpYYs8PhqGclHMH3pUWHR34lqNiTYnHN6yXDcGfzi4lhxyp-CzKmAI4LVoqFeUDvHpQG0HdZBv6gLBHpVKzJRqduh4Ep5z_YrvihXd4n5yVMCrQmYHM0Eps3y_7-NcoMiIRSvVzUiIVJPzp84HWbxyaL6cuFlQ8X2D009iUMEIV-Xo-nGt1RWXjaP-MKwDy91bXqcM2AJ7816VjhUcC7VTg3xBBeVFmbh7Uq4" />

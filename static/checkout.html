@@ -1,298 +1,354 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Checkout | The Tactile Sanctuary</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-tint": "#53644d",
-              "inverse-on-surface": "#9b9d9d",
-              "on-error-container": "#6e1400",
-              "tertiary-fixed": "#fffbff",
-              "surface-container-lowest": "#ffffff",
-              "background": "#f8faf9",
-              "error-container": "#fd795a",
-              "primary-fixed-dim": "#c7dabe",
-              "on-primary-fixed": "#34432f",
-              "outline-variant": "#adb3b3",
-              "tertiary-container": "#fffbff",
-              "on-primary-container": "#465640",
-              "surface-container-low": "#f1f4f4",
-              "inverse-surface": "#0c0f0f",
-              "on-background": "#2d3434",
-              "secondary-fixed": "#f0e0d1",
-              "tertiary": "#615f5a",
-              "on-surface-variant": "#5a6060",
-              "on-tertiary-fixed": "#504e4a",
-              "surface-dim": "#d5dbdb",
-              "surface-container-highest": "#dde4e3",
-              "outline": "#757c7c",
-              "inverse-primary": "#e1f4d7",
-              "surface-variant": "#dde4e3",
-              "on-secondary-container": "#5a5044",
-              "secondary-container": "#f0e0d1",
-              "on-error": "#fff7f6",
-              "on-secondary-fixed": "#473e33",
-              "on-tertiary-container": "#62605b",
-              "on-tertiary-fixed-variant": "#6d6b66",
-              "secondary": "#685d51",
-              "surface": "#f8faf9",
-              "error": "#a73b21",
-              "on-primary-fixed-variant": "#4f604a",
-              "surface-container": "#eaefee",
-              "on-tertiary": "#fdf8f1",
-              "tertiary-dim": "#54534e",
-              "on-surface": "#2d3434",
-              "primary-fixed": "#d5e8cc",
-              "error-dim": "#791903",
-              "surface-bright": "#f8faf9",
-              "surface-container-high": "#e4e9e9",
-              "on-primary": "#ecffe1",
-              "secondary-fixed-dim": "#e1d2c3",
-              "primary-dim": "#475842",
-              "primary": "#53644d",
-              "on-secondary-fixed-variant": "#655a4e",
-              "tertiary-fixed-dim": "#f1ede6",
-              "secondary-dim": "#5c5146",
-              "on-secondary": "#fff7f3",
-              "primary-container": "#d5e8cc"
-            },
-            fontFamily: {
-              "headline": ["Noto Serif"],
-              "body": ["Manrope"],
-              "label": ["Manrope"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+<html class="light" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Checkout | Diva</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;500;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-tint": "#53644d",
+            "inverse-on-surface": "#9b9d9d",
+            "on-error-container": "#6e1400",
+            "tertiary-fixed": "#fffbff",
+            "surface-container-lowest": "#ffffff",
+            "background": "#f8faf9",
+            "error-container": "#fd795a",
+            "primary-fixed-dim": "#c7dabe",
+            "on-primary-fixed": "#34432f",
+            "outline-variant": "#adb3b3",
+            "tertiary-container": "#fffbff",
+            "on-primary-container": "#465640",
+            "surface-container-low": "#f1f4f4",
+            "inverse-surface": "#0c0f0f",
+            "on-background": "#2d3434",
+            "secondary-fixed": "#f0e0d1",
+            "tertiary": "#615f5a",
+            "on-surface-variant": "#5a6060",
+            "on-tertiary-fixed": "#504e4a",
+            "surface-dim": "#d5dbdb",
+            "surface-container-highest": "#dde4e3",
+            "outline": "#757c7c",
+            "inverse-primary": "#e1f4d7",
+            "surface-variant": "#dde4e3",
+            "on-secondary-container": "#5a5044",
+            "secondary-container": "#f0e0d1",
+            "on-error": "#fff7f6",
+            "on-secondary-fixed": "#473e33",
+            "on-tertiary-container": "#62605b",
+            "on-tertiary-fixed-variant": "#6d6b66",
+            "secondary": "#685d51",
+            "surface": "#f8faf9",
+            "error": "#a73b21",
+            "on-primary-fixed-variant": "#4f604a",
+            "surface-container": "#eaefee",
+            "on-tertiary": "#fdf8f1",
+            "tertiary-dim": "#54534e",
+            "on-surface": "#2d3434",
+            "primary-fixed": "#d5e8cc",
+            "error-dim": "#791903",
+            "surface-bright": "#f8faf9",
+            "surface-container-high": "#e4e9e9",
+            "on-primary": "#ecffe1",
+            "secondary-fixed-dim": "#e1d2c3",
+            "primary-dim": "#475842",
+            "primary": "#53644d",
+            "on-secondary-fixed-variant": "#655a4e",
+            "tertiary-fixed-dim": "#f1ede6",
+            "secondary-dim": "#5c5146",
+            "on-secondary": "#fff7f3",
+            "primary-container": "#d5e8cc"
           },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
         },
-      }
-    </script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
-      }
-      .ghost-border {
-        border: 1px solid rgba(173, 179, 179, 0.15);
-      }
-      .ambient-shadow {
-        shadow: 0 16px 32px rgba(45, 52, 52, 0.04);
-      }
-    </style>
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .ghost-border {
+      border: 1px solid rgba(173, 179, 179, 0.15);
+    }
+
+    .ambient-shadow {
+      shadow: 0 16px 32px rgba(45, 52, 52, 0.04);
+    }
+  </style>
 </head>
+
 <body class="bg-background text-on-background font-body selection:bg-primary-fixed selection:text-on-primary-fixed">
-<!-- Top Navigation Bar (Contextual: Large Website Version) -->
-<nav class="fixed top-0 w-full z-50 bg-[#f8faf9]/60 backdrop-blur-md flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto left-1/2 -translate-x-1/2">
-<div class="text-2xl font-serif italic text-on-background">The Tactile Sanctuary</div>
-<div class="hidden md:flex gap-8 font-headline font-light tracking-tight items-center">
-<a class="text-on-background/70 hover:text-primary transition-colors" href="#">Shop Candles</a>
-<a class="text-on-background/70 hover:text-primary transition-colors" href="#">Kits</a>
-<a class="text-on-background/70 hover:text-primary transition-colors" href="#">Supplies</a>
-<a class="text-on-background/70 hover:text-primary transition-colors" href="#">About Us</a>
-</div>
-<div class="flex items-center gap-6">
-<span class="material-symbols-outlined text-on-background/70 cursor-pointer hover:opacity-80 transition-all">person</span>
-<span class="material-symbols-outlined text-on-background/70 cursor-pointer hover:opacity-80 transition-all">favorite</span>
-<div class="relative">
-<span class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all">shopping_bag</span>
-<span class="absolute -top-2 -right-2 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
-</div>
-</div>
-</nav>
-<!-- Main Content Canvas -->
-<main class="pt-32 pb-24 px-8 max-w-screen-xl mx-auto min-h-screen">
-<div class="flex flex-col md:flex-row gap-16">
-<!-- Left Column: Shipping & Info -->
-<div class="flex-1 space-y-12">
-<header class="space-y-2">
-<h1 class="text-4xl font-headline font-light tracking-tight text-on-background">Thanh toán</h1>
-<p class="text-on-surface-variant font-body text-sm tracking-wide">Complete your sensory journey</p>
-</header>
-<!-- Shipping Form -->
-<section class="space-y-8">
-<div class="flex items-center gap-4">
-<span class="bg-primary-container text-on-primary-container w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs">1</span>
-<h2 class="text-xl font-headline text-on-background">Shipping Information</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="space-y-1">
-<label class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant font-bold px-1">Full Name</label>
-<input class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg py-4 px-4 text-sm transition-all placeholder:text-outline-variant/50" placeholder="e.g. Elena Vance" type="text"/>
-</div>
-<div class="space-y-1">
-<label class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant font-bold px-1">Email Address</label>
-<input class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg py-4 px-4 text-sm transition-all placeholder:text-outline-variant/50" placeholder="elena@sanctuary.com" type="email"/>
-</div>
-<div class="md:col-span-2 space-y-1">
-<label class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant font-bold px-1">Shipping Address</label>
-<input class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg py-4 px-4 text-sm transition-all placeholder:text-outline-variant/50" placeholder="123 Serenity Lane, Apartment 4B" type="text"/>
-</div>
-<div class="space-y-1">
-<label class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant font-bold px-1">City</label>
-<input class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg py-4 px-4 text-sm transition-all" type="text"/>
-</div>
-<div class="space-y-1">
-<label class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant font-bold px-1">Phone Number</label>
-<input class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg py-4 px-4 text-sm transition-all" placeholder="+84 ..." type="tel"/>
-</div>
-</div>
-</section>
-<!-- Shipping Methods -->
-<section class="space-y-8">
-<div class="flex items-center gap-4">
-<span class="bg-primary-container text-on-primary-container w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs">2</span>
-<h2 class="text-xl font-headline text-on-background">Delivery Method</h2>
-</div>
-<div class="space-y-4">
-<label class="flex items-center p-6 bg-surface-container-lowest rounded-xl cursor-pointer hover:bg-surface-container transition-colors shadow-[0_8px_16px_rgba(45,52,52,0.02)] group">
-<input checked="" class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="shipping" type="radio"/>
-<div class="ml-6 flex-1">
-<p class="text-sm font-bold text-on-background">Eco-Friendly Standard</p>
-<p class="text-xs text-on-surface-variant">3-5 business days. Compostable packaging.</p>
-</div>
-<span class="text-sm font-headline italic">Free</span>
-</label>
-<label class="flex items-center p-6 bg-surface-container-lowest rounded-xl cursor-pointer hover:bg-surface-container transition-colors shadow-[0_8px_16px_rgba(45,52,52,0.02)] group border-primary/10 border">
-<input class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="shipping" type="radio"/>
-<div class="ml-6 flex-1">
-<p class="text-sm font-bold text-on-background">Sanctuary Express</p>
-<p class="text-xs text-on-surface-variant">1-2 business days. Prioritized handling.</p>
-</div>
-<span class="text-sm font-headline italic">$12.00</span>
-</label>
-</div>
-</section>
-</div>
-<!-- Right Column: Order Summary & Payment -->
-<div class="w-full md:w-[420px]">
-<div class="bg-surface-container-high rounded-3xl p-8 sticky top-32 space-y-10 shadow-[0_32px_64px_rgba(45,52,52,0.04)]">
-<!-- Itemized List -->
-<div class="space-y-6">
-<h3 class="text-sm uppercase tracking-[0.2em] font-bold text-on-surface-variant">Your Collection</h3>
-<div class="space-y-6">
-<!-- Item 1 -->
-<div class="flex gap-4">
-<div class="w-20 h-20 bg-white rounded-lg overflow-hidden shrink-0">
-<img class="w-full h-full object-cover" data-alt="minimalist glass jar candle with cream colored wax on a raw wooden surface with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPXNPVCpN3j1G6wMU6c1BBxcBs_vIpoCHf8fqqzcreRdFues7be7YKYDnySQ7BDOs-UN5TD845rbvbGxHMaSKg2JyfubdUv7ENDeu6Yg_kxYj15VcKudN0jDDwyNBAT8xCE6bhxi_98q0CivAK82HickYEZKM1KNhwh6FU7fxXUIxmR7zseulxKXs-2_GZsXV0ohfpsDw2gh4oqcMkkeR5y9hnXNSSQVWgKDS0IEr4BoRLyDE1jxUqTxUGO2tkRg4zHOZTUy4Fq8o"/>
-</div>
-<div class="flex-1 py-1 flex flex-col justify-between">
-<div>
-<h4 class="text-sm font-bold text-on-background">Midnight Moss No. 4</h4>
-<p class="text-[10px] uppercase tracking-wider text-on-surface-variant">12oz • Hand-Poured</p>
-</div>
-<div class="flex justify-between items-end">
-<span class="text-xs text-on-surface-variant">Qty: 1</span>
-<span class="text-sm font-headline">$38.00</span>
-</div>
-</div>
-</div>
-<!-- Item 2 -->
-<div class="flex gap-4">
-<div class="w-20 h-20 bg-white rounded-lg overflow-hidden shrink-0">
-<img class="w-full h-full object-cover" data-alt="artisan matchbox with beautiful illustration next to a bundle of sage on a linen cloth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBguHusl_f6nhmWXE7YYp-32iNVxtzXobX854Oh5LCLwIYy4e_aAOe02MrExJ3gWdUV_rHMUV3N2a9PHQUdoEwX4HB3TCUex98yHBrGA3o1-UpBAr5AXutAyXtbSaMWURJInDfDiASMn8kx_9ItkQfCN80QnY6RwhtYrbsElSDULv-hry0s3UQH-SJo1NhteeC_Dd43BFgY9S2m0M18m_Kkz0q1xIDL0OV7zPI1ra8u81FHUodvcD9br1DKsHUq9Bk2ln8IYZe77o"/>
-</div>
-<div class="flex-1 py-1 flex flex-col justify-between">
-<div>
-<h4 class="text-sm font-bold text-on-background">Cedar Strike Matches</h4>
-<p class="text-[10px] uppercase tracking-wider text-on-surface-variant">Collector Box</p>
-</div>
-<div class="flex justify-between items-end">
-<span class="text-xs text-on-surface-variant">Qty: 1</span>
-<span class="text-sm font-headline">$14.00</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Discount Code -->
-<div class="flex gap-2">
-<input class="flex-1 bg-white/50 border-none focus:ring-1 focus:ring-primary rounded-lg py-3 px-4 text-xs" placeholder="Promo code" type="text"/>
-<button class="bg-primary text-on-primary px-6 rounded-lg text-xs font-bold hover:bg-primary-dim transition-all active:scale-95">Apply</button>
-</div>
-<!-- Totals -->
-<div class="space-y-4 pt-4 border-t border-outline-variant/10">
-<div class="flex justify-between text-sm">
-<span class="text-on-surface-variant">Subtotal</span>
-<span class="text-on-background">$52.00</span>
-</div>
-<div class="flex justify-between text-sm">
-<span class="text-on-surface-variant">Shipping</span>
-<span class="text-on-background italic">Calculated at next step</span>
-</div>
-<div class="flex justify-between text-xl font-headline py-2">
-<span>Total</span>
-<span class="font-bold text-primary">$52.00</span>
-</div>
-</div>
-<!-- Payment Selection -->
-<div class="space-y-4">
-<h3 class="text-sm uppercase tracking-[0.2em] font-bold text-on-surface-variant">Payment</h3>
-<div class="grid grid-cols-3 gap-3">
-<button class="flex flex-col items-center justify-center p-4 bg-white rounded-xl hover:shadow-lg transition-all border border-transparent focus:border-primary">
-<span class="material-symbols-outlined text-on-surface-variant mb-2">credit_card</span>
-<span class="text-[10px] font-bold uppercase tracking-tighter">Card</span>
-</button>
-<button class="flex flex-col items-center justify-center p-4 bg-white rounded-xl hover:shadow-lg transition-all border border-transparent focus:border-primary">
-<span class="material-symbols-outlined text-on-surface-variant mb-2">account_balance</span>
-<span class="text-[10px] font-bold uppercase tracking-tighter">Bank</span>
-</button>
-<button class="flex flex-col items-center justify-center p-4 bg-white rounded-xl hover:shadow-lg transition-all border border-transparent focus:border-primary">
-<span class="material-symbols-outlined text-on-surface-variant mb-2">local_shipping</span>
-<span class="text-[10px] font-bold uppercase tracking-tighter">COD</span>
-</button>
-</div>
-</div>
-<!-- CTA Button -->
-<button class="w-full bg-primary text-on-primary py-5 rounded-2xl font-bold tracking-widest uppercase text-sm hover:translate-y-[-2px] hover:shadow-xl transition-all active:scale-[0.98]">
-                        Hoàn Tất Thanh Toán
-                    </button>
-<!-- Trust Badges -->
-<div class="flex justify-center items-center gap-6 opacity-40 grayscale pt-2">
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-[18px]">verified_user</span>
-<span class="text-[10px] font-bold uppercase">Secure SSL</span>
-</div>
-<div class="flex items-center gap-1">
-<span class="material-symbols-outlined text-[18px]">eco</span>
-<span class="text-[10px] font-bold uppercase">100% Vegan</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- Footer (Website Version) -->
-<footer class="w-full mt-24 bg-surface-container-low dark:bg-[#1a1e1e]">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
-<div class="space-y-6">
-<div class="font-serif text-lg text-on-background">The Tactile Sanctuary</div>
-<p class="text-xs uppercase tracking-[0.1em] text-on-background/50 leading-loose">© 2024 The Tactile Sanctuary. <br/>Crafted for Calm.</p>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="font-bold text-[10px] uppercase tracking-widest text-primary">Discover</h4>
-<a class="font-body text-xs uppercase tracking-[0.1em] text-on-background/50 hover:text-on-background underline decoration-outline-variant/30 underline-offset-4 transition-all" href="#">Scent Guide</a>
-<a class="font-body text-xs uppercase tracking-[0.1em] text-on-background/50 hover:text-on-background underline decoration-outline-variant/30 underline-offset-4 transition-all" href="#">Wholesale</a>
-</div>
-<div class="flex flex-col gap-4">
-<h4 class="font-bold text-[10px] uppercase tracking-widest text-primary">Assistance</h4>
-<a class="font-body text-xs uppercase tracking-[0.1em] text-on-background/50 hover:text-on-background underline decoration-outline-variant/30 underline-offset-4 transition-all" href="#">Shipping &amp; Returns</a>
-<a class="font-body text-xs uppercase tracking-[0.1em] text-on-background/50 hover:text-on-background underline decoration-outline-variant/30 underline-offset-4 transition-all" href="#">Privacy Policy</a>
-</div>
-<div class="space-y-6">
-<h4 class="font-bold text-[10px] uppercase tracking-widest text-primary">Newsletter</h4>
-<div class="flex border-b border-outline-variant/30 pb-2">
-<input class="bg-transparent border-none p-0 text-[10px] uppercase tracking-widest w-full focus:ring-0" placeholder="YOUR EMAIL" type="email"/>
-<span class="material-symbols-outlined text-on-background/50">arrow_forward</span>
-</div>
-</div>
-</div>
-</footer>
-</body></html>
+  <!-- Top Navigation Bar (Contextual: Large Website Version) -->
+  <nav
+    class="fixed top-0 w-full z-50 bg-[#f8faf9]/60 backdrop-blur-md flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto left-1/2 -translate-x-1/2">
+    <div class="text-2xl font-serif italic text-on-background">Diva</div>
+    <div class="hidden md:flex gap-8 font-headline font-light tracking-tight items-center">
+      <a class="text-on-background/70 hover:text-primary transition-colors" href="#">Shop Candles</a>
+      <a class="text-on-background/70 hover:text-primary transition-colors" href="#">Kits</a>
+      <a class="text-on-background/70 hover:text-primary transition-colors" href="#">Supplies</a>
+      <a class="text-on-background/70 hover:text-primary transition-colors" href="#">About Us</a>
+    </div>
+    <div class="flex items-center gap-6">
+      <span
+        class="material-symbols-outlined text-on-background/70 cursor-pointer hover:opacity-80 transition-all">person</span>
+      <span
+        class="material-symbols-outlined text-on-background/70 cursor-pointer hover:opacity-80 transition-all">favorite</span>
+      <div class="relative">
+        <span
+          class="material-symbols-outlined text-primary cursor-pointer hover:opacity-80 transition-all">shopping_bag</span>
+        <span
+          class="absolute -top-2 -right-2 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+      </div>
+    </div>
+  </nav>
+  <!-- Main Content Canvas -->
+  <main class="pt-32 pb-24 px-8 max-w-screen-xl mx-auto min-h-screen">
+    <div class="flex flex-col md:flex-row gap-16">
+      <!-- Left Column: Shipping & Info -->
+      <div class="flex-1 space-y-12">
+        <header class="space-y-2">
+          <h1 class="text-4xl font-headline font-light tracking-tight text-on-background">Thanh toán</h1>
+          <p class="text-on-surface-variant font-body text-sm tracking-wide">Complete your sensory journey</p>
+        </header>
+        <!-- Shipping Form -->
+        <section class="space-y-8">
+          <div class="flex items-center gap-4">
+            <span
+              class="bg-primary-container text-on-primary-container w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs">1</span>
+            <h2 class="text-xl font-headline text-on-background">Shipping Information</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-1">
+              <label class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant font-bold px-1">Full
+                Name</label>
+              <input
+                class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg py-4 px-4 text-sm transition-all placeholder:text-outline-variant/50"
+                placeholder="e.g. Elena Vance" type="text" />
+            </div>
+            <div class="space-y-1">
+              <label class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant font-bold px-1">Email
+                Address</label>
+              <input
+                class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg py-4 px-4 text-sm transition-all placeholder:text-outline-variant/50"
+                placeholder="elena@sanctuary.com" type="email" />
+            </div>
+            <div class="md:col-span-2 space-y-1">
+              <label class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant font-bold px-1">Shipping
+                Address</label>
+              <input
+                class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg py-4 px-4 text-sm transition-all placeholder:text-outline-variant/50"
+                placeholder="123 Serenity Lane, Apartment 4B" type="text" />
+            </div>
+            <div class="space-y-1">
+              <label
+                class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant font-bold px-1">City</label>
+              <input
+                class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg py-4 px-4 text-sm transition-all"
+                type="text" />
+            </div>
+            <div class="space-y-1">
+              <label class="text-[0.65rem] uppercase tracking-widest text-on-surface-variant font-bold px-1">Phone
+                Number</label>
+              <input
+                class="w-full bg-surface-container-low border-none focus:ring-1 focus:ring-primary rounded-lg py-4 px-4 text-sm transition-all"
+                placeholder="+84 ..." type="tel" />
+            </div>
+          </div>
+        </section>
+        <!-- Shipping Methods -->
+        <section class="space-y-8">
+          <div class="flex items-center gap-4">
+            <span
+              class="bg-primary-container text-on-primary-container w-8 h-8 rounded-full flex items-center justify-center font-bold text-xs">2</span>
+            <h2 class="text-xl font-headline text-on-background">Delivery Method</h2>
+          </div>
+          <div class="space-y-4">
+            <label
+              class="flex items-center p-6 bg-surface-container-lowest rounded-xl cursor-pointer hover:bg-surface-container transition-colors shadow-[0_8px_16px_rgba(45,52,52,0.02)] group">
+              <input checked="" class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="shipping"
+                type="radio" />
+              <div class="ml-6 flex-1">
+                <p class="text-sm font-bold text-on-background">Eco-Friendly Standard</p>
+                <p class="text-xs text-on-surface-variant">3-5 business days. Compostable packaging.</p>
+              </div>
+              <span class="text-sm font-headline italic">Free</span>
+            </label>
+            <label
+              class="flex items-center p-6 bg-surface-container-lowest rounded-xl cursor-pointer hover:bg-surface-container transition-colors shadow-[0_8px_16px_rgba(45,52,52,0.02)] group border-primary/10 border">
+              <input class="w-4 h-4 text-primary focus:ring-primary border-outline-variant" name="shipping"
+                type="radio" />
+              <div class="ml-6 flex-1">
+                <p class="text-sm font-bold text-on-background">Sanctuary Express</p>
+                <p class="text-xs text-on-surface-variant">1-2 business days. Prioritized handling.</p>
+              </div>
+              <span class="text-sm font-headline italic">$12.00</span>
+            </label>
+          </div>
+        </section>
+      </div>
+      <!-- Right Column: Order Summary & Payment -->
+      <div class="w-full md:w-[420px]">
+        <div
+          class="bg-surface-container-high rounded-3xl p-8 sticky top-32 space-y-10 shadow-[0_32px_64px_rgba(45,52,52,0.04)]">
+          <!-- Itemized List -->
+          <div class="space-y-6">
+            <h3 class="text-sm uppercase tracking-[0.2em] font-bold text-on-surface-variant">Your Collection</h3>
+            <div class="space-y-6">
+              <!-- Item 1 -->
+              <div class="flex gap-4">
+                <div class="w-20 h-20 bg-white rounded-lg overflow-hidden shrink-0">
+                  <img class="w-full h-full object-cover"
+                    data-alt="minimalist glass jar candle with cream colored wax on a raw wooden surface with soft shadows"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPXNPVCpN3j1G6wMU6c1BBxcBs_vIpoCHf8fqqzcreRdFues7be7YKYDnySQ7BDOs-UN5TD845rbvbGxHMaSKg2JyfubdUv7ENDeu6Yg_kxYj15VcKudN0jDDwyNBAT8xCE6bhxi_98q0CivAK82HickYEZKM1KNhwh6FU7fxXUIxmR7zseulxKXs-2_GZsXV0ohfpsDw2gh4oqcMkkeR5y9hnXNSSQVWgKDS0IEr4BoRLyDE1jxUqTxUGO2tkRg4zHOZTUy4Fq8o" />
+                </div>
+                <div class="flex-1 py-1 flex flex-col justify-between">
+                  <div>
+                    <h4 class="text-sm font-bold text-on-background">Midnight Moss No. 4</h4>
+                    <p class="text-[10px] uppercase tracking-wider text-on-surface-variant">12oz • Hand-Poured</p>
+                  </div>
+                  <div class="flex justify-between items-end">
+                    <span class="text-xs text-on-surface-variant">Qty: 1</span>
+                    <span class="text-sm font-headline">$38.00</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Item 2 -->
+              <div class="flex gap-4">
+                <div class="w-20 h-20 bg-white rounded-lg overflow-hidden shrink-0">
+                  <img class="w-full h-full object-cover"
+                    data-alt="artisan matchbox with beautiful illustration next to a bundle of sage on a linen cloth"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBguHusl_f6nhmWXE7YYp-32iNVxtzXobX854Oh5LCLwIYy4e_aAOe02MrExJ3gWdUV_rHMUV3N2a9PHQUdoEwX4HB3TCUex98yHBrGA3o1-UpBAr5AXutAyXtbSaMWURJInDfDiASMn8kx_9ItkQfCN80QnY6RwhtYrbsElSDULv-hry0s3UQH-SJo1NhteeC_Dd43BFgY9S2m0M18m_Kkz0q1xIDL0OV7zPI1ra8u81FHUodvcD9br1DKsHUq9Bk2ln8IYZe77o" />
+                </div>
+                <div class="flex-1 py-1 flex flex-col justify-between">
+                  <div>
+                    <h4 class="text-sm font-bold text-on-background">Cedar Strike Matches</h4>
+                    <p class="text-[10px] uppercase tracking-wider text-on-surface-variant">Collector Box</p>
+                  </div>
+                  <div class="flex justify-between items-end">
+                    <span class="text-xs text-on-surface-variant">Qty: 1</span>
+                    <span class="text-sm font-headline">$14.00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Discount Code -->
+          <div class="flex gap-2">
+            <input class="flex-1 bg-white/50 border-none focus:ring-1 focus:ring-primary rounded-lg py-3 px-4 text-xs"
+              placeholder="Promo code" type="text" />
+            <button
+              class="bg-primary text-on-primary px-6 rounded-lg text-xs font-bold hover:bg-primary-dim transition-all active:scale-95">Apply</button>
+          </div>
+          <!-- Totals -->
+          <div class="space-y-4 pt-4 border-t border-outline-variant/10">
+            <div class="flex justify-between text-sm">
+              <span class="text-on-surface-variant">Subtotal</span>
+              <span class="text-on-background">$52.00</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-on-surface-variant">Shipping</span>
+              <span class="text-on-background italic">Calculated at next step</span>
+            </div>
+            <div class="flex justify-between text-xl font-headline py-2">
+              <span>Total</span>
+              <span class="font-bold text-primary">$52.00</span>
+            </div>
+          </div>
+          <!-- Payment Selection -->
+          <div class="space-y-4">
+            <h3 class="text-sm uppercase tracking-[0.2em] font-bold text-on-surface-variant">Payment</h3>
+            <div class="grid grid-cols-3 gap-3">
+              <button
+                class="flex flex-col items-center justify-center p-4 bg-white rounded-xl hover:shadow-lg transition-all border border-transparent focus:border-primary">
+                <span class="material-symbols-outlined text-on-surface-variant mb-2">credit_card</span>
+                <span class="text-[10px] font-bold uppercase tracking-tighter">Card</span>
+              </button>
+              <button
+                class="flex flex-col items-center justify-center p-4 bg-white rounded-xl hover:shadow-lg transition-all border border-transparent focus:border-primary">
+                <span class="material-symbols-outlined text-on-surface-variant mb-2">account_balance</span>
+                <span class="text-[10px] font-bold uppercase tracking-tighter">Bank</span>
+              </button>
+              <button
+                class="flex flex-col items-center justify-center p-4 bg-white rounded-xl hover:shadow-lg transition-all border border-transparent focus:border-primary">
+                <span class="material-symbols-outlined text-on-surface-variant mb-2">local_shipping</span>
+                <span class="text-[10px] font-bold uppercase tracking-tighter">COD</span>
+              </button>
+            </div>
+          </div>
+          <!-- CTA Button -->
+          <button
+            class="w-full bg-primary text-on-primary py-5 rounded-2xl font-bold tracking-widest uppercase text-sm hover:translate-y-[-2px] hover:shadow-xl transition-all active:scale-[0.98]">
+            Hoàn Tất Thanh Toán
+          </button>
+          <!-- Trust Badges -->
+          <div class="flex justify-center items-center gap-6 opacity-40 grayscale pt-2">
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-[18px]">verified_user</span>
+              <span class="text-[10px] font-bold uppercase">Secure SSL</span>
+            </div>
+            <div class="flex items-center gap-1">
+              <span class="material-symbols-outlined text-[18px]">eco</span>
+              <span class="text-[10px] font-bold uppercase">100% Vegan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Footer (Website Version) -->
+  <footer class="w-full mt-24 bg-surface-container-low dark:bg-[#1a1e1e]">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+      <div class="space-y-6">
+        <div class="font-serif text-lg text-on-background">Diva</div>
+        <p class="text-xs uppercase tracking-[0.1em] text-on-background/50 leading-loose">© 2024 Diva. <br />Crafted for
+          Calm.</p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4 class="font-bold text-[10px] uppercase tracking-widest text-primary">Discover</h4>
+        <a class="font-body text-xs uppercase tracking-[0.1em] text-on-background/50 hover:text-on-background underline decoration-outline-variant/30 underline-offset-4 transition-all"
+          href="#">Scent Guide</a>
+        <a class="font-body text-xs uppercase tracking-[0.1em] text-on-background/50 hover:text-on-background underline decoration-outline-variant/30 underline-offset-4 transition-all"
+          href="#">Wholesale</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4 class="font-bold text-[10px] uppercase tracking-widest text-primary">Assistance</h4>
+        <a class="font-body text-xs uppercase tracking-[0.1em] text-on-background/50 hover:text-on-background underline decoration-outline-variant/30 underline-offset-4 transition-all"
+          href="#">Shipping &amp; Returns</a>
+        <a class="font-body text-xs uppercase tracking-[0.1em] text-on-background/50 hover:text-on-background underline decoration-outline-variant/30 underline-offset-4 transition-all"
+          href="#">Privacy Policy</a>
+      </div>
+      <div class="space-y-6">
+        <h4 class="font-bold text-[10px] uppercase tracking-widest text-primary">Newsletter</h4>
+        <div class="flex border-b border-outline-variant/30 pb-2">
+          <input class="bg-transparent border-none p-0 text-[10px] uppercase tracking-widest w-full focus:ring-0"
+            placeholder="YOUR EMAIL" type="email" />
+          <span class="material-symbols-outlined text-on-background/50">arrow_forward</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

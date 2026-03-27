@@ -13,12 +13,16 @@ class CategoryForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Tên danh mục')
                     ->required(),
                 TextInput::make('slug')
+                    ->label('Slug')
                     ->required(),
                 Textarea::make('description')
+                    ->label('Mô tả')
                     ->columnSpanFull(),
                 Textarea::make('image')
+                    ->label('Ảnh danh mục')
                     ->columnSpanFull(),
             ]);
     }

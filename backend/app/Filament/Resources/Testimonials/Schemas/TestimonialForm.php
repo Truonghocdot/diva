@@ -13,12 +13,16 @@ class TestimonialForm
         return $schema
             ->components([
                 TextInput::make('user_name')
+                    ->label('Tên khách hàng')
                     ->required(),
-                TextInput::make('location'),
+                TextInput::make('location')
+                    ->label('Khu vực'),
                 Textarea::make('content')
+                    ->label('Nội dung đánh giá')
                     ->required()
                     ->columnSpanFull(),
                 TextInput::make('rating')
+                    ->label('Số sao')
                     ->required()
                     ->numeric()
                     ->default(5),

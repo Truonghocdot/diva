@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Checkout | The Tactile Sanctuary')
+@section('title', 'Checkout | Diva')
 @section('meta_robots', 'noindex,nofollow')
 @section('canonical_url', url('/checkout'))
 
 @php
-    $header_class = 'fixed top-0 w-full z-50 glass-nav';
+$header_class = 'fixed top-0 w-full z-50 glass-nav';
 @endphp
 
 @section('content')

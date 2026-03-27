@@ -19,6 +19,8 @@ class ProductResource extends Resource
     protected static ?string $model = Product::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    
+    protected static string|\UnitEnum|null $navigationGroup = 'Nội dung';
 
     public static function form(Schema $schema): Schema
     {
@@ -44,5 +46,20 @@ class ProductResource extends Resource
             'create' => CreateProduct::route('/create'),
             'edit' => EditProduct::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Sản phẩm';
+    }
+
+    public static function getModelLabel(): string
+    {
+        return 'sản phẩm';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'sản phẩm';
     }
 }

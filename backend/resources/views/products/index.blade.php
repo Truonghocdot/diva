@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'The Tactile Sanctuary | Curated Collections')
+@section('title', 'Diva | Curated Collections')
 @section('meta_description', 'Mua nến thơm, starter kits và candle supplies với nhiều nhóm mùi hương được tuyển chọn thủ công.')
 @section('canonical_url', request('category') ? url('/shop?category=' . request('category')) : url('/shop'))
 
 @php
-    $header_class = 'fixed top-0 w-full z-50 glass-nav';
+$header_class = 'fixed top-0 w-full z-50 glass-nav';
 @endphp
 
 @section('content')
@@ -13,7 +13,7 @@
     <!-- Header & Sort -->
     <header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
         <div class="max-w-2xl">
-            <h1 class="text-5xl lg:text-6xl font-headline font-light tracking-tight mb-4 leading-tight">Artisan Vessels & <br/><span class="italic text-primary">Ephemeral Scents</span></h1>
+            <h1 class="text-5xl lg:text-6xl font-headline font-light tracking-tight mb-4 leading-tight">Artisan Vessels & <br /><span class="italic text-primary">Ephemeral Scents</span></h1>
             <p class="text-on-surface-variant leading-relaxed max-w-lg">Discover our curated collection of hand-poured vessels and refined fragrance oils, designed to transform your space into a sensory refuge.</p>
         </div>
         <div class="flex items-center gap-4">
@@ -35,7 +35,7 @@
                 <div class="space-y-3">
                     @foreach($categories as $category)
                     <label class="flex items-center group cursor-pointer">
-                        <input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20 bg-transparent transition-all" type="checkbox" {{ request('category') == $category->slug ? 'checked' : '' }} onclick="window.location='{{ url('/shop?category=' . $category->slug) }}'"/>
+                        <input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20 bg-transparent transition-all" type="checkbox" {{ request('category') == $category->slug ? 'checked' : '' }} onclick="window.location='{{ url('/shop?category=' . $category->slug) }}'" />
                         <span class="ml-3 text-sm {{ request('category') == $category->slug ? 'text-primary font-medium' : 'text-on-surface-variant group-hover:text-primary transition-colors' }}">{{ $category->name }}</span>
                     </label>
                     @endforeach
@@ -50,13 +50,12 @@
             <!-- Card -->
             <div class="group cursor-pointer" onclick="window.location='{{ url('/products/' . $product->slug) }}'">
                 <div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ $product->image }}"/>
+                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ $product->image }}" />
                     <livewire:add-to-cart-button
                         :product-id="$product->id"
                         label="Add to Cart"
                         button-class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2"
-                        :key="'shop-add-'.$product->id"
-                    />
+                        :key="'shop-add-'.$product->id" />
                 </div>
                 <div class="flex justify-between items-start mb-2">
                     <h3 class="font-headline text-xl text-on-surface">{{ $product->name }}</h3>

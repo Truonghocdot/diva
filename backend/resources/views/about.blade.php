@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'About Us | The Tactile Sanctuary')
+@section('title', 'About Us | Diva')
 @section('meta_description', 'Câu chuyện thương hiệu nến thơm Diva: nguyên liệu tự nhiên, quy trình thủ công và trải nghiệm đa giác quan.')
 @section('canonical_url', url('/about'))
 
@@ -9,13 +9,13 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center mb-32">
         <div class="space-y-8">
             <h2 class="text-xs font-label uppercase tracking-[0.3em] text-primary font-bold">Câu chuyện của chúng tôi</h2>
-            <h1 class="text-5xl md:text-7xl font-headline font-light leading-tight italic">Nơi mùi hương <br/> chạm đến linh hồn.</h1>
+            <h1 class="text-5xl md:text-7xl font-headline font-light leading-tight italic">Nơi mùi hương <br /> chạm đến linh hồn.</h1>
             <p class="text-xl text-on-surface-variant font-light leading-relaxed">
-                Được thành lập vào năm {{ date('Y') }}, The Tactile Sanctuary khởi đầu từ mong muốn tạo ra một không gian bình yên trong tâm trí mỗi người giữa nhịp sống hối hả.
+                Được thành lập vào năm {{ date('Y') }}, Diva khởi đầu từ mong muốn tạo ra một không gian bình yên trong tâm trí mỗi người giữa nhịp sống hối hả.
             </p>
         </div>
         <div class="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl skew-y-1">
-            <img class="w-full h-full object-cover" src="https://arteproduct.com/wp-content/uploads/2023/08/nen-thom-arte-tron.jpg"/>
+            <img class="w-full h-full object-cover" src="https://arteproduct.com/wp-content/uploads/2023/08/nen-thom-arte-tron.jpg" />
         </div>
     </div>
 

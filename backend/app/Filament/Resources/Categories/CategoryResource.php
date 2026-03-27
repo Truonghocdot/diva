@@ -19,6 +19,8 @@ class CategoryResource extends Resource
     protected static ?string $model = Category::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    
+    protected static string|\UnitEnum|null $navigationGroup = 'Nội dung';
 
     public static function form(Schema $schema): Schema
     {
@@ -44,5 +46,20 @@ class CategoryResource extends Resource
             'create' => CreateCategory::route('/create'),
             'edit' => EditCategory::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Danh mục';
+    }
+
+    public static function getModelLabel(): string
+    {
+        return 'danh mục';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'danh mục';
     }
 }

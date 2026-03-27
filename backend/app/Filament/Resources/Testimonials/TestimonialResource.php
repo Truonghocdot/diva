@@ -19,6 +19,8 @@ class TestimonialResource extends Resource
     protected static ?string $model = Testimonial::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    
+    protected static string|\UnitEnum|null $navigationGroup = 'Nội dung';
 
     public static function form(Schema $schema): Schema
     {
@@ -44,5 +46,20 @@ class TestimonialResource extends Resource
             'create' => CreateTestimonial::route('/create'),
             'edit' => EditTestimonial::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Đánh giá';
+    }
+
+    public static function getModelLabel(): string
+    {
+        return 'đánh giá';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'đánh giá';
     }
 }

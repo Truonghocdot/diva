@@ -28,9 +28,9 @@ class UserRole
     public static function labels(): array
     {
         return [
-            self::ADMIN => 'Admin',
-            self::CLIENT => 'Client',
-            self::STAFF => 'Staff',
+            self::ADMIN => 'Quản trị viên',
+            self::CLIENT => 'Khách hàng',
+            self::STAFF => 'Nhân viên',
         ];
     }
 

@@ -19,6 +19,8 @@ class BannerResource extends Resource
     protected static ?string $model = Banner::class;
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    
+    protected static string|\UnitEnum|null $navigationGroup = 'Nội dung';
 
     public static function form(Schema $schema): Schema
     {
@@ -44,5 +46,20 @@ class BannerResource extends Resource
             'create' => CreateBanner::route('/create'),
             'edit' => EditBanner::route('/{record}/edit'),
         ];
+    }
+
+    public static function getNavigationLabel(): string
+    {
+        return 'Banner';
+    }
+
+    public static function getModelLabel(): string
+    {
+        return 'banner';
+    }
+
+    public static function getPluralModelLabel(): string
+    {
+        return 'banner';
     }
 }
