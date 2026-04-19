@@ -2,14 +2,15 @@
 
 namespace App\Filament\Resources\Posts\Schemas;
 
+use App\Support\WebpImageUpload;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\RichEditor;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Schemas\Components\Grid;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
 
@@ -77,7 +78,16 @@ class PostForm
                                         FileUpload::make('image')
                                             ->label('Ảnh bìa')
                                             ->image()
-                                            ->directory('posts'),
+                                            ->acceptedFileTypes([
+                                                'image/jpeg',
+                                                'image/png',
+                                                'image/webp',
+                                                'image/gif',
+                                            ])
+                                            ->directory('posts')
+                                            ->disk('public')
+                                            ->visibility('public')
+                                            ->saveUploadedFileUsing(fn ($component, $file): string => WebpImageUpload::store($file, $component)),
                                     ]),
                             ]),
                     ]),
