@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Services\SiteContentService;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -11,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(SiteContentService::class);
     }
 
     /**
@@ -19,6 +21,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        View::composer('*', function ($view): void {
+            $siteContent = app(SiteContentService::class);
+
+            $view->with('siteSettings', $siteContent->getSettings());
+            $view->with('siteMenus', $siteContent->getMenus());
+        });
     }
 }

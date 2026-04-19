@@ -21,7 +21,7 @@ class ProductForm
                     ->columns(2)
                     ->schema([
                         TextInput::make('name')
-                            ->label('Tên sản phẩm')
+                            ->label('Tên nguyên liệu / SKU')
                             ->required()
                             ->live(onBlur: true)
                             ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
@@ -29,6 +29,8 @@ class ProductForm
                             ->label('Slug')
                             ->required()
                             ->unique(ignoreRecord: true),
+                        TextInput::make('sku')
+                            ->label('Mã SKU'),
                         Select::make('category_id')
                             ->label('Danh mục')
                             ->relationship('category', 'name')
@@ -36,14 +38,24 @@ class ProductForm
                             ->searchable()
                             ->preload(),
                         TextInput::make('price')
-                            ->label('Giá bán')
+                            ->label('Giá sỉ tham chiếu')
                             ->required()
                             ->numeric()
                             ->prefix('đ'),
-                        TextInput::make('sale_price')
-                            ->label('Giá khuyến mãi')
+                        TextInput::make('unit')
+                            ->label('Đơn vị tính')
+                            ->placeholder('kg, lít, chai, bao, thùng'),
+                        TextInput::make('min_order_quantity')
+                            ->label('MOQ')
                             ->numeric()
-                            ->prefix('đ'),
+                            ->default(1),
+                        TextInput::make('pack_size')
+                            ->label('Quy cách đóng gói'),
+                        TextInput::make('lead_time_days')
+                            ->label('Lead time (ngày)')
+                            ->numeric(),
+                        TextInput::make('origin')
+                            ->label('Xuất xứ'),
                         TextInput::make('stock')
                             ->label('Tồn kho')
                             ->required()
@@ -53,8 +65,12 @@ class ProductForm
 
                 Section::make('Mô tả & Hình ảnh')
                     ->schema([
+                        Textarea::make('short_description')
+                            ->label('Mô tả ngắn')
+                            ->rows(3)
+                            ->columnSpanFull(),
                         Textarea::make('description')
-                            ->label('Mô tả sản phẩm')
+                            ->label('Mô tả chi tiết')
                             ->rows(5)
                             ->columnSpanFull(),
                         TextInput::make('image')
@@ -66,26 +82,17 @@ class ProductForm
                             ->columnSpanFull(),
                     ]),
 
-                Section::make('Thông số kỹ thuật')
+                Section::make('Thông số bán sỉ')
                     ->columns(3)
                     ->schema([
-                        TextInput::make('wax_type')->label('Loại sáp'),
-                        TextInput::make('burn_time')->label('Thời gian cháy'),
-                        TextInput::make('weight')->label('Khối lượng'),
-                    ]),
-
-                Section::make('Hồ sơ mùi hương')
-                    ->columns(3)
-                    ->schema([
-                        TagsInput::make('scent_top_notes')
-                            ->label('Nốt hương đầu')
-                            ->placeholder('Nhập và nhấn Enter'),
-                        TagsInput::make('scent_middle_notes')
-                            ->label('Nốt hương giữa')
-                            ->placeholder('Nhập và nhấn Enter'),
-                        TagsInput::make('scent_base_notes')
-                            ->label('Nốt hương cuối')
-                            ->placeholder('Nhập và nhấn Enter'),
+                        TagsInput::make('applications')
+                            ->label('Ứng dụng')
+                            ->placeholder('Nến thơm, mỹ phẩm, tẩy rửa...')
+                            ->columnSpan(2),
+                        Textarea::make('specifications')
+                            ->label('Thông số / tiêu chuẩn kỹ thuật')
+                            ->rows(5)
+                            ->columnSpanFull(),
                     ]),
 
                 Section::make('Trạng thái')

@@ -1,9 +1,9 @@
-<a href="{{ url('/checkout') }}" class="relative group">
-    <span class="material-symbols-outlined text-[#53644d] dark:text-[#ecffe1] hover:opacity-80 transition-all duration-300 active:scale-95">
+<a href="{{ url('/checkout') }}" class="relative flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition hover:border-blue-200 hover:text-primary">
+    <span class="material-symbols-outlined text-slate-700">
         shopping_bag
     </span>
     <span
-        class="absolute -top-1 -right-1 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-primary text-[10px] text-on-primary font-bold"
+        class="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-white"
     >
         {{ $count }}
     </span>

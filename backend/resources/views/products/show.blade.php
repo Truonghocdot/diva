@@ -1,14 +1,12 @@
 @extends('layouts.app')
 
-@section('title', $product->name . ' | Diva')
+@section('title', $product->name . ' | Diva Materials')
 @section('meta_description', \Illuminate\Support\Str::limit(strip_tags($product->description ?? ''), 155, '...'))
 @section('meta_keywords', implode(', ', array_filter([
-'nến thơm',
+'nguyen lieu',
 $product->name,
-$product->wax_type,
-is_array($product->scent_top_notes) ? implode(', ', $product->scent_top_notes) : null,
-is_array($product->scent_middle_notes) ? implode(', ', $product->scent_middle_notes) : null,
-is_array($product->scent_base_notes) ? implode(', ', $product->scent_base_notes) : null,
+$product->sku,
+$product->origin,
 ])))
 @section('canonical_url', url('/products/' . $product->slug))
 @section('og_type', 'product')
@@ -26,7 +24,7 @@ $productSchema = [
 'sku' => 'DIVA-' . $product->id,
 'brand' => [
 '@type' => 'Brand',
-'name' => 'Diva',
+'name' => 'Diva Materials',
 ],
 'offers' => [
 '@type' => 'Offer',
@@ -49,16 +47,15 @@ $productSchema = [
 @endsection
 
 @php
-$header_class = 'fixed top-0 w-full z-50 bg-[#f8faf9]/60 backdrop-blur-md';
+$header_class = 'fixed top-0 z-50 w-full border-b border-white/60 bg-white/85 backdrop-blur-xl';
 $galleryImages = $product->gallery_images;
 @endphp
 
 @section('content')
-<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+<main class="mx-auto max-w-screen-2xl px-8 pb-24 pt-32">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-        <!-- Left: Gallery Section -->
         <div class="lg:col-span-7 space-y-8">
-            <div class="relative aspect-[4/5] rounded-xl overflow-hidden bg-surface-container-low group">
+            <div class="group relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-xl shadow-slate-200/60">
                 <img
                     id="product-main-image"
                     class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -70,7 +67,7 @@ $galleryImages = $product->gallery_images;
                 @foreach($galleryImages as $index => $imageUrl)
                 <button
                     type="button"
-                    class="aspect-square rounded-lg overflow-hidden border {{ $index === 0 ? 'border-primary' : 'border-outline-variant/30' }} transition-colors"
+                    class="aspect-square overflow-hidden rounded-2xl border {{ $index === 0 ? 'border-primary' : 'border-slate-200' }} bg-white transition-colors"
                     data-image="{{ $imageUrl }}"
                     aria-label="Ảnh sản phẩm {{ $index + 1 }}">
                     <img src="{{ $imageUrl }}" alt="{{ $product->name }} - {{ $index + 1 }}" class="w-full h-full object-cover" />
@@ -79,89 +76,87 @@ $galleryImages = $product->gallery_images;
             </div>
             @endif
         </div>
-        <!-- Right: Product Info Section -->
         <div class="lg:col-span-5 flex flex-col space-y-10">
             <header class="space-y-4">
-                <h1 class="text-5xl font-headline font-light tracking-tight text-on-surface italic">{{ $product->name }}</h1>
-                <p class="text-2xl font-light text-primary">{{ number_format($product->price) }} VND</p>
+                <span class="inline-flex rounded-full border border-blue-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">{{ $product->category?->name ?: 'Nguyen lieu' }}</span>
+                <h1 class="text-5xl font-headline font-light tracking-tight text-slate-950">{{ $product->name }}</h1>
+                <div class="flex flex-wrap gap-3 text-sm text-slate-500">
+                    @if($product->sku)
+                        <span class="rounded-full border border-slate-200 px-3 py-1">SKU {{ $product->sku }}</span>
+                    @endif
+                    @if($product->origin)
+                        <span class="rounded-full border border-slate-200 px-3 py-1">Xuat xu {{ $product->origin }}</span>
+                    @endif
+                </div>
+                <p class="text-2xl font-semibold text-primary">{{ number_format($product->price) }} VND @if($product->unit)<span class="text-base font-medium text-slate-500">/ {{ $product->unit }}</span>@endif</p>
+                <p class="max-w-2xl text-base leading-8 text-slate-600">{{ $product->short_description ?: $product->description }}</p>
             </header>
 
-            <section class="p-8 bg-surface-container-low rounded-xl space-y-6">
-                <h3 class="text-xs font-label uppercase tracking-[0.2em] text-on-surface-variant">Tầng hương</h3>
-                <div class="space-y-4">
-                    @if($product->scent_top_notes)
-                    <div class="flex items-start gap-4">
-                        <span class="text-[10px] font-label uppercase tracking-widest text-primary mt-1 w-20">Hương đầu</span>
-                        <div class="flex flex-wrap gap-2">
-                            @foreach($product->scent_top_notes as $note)
-                            <span class="px-3 py-1 bg-white text-on-surface text-[10px] rounded-full ghost-border">{{ $note }}</span>
-                            @endforeach
-                        </div>
+            <section class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/60">
+                <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Thong tin mua si</h3>
+                <div class="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
+                    <div class="rounded-2xl bg-blue-50 p-4">
+                        <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">MOQ</span>
+                        <span class="mt-2 block text-lg font-semibold text-slate-950">{{ number_format($product->min_order_quantity) }}</span>
                     </div>
-                    @endif
-                    @if($product->scent_middle_notes)
-                    <div class="flex items-start gap-4">
-                        <span class="text-[10px] font-label uppercase tracking-widest text-primary mt-1 w-20">Hương giữa</span>
-                        <div class="flex flex-wrap gap-2">
-                            @foreach($product->scent_middle_notes as $note)
-                            <span class="px-3 py-1 bg-white text-on-surface text-[10px] rounded-full ghost-border">{{ $note }}</span>
-                            @endforeach
-                        </div>
+                    <div class="rounded-2xl bg-blue-50 p-4">
+                        <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Don vi</span>
+                        <span class="mt-2 block text-lg font-semibold text-slate-950">{{ $product->unit ?: 'N/A' }}</span>
                     </div>
-                    @endif
-                    @if($product->scent_base_notes)
-                    <div class="flex items-start gap-4">
-                        <span class="text-[10px] font-label uppercase tracking-widest text-primary mt-1 w-20">Hương cuối</span>
-                        <div class="flex flex-wrap gap-2">
-                            @foreach($product->scent_base_notes as $note)
-                            <span class="px-3 py-1 bg-white text-on-surface text-[10px] rounded-full ghost-border">{{ $note }}</span>
-                            @endforeach
-                        </div>
+                    <div class="rounded-2xl bg-blue-50 p-4">
+                        <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Quy cach</span>
+                        <span class="mt-2 block text-lg font-semibold text-slate-950">{{ $product->pack_size ?: 'Lien he' }}</span>
                     </div>
-                    @endif
+                    <div class="rounded-2xl bg-blue-50 p-4">
+                        <span class="block text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">Lead time</span>
+                        <span class="mt-2 block text-lg font-semibold text-slate-950">{{ $product->lead_time_days ? $product->lead_time_days . ' ngay' : 'Xac nhan' }}</span>
+                    </div>
                 </div>
             </section>
 
-            <div class="grid grid-cols-3 gap-8 py-8 border-y border-outline-variant/10">
-                <div class="text-center">
-                    <span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant block mb-1">Loại sáp</span>
-                    <span class="text-sm font-medium">{{ $product->wax_type }}</span>
+            @if($product->applications)
+                <div class="space-y-4 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/60">
+                    <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Ung dung phu hop</h3>
+                    <div class="flex flex-wrap gap-3">
+                        @foreach($product->applications as $application)
+                            <span class="rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-700">{{ $application }}</span>
+                        @endforeach
+                    </div>
                 </div>
-                <div class="text-center">
-                    <span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant block mb-1">Thời gian cháy</span>
-                    <span class="text-sm font-medium">{{ $product->burn_time }}</span>
-                </div>
-                <div class="text-center">
-                    <span class="text-[10px] font-label uppercase tracking-widest text-on-surface-variant block mb-1">Khối lượng</span>
-                    <span class="text-sm font-medium">{{ $product->weight }}</span>
-                </div>
-            </div>
+            @endif
+
+            @if($product->specifications)
+                <section class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/60">
+                    <h3 class="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Thong so ky thuat</h3>
+                    <div class="mt-4 whitespace-pre-line text-sm leading-7 text-slate-600">{{ $product->specifications }}</div>
+                </section>
+            @endif
 
             <div class="space-y-4">
                 <livewire:add-to-cart-button
                     :product-id="$product->id"
-                    label="Thêm vào giỏ"
+                    label="Them vao don si"
                     :show-quantity-controls="true"
-                    button-class="w-full py-4 bg-primary text-on-primary font-body font-bold rounded-lg hover:shadow-lg transition-all"
+                    button-class="w-full rounded-full bg-primary py-4 font-body font-bold text-white transition-all hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/20"
                     :key="'detail-add-'.$product->id" />
+                <a href="{{ url('/checkout') }}" class="inline-flex w-full items-center justify-center rounded-full border border-blue-200 bg-white py-4 text-sm font-semibold text-primary transition hover:bg-blue-50">Di den trang dat mua si</a>
             </div>
         </div>
     </div>
 
-    <!-- Related Products -->
     @if($relatedProducts->count() > 0)
     <section class="mt-48">
-        <h2 class="text-3xl font-headline font-light mb-12">Sản phẩm liên quan</h2>
+        <h2 class="mb-12 text-3xl font-headline font-light text-slate-950">San pham lien quan</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             @foreach($relatedProducts as $item)
             <div class="group cursor-pointer" onclick="window.location='{{ url('/products/' . $item->slug) }}'">
-                <div class="aspect-[4/5] bg-surface-container-low rounded-xl overflow-hidden mb-6 relative">
+                <div class="relative mb-6 aspect-[4/5] overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-lg shadow-slate-200/60">
                     <img alt="{{ $item->name }}"
                         class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         src="{{ $item->image }}" />
                 </div>
-                <h3 class="text-lg font-headline font-medium mb-1">{{ $item->name }}</h3>
-                <p class="text-primary font-bold">{{ number_format($item->price) }}đ</p>
+                <h3 class="mb-1 text-lg font-headline font-medium text-slate-950">{{ $item->name }}</h3>
+                <p class="font-bold text-primary">{{ number_format($item->price) }}đ</p>
             </div>
             @endforeach
         </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Diva | Bộ Sưu Tập Tuyển Chọn')
-@section('meta_description', 'Mua nến thơm, starter kits và candle supplies với nhiều nhóm mùi hương được tuyển chọn thủ công.')
+@section('title', 'Catalog Nguyen Lieu | Diva Materials')
+@section('meta_description', 'Catalog mua si nguyen lieu, huong lieu, bao bi va phu lieu cho doanh nghiep san xuat va workshop.')
 @section('canonical_url', request('category') ? url('/shop?category=' . request('category')) : url('/shop'))
 
 @php
@@ -9,62 +9,60 @@ $header_class = 'fixed top-0 w-full z-50 glass-nav';
 @endphp
 
 @section('content')
-<main class="pt-32 pb-24 max-w-screen-2xl mx-auto px-8 lg:px-12">
-    <!-- Header & Sort -->
-    <header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<main class="mx-auto max-w-screen-2xl px-8 pb-24 pt-32 lg:px-12">
+    <header class="mb-16 flex flex-col justify-between gap-8 md:flex-row md:items-end">
         <div class="max-w-2xl">
-            <h1 class="text-5xl lg:text-6xl font-headline font-light tracking-tight mb-4 leading-tight">Hũ nến thủ công & <br /><span class="italic text-primary">Mùi hương tinh tuyển</span></h1>
-            <p class="text-on-surface-variant leading-relaxed max-w-lg">Khám phá bộ sưu tập nến rót tay và tinh dầu hương cao cấp, giúp không gian của bạn trở nên thư thái và giàu cảm xúc.</p>
+            <span class="inline-flex rounded-full border border-blue-200 bg-white px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Wholesale catalog</span>
+            <h1 class="mt-5 font-headline text-5xl leading-tight text-slate-950 lg:text-6xl">Nguyen lieu va phu lieu <br /><span class="text-primary">danh cho don hang so luong lon</span></h1>
+            <p class="mt-4 max-w-lg leading-8 text-slate-600">Chon nhanh theo danh muc, MOQ va quy cach dong goi de lap don mua si cho workshop, nha may va doi thuong mai.</p>
         </div>
-        <div class="flex items-center gap-4">
-            <span class="font-label text-xs uppercase tracking-[0.15em] text-outline">Sắp xếp:</span>
-            <select class="bg-transparent border-none focus:ring-0 font-body text-sm text-primary font-medium cursor-pointer py-1 pl-0 pr-8">
-                <option>Phổ biến nhất</option>
-                <option>Mới nhất</option>
-                <option>Giá thấp đến cao</option>
-                <option>Giá cao đến thấp</option>
+        <div class="flex items-center gap-4 rounded-full border border-slate-200 bg-white px-5 py-3 shadow-sm">
+            <span class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-500">Sap xep</span>
+            <select class="cursor-pointer border-none bg-transparent py-1 pl-0 pr-8 text-sm font-medium text-primary focus:ring-0">
+                <option>San pham noi bat</option>
+                <option>Moi nhat</option>
+                <option>MOQ thap nhat</option>
+                <option>Ton kho cao nhat</option>
             </select>
         </div>
     </header>
 
     <div class="flex flex-col lg:flex-row gap-16">
-        <!-- Sidebar Filters -->
         <aside class="w-full lg:w-64 flex-shrink-0 space-y-12">
-            <section>
-                <h3 class="font-label text-xs uppercase tracking-[0.2em] text-on-surface mb-6 font-bold">Nhóm hương</h3>
+            <section class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-lg shadow-slate-200/60">
+                <h3 class="mb-6 text-xs font-bold uppercase tracking-[0.2em] text-slate-500">Danh muc nguyen lieu</h3>
                 <div class="space-y-3">
+                    <a href="{{ url('/shop') }}" class="block rounded-full px-4 py-2 text-sm {{ request('category') ? 'text-slate-600 hover:text-primary' : 'bg-blue-50 font-semibold text-primary' }}">Tat ca</a>
                     @foreach($categories as $category)
-                    <label class="flex items-center group cursor-pointer">
-                        <input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20 bg-transparent transition-all" type="checkbox" {{ request('category') == $category->slug ? 'checked' : '' }} onclick="window.location='{{ url('/shop?category=' . $category->slug) }}'" />
-                        <span class="ml-3 text-sm {{ request('category') == $category->slug ? 'text-primary font-medium' : 'text-on-surface-variant group-hover:text-primary transition-colors' }}">{{ $category->name }}</span>
-                    </label>
+                        <a href="{{ url('/shop?category=' . $category->slug) }}" class="block rounded-full px-4 py-2 text-sm {{ request('category') == $category->slug ? 'bg-blue-50 font-semibold text-primary' : 'text-slate-600 hover:text-primary' }}">{{ $category->name }}</a>
                     @endforeach
                 </div>
             </section>
-            <!-- ... other filters ... -->
         </aside>
 
-        <!-- Product Grid -->
         <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-16">
             @foreach($products as $product)
-            <!-- Card -->
             <div class="group cursor-pointer" onclick="window.location='{{ url('/products/' . $product->slug) }}'">
-                <div class="relative aspect-[4/5] bg-surface-container-low overflow-hidden rounded-xl mb-6">
+                <div class="relative mb-6 aspect-[4/5] overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-lg shadow-slate-200/60">
                     <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="{{ $product->image }}" />
                     <livewire:add-to-cart-button
                         :product-id="$product->id"
-                        label="Thêm vào giỏ"
-                        button-class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-md py-4 rounded-lg opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 font-label text-xs uppercase tracking-widest text-on-surface flex items-center justify-center gap-2"
+                        label="Them vao don si"
+                        button-class="absolute bottom-4 left-4 right-4 flex translate-y-4 items-center justify-center gap-2 rounded-full bg-white/95 py-4 text-xs font-semibold uppercase tracking-[0.2em] text-slate-900 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
                         :key="'shop-add-'.$product->id" />
                 </div>
-                <div class="flex justify-between items-start mb-2">
-                    <h3 class="font-headline text-xl text-on-surface">{{ $product->name }}</h3>
-                    <span class="font-body text-sm font-bold text-primary">{{ number_format($product->price) }}đ</span>
+                <div class="mb-2 flex items-start justify-between gap-4">
+                    <h3 class="font-headline text-2xl text-slate-950">{{ $product->name }}</h3>
+                    <span class="rounded-full bg-blue-50 px-3 py-1 text-sm font-bold text-primary">{{ number_format($product->price) }}đ</span>
                 </div>
-                <p class="text-sm text-on-surface-variant mb-4 leading-relaxed line-clamp-2">{{ $product->description }}</p>
+                <p class="mb-4 line-clamp-2 text-sm leading-7 text-slate-600">{{ $product->short_description ?: $product->description }}</p>
                 <div class="flex gap-2">
                     @if($product->category)
-                    <span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-label uppercase tracking-wider rounded-full">{{ $product->category->name }}</span>
+                        <span class="rounded-full border border-slate-200 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">{{ $product->category->name }}</span>
+                    @endif
+                    <span class="rounded-full border border-slate-200 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">MOQ {{ number_format($product->min_order_quantity) }}</span>
+                    @if($product->unit)
+                        <span class="rounded-full border border-slate-200 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-500">{{ $product->unit }}</span>
                     @endif
                 </div>
             </div>

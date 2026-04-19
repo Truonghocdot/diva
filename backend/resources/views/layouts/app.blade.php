@@ -3,11 +3,13 @@
 
 <head>
     @php
-    $defaultTitle = 'Diva | Cánh Cửa Bước Vào Thế Giới Hương Thơm';
-    $defaultDescription = 'Nến thơm thủ công cao cấp với hồ sơ mùi hương tinh tế, giúp không gian sống thư thái và sang trọng.';
+    $brandName = $siteSettings['site_name'] ?? 'Diva Materials';
+    $brandTagline = $siteSettings['site_tagline'] ?? 'B2B Supply Hub';
+    $defaultTitle = ($siteSettings['site_title'] ?? null) ?: ($brandName . ' | Nguyen Lieu Va Phu Lieu Mua Si');
+    $defaultDescription = 'Nha cung cap nguyen lieu, huong lieu, sap, bao bi va phu lieu cho doanh nghiep san xuat, workshop va thuong mai.';
     $seoTitle = trim($__env->yieldContent('title', $defaultTitle));
     $seoDescription = trim($__env->yieldContent('meta_description', $defaultDescription));
-    $seoKeywords = trim($__env->yieldContent('meta_keywords', 'nến thơm, nến thơm cao cấp, nến thủ công, candle, scented candle'));
+    $seoKeywords = trim($__env->yieldContent('meta_keywords', 'nguyen lieu, phu lieu, sap, huong lieu, bao bi, mua si, b2b, diva materials'));
     $seoCanonical = trim($__env->yieldContent('canonical_url', request()->fullUrl()));
     $seoRobots = trim($__env->yieldContent('meta_robots', 'index,follow,max-image-preview:large'));
     $ogType = trim($__env->yieldContent('og_type', 'website'));
@@ -29,7 +31,7 @@
     <meta property="og:title" content="{{ $seoTitle }}" />
     <meta property="og:description" content="{{ $seoDescription }}" />
     <meta property="og:url" content="{{ $seoCanonical }}" />
-    <meta property="og:site_name" content="Diva - The Tactile Sanctuary" />
+    <meta property="og:site_name" content="{{ $brandName }}" />
     <meta property="og:image" content="{{ $ogImage }}" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -37,7 +39,7 @@
     <meta name="twitter:title" content="{{ $seoTitle }}" />
     <meta name="twitter:description" content="{{ $seoDescription }}" />
     <meta name="twitter:image" content="{{ $ogImage }}" />
-    <meta name="theme-color" content="#53644d" />
+    <meta name="theme-color" content="#2563eb" />
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}" />
@@ -82,7 +84,7 @@
     </script>
     @endif
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries,line-clamp"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
 
@@ -92,57 +94,57 @@
             theme: {
                 extend: {
                     colors: {
-                        "surface-tint": "#53644d",
-                        "inverse-on-surface": "#9b9d9d",
-                        "on-error-container": "#6e1400",
-                        "tertiary-fixed": "#fffbff",
+                        "surface-tint": "#2563eb",
+                        "inverse-on-surface": "#94a3b8",
+                        "on-error-container": "#7f1d1d",
+                        "tertiary-fixed": "#eff6ff",
                         "surface-container-lowest": "#ffffff",
-                        "background": "#f8faf9",
-                        "error-container": "#fd795a",
-                        "primary-fixed-dim": "#c7dabe",
-                        "on-primary-fixed": "#34432f",
-                        "outline-variant": "#adb3b3",
-                        "tertiary-container": "#fffbff",
-                        "on-primary-container": "#465640",
-                        "surface-container-low": "#f1f4f4",
-                        "inverse-surface": "#0c0f0f",
-                        "on-background": "#2d3434",
-                        "secondary-fixed": "#f0e0d1",
-                        "tertiary": "#615f5a",
-                        "on-surface-variant": "#5a6060",
-                        "on-tertiary-fixed": "#504e4a",
-                        "surface-dim": "#d5dbdb",
-                        "surface-container-highest": "#dde4e3",
-                        "outline": "#757c7c",
-                        "inverse-primary": "#e1f4d7",
-                        "surface-variant": "#dde4e3",
-                        "on-secondary-container": "#5a5044",
-                        "secondary-container": "#f0e0d1",
-                        "on-error": "#fff7f6",
-                        "on-secondary-fixed": "#473e33",
-                        "on-tertiary-container": "#62605b",
-                        "on-tertiary-fixed-variant": "#6d6b66",
-                        "secondary": "#685d51",
-                        "surface": "#f8faf9",
-                        "error": "#a73b21",
-                        "on-primary-fixed-variant": "#4f604a",
-                        "surface-container": "#eaefee",
-                        "on-tertiary": "#fdf8f1",
-                        "tertiary-dim": "#54534e",
-                        "on-surface": "#2d3434",
-                        "primary-fixed": "#d5e8cc",
-                        "error-dim": "#791903",
-                        "surface-bright": "#f8faf9",
-                        "surface-container-high": "#e4e9e9",
-                        "on-primary": "#ecffe1",
-                        "secondary-fixed-dim": "#e1d2c3",
-                        "primary-dim": "#475842",
-                        "primary": "#53644d",
-                        "on-secondary-fixed-variant": "#655a4e",
-                        "tertiary-fixed-dim": "#f1ede6",
-                        "secondary-dim": "#5c5146",
-                        "on-secondary": "#fff7f3",
-                        "primary-container": "#d5e8cc"
+                        "background": "#f5f9ff",
+                        "error-container": "#fee2e2",
+                        "primary-fixed-dim": "#bfdbfe",
+                        "on-primary-fixed": "#172554",
+                        "outline-variant": "#cbd5e1",
+                        "tertiary-container": "#eff6ff",
+                        "on-primary-container": "#1d4ed8",
+                        "surface-container-low": "#f8fbff",
+                        "inverse-surface": "#0f172a",
+                        "on-background": "#0f172a",
+                        "secondary-fixed": "#dbeafe",
+                        "tertiary": "#1e40af",
+                        "on-surface-variant": "#475569",
+                        "on-tertiary-fixed": "#1e3a8a",
+                        "surface-dim": "#e2e8f0",
+                        "surface-container-highest": "#eaf2ff",
+                        "outline": "#94a3b8",
+                        "inverse-primary": "#bfdbfe",
+                        "surface-variant": "#eff6ff",
+                        "on-secondary-container": "#1e3a8a",
+                        "secondary-container": "#dbeafe",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1e3a8a",
+                        "on-tertiary-container": "#1e40af",
+                        "on-tertiary-fixed-variant": "#1d4ed8",
+                        "secondary": "#3b82f6",
+                        "surface": "#ffffff",
+                        "error": "#dc2626",
+                        "on-primary-fixed-variant": "#1d4ed8",
+                        "surface-container": "#eff6ff",
+                        "on-tertiary": "#eff6ff",
+                        "tertiary-dim": "#1d4ed8",
+                        "on-surface": "#0f172a",
+                        "primary-fixed": "#dbeafe",
+                        "error-dim": "#b91c1c",
+                        "surface-bright": "#ffffff",
+                        "surface-container-high": "#f1f7ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#bfdbfe",
+                        "primary-dim": "#1d4ed8",
+                        "primary": "#2563eb",
+                        "on-secondary-fixed-variant": "#1d4ed8",
+                        "tertiary-fixed-dim": "#dbeafe",
+                        "secondary-dim": "#2563eb",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#dbeafe"
                     },
                     fontFamily: {
                         "headline": ["Noto Serif"],
@@ -164,53 +166,29 @@
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
 
-        .bg-glass {
-            backdrop-filter: blur(20px);
-            background-color: rgba(221, 228, 227, 0.6);
-        }
-
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-
-        .scent-gradient {
-            background: linear-gradient(135deg, #53644d 0%, #d5e8cc 100%);
-        }
-
         .glass-nav {
-            background-color: rgba(248, 250, 249, 0.6);
-            backdrop-filter: blur(20px);
-        }
-
-        .ghost-border {
-            border: 1px solid rgba(173, 179, 179, 0.15);
+            background-color: rgba(255, 255, 255, 0.84);
+            backdrop-filter: blur(22px);
         }
     </style>
     @php
     $organizationSchema = [
     '@context' => 'https://schema.org',
     '@type' => 'Organization',
-    'name' => 'Diva - Diva',
+    'name' => $brandName,
     'url' => url('/'),
     'logo' => asset('favicon.ico'),
     ];
     @endphp
     <script type="application/ld+json">
-        {
-            !!json_encode($organizationSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!
-        }
+        {!! json_encode($organizationSchema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) !!}
     </script>
     @yield('structured_data')
     @livewireStyles
     @yield('extra_css')
 </head>
 
-<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<body class="bg-background font-body text-on-surface selection:bg-primary-container selection:text-on-primary-container">
     @include('partials.header')
 
     <main>

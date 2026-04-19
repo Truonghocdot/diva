@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Page;
 use App\Models\Product;
 use Illuminate\Http\Response;
 
@@ -22,12 +23,6 @@ class SitemapController extends Controller
                 'lastmod' => now()->toAtomString(),
                 'changefreq' => 'daily',
                 'priority' => '0.9',
-            ],
-            [
-                'loc' => url('/about'),
-                'lastmod' => now()->toAtomString(),
-                'changefreq' => 'monthly',
-                'priority' => '0.7',
             ],
         ];
 
@@ -55,9 +50,24 @@ class SitemapController extends Controller
                 ];
             });
 
+        $pageUrls = Page::query()
+            ->where('is_published', true)
+            ->where('is_homepage', false)
+            ->select(['slug', 'updated_at'])
+            ->get()
+            ->map(function (Page $page) {
+                return [
+                    'loc' => url('/' . $page->slug),
+                    'lastmod' => optional($page->updated_at)->toAtomString(),
+                    'changefreq' => 'monthly',
+                    'priority' => '0.7',
+                ];
+            });
+
         $urls = collect($staticUrls)
             ->concat($categoryUrls)
-            ->concat($productUrls);
+            ->concat($productUrls)
+            ->concat($pageUrls);
 
         $xml = view('sitemap', compact('urls'))->render();
 

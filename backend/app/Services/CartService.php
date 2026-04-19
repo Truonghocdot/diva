@@ -55,8 +55,10 @@ class CartService
 
     public function addProduct(Product $product, int $quantity = 1): CartItem
     {
-        if ($quantity < 1) {
-            throw new InvalidArgumentException('Số lượng phải lớn hơn 0.');
+        $minimumQuantity = max((int) ($product->min_order_quantity ?: 1), 1);
+
+        if ($quantity < $minimumQuantity) {
+            throw new InvalidArgumentException('So luong toi thieu cho san pham nay la ' . $minimumQuantity . '.');
         }
 
         if ($product->stock < $quantity) {
@@ -98,9 +100,10 @@ class CartService
             throw new InvalidArgumentException('Sản phẩm không tồn tại.');
         }
 
-        if ($quantity < 1) {
-            $this->removeItem($item);
-            return;
+        $minimumQuantity = max((int) ($product->min_order_quantity ?: 1), 1);
+
+        if ($quantity < $minimumQuantity) {
+            throw new InvalidArgumentException('So luong toi thieu cho san pham nay la ' . $minimumQuantity . '.');
         }
 
         if ($quantity > $product->stock) {

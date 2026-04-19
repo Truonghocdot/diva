@@ -14,6 +14,8 @@ class AddToCartButton extends Component
 
     public int $quantity = 1;
 
+    public int $minQuantity = 1;
+
     public bool $showQuantityControls = false;
 
     public string $label = 'Add to Cart';
@@ -23,6 +25,18 @@ class AddToCartButton extends Component
     public bool $justAdded = false;
 
     public ?string $successMessage = null;
+
+    public function mount(): void
+    {
+        $product = Product::find($this->productId);
+
+        if (!$product) {
+            return;
+        }
+
+        $this->minQuantity = max((int) ($product->min_order_quantity ?: 1), 1);
+        $this->quantity = max($this->quantity, $this->minQuantity);
+    }
 
     public function addToCart(CartService $cartService): void
     {
@@ -56,7 +70,7 @@ class AddToCartButton extends Component
 
     public function decrement(): void
     {
-        if ($this->quantity <= 1) {
+        if ($this->quantity <= $this->minQuantity) {
             return;
         }
 

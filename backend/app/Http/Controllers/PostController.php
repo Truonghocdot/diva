@@ -10,7 +10,8 @@ class PostController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Post::where('status', 'published')
+        $query = Post::with(['category', 'author'])
+            ->where('status', 'published')
             ->orderBy('published_at', 'desc');
 
         if ($request->has('category')) {
@@ -27,12 +28,14 @@ class PostController extends Controller
     public function show($slug)
     {
         $post = Post::where('slug', $slug)
+            ->with(['category', 'author'])
             ->where('status', 'published')
             ->firstOrFail();
 
         $relatedPosts = Post::where('category_id', $post->category_id)
             ->where('id', '!=', $post->id)
             ->where('status', 'published')
+            ->with(['category', 'author'])
             ->limit(3)
             ->get();
 

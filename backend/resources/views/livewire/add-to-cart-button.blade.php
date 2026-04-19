@@ -13,6 +13,7 @@
                 class="w-9 h-9 rounded-lg border border-outline-variant/40 text-on-surface hover:bg-surface-container-low transition-colors"
             >+</button>
         </div>
+        <p class="text-xs text-slate-500">MOQ: {{ number_format($minQuantity) }}</p>
     @endif
 
     <button

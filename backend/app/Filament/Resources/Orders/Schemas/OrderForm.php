@@ -17,9 +17,12 @@ class OrderForm
                 ->columns(2)
                 ->schema([
                     TextInput::make('order_number')->label('Mã đơn')->disabled()->dehydrated(false),
+                    TextInput::make('company_name')->label('Tên doanh nghiệp'),
                     TextInput::make('customer_name')->label('Tên khách hàng')->required(),
+                    TextInput::make('contact_position')->label('Chức vụ liên hệ'),
                     TextInput::make('customer_email')->label('Email khách hàng')->email()->required(),
                     TextInput::make('customer_phone')->label('Số điện thoại')->required(),
+                    TextInput::make('tax_code')->label('Mã số thuế'),
                     Select::make('status')
                         ->label('Trạng thái đơn')
                         ->options([

@@ -1,53 +1,63 @@
-<!-- Thanh điều hướng trên cùng -->
 @php
-    $isLoggedIn = auth()->check();
-    $user = auth()->user();
-    $wishlistCount = $isLoggedIn ? \App\Models\Wishlist::where('user_id', $user->id)->count() : 0;
+    $primaryMenuItems = $siteMenus['primary']->items ?? [
+        ['label' => 'Catalog', 'url' => '/shop'],
+        ['label' => 'Ve chung toi', 'url' => '/about'],
+        ['label' => 'Tin tuc', 'url' => '/blog'],
+        ['label' => 'Dat mua si', 'url' => '/checkout'],
+    ];
+    $brandName = $siteSettings['site_name'] ?? 'Diva Materials';
+    $brandTagline = $siteSettings['site_tagline'] ?? 'B2B Supply Hub';
+    $brandLogo = $siteSettings['logo_url'] ?? null;
+    $headerCtaLabel = $siteSettings['header_cta_label'] ?? 'Quan tri noi dung';
+    $headerCtaUrl = $siteSettings['header_cta_url'] ?? '/admin';
 @endphp
-<nav class="{{ $header_class ?? 'fixed top-0 w-full z-50 bg-[#f8faf9]/60 dark:bg-[#2d3434]/60 backdrop-blur-md bg-gradient-to-b from-[#dde4e3]/20 to-transparent' }}">
-    <div class="flex justify-between items-center px-8 py-6 max-w-screen-2xl mx-auto">
+
+<nav class="{{ $header_class ?? 'fixed top-0 z-50 w-full border-b border-white/60 bg-white/85 backdrop-blur-xl' }}">
+    <div class="mx-auto flex max-w-screen-2xl items-center justify-between px-8 py-5">
         <div class="flex items-center gap-12">
-            <a class="text-2xl font-headline italic text-[#2d3434] dark:text-[#f8faf9]" href="{{ url('/') }}">Diva</a>
-            <div class="hidden md:flex items-center gap-8">
-                <a class="{{ request()->is('shop*') ? 'text-[#53644d] dark:text-[#ecffe1] border-b border-[#53644d] pb-1' : 'text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d]' }} font-headline font-light tracking-tight transition-all duration-300"
-                    href="{{ url('/shop') }}">Cửa hàng</a>
-                 <a class="text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d] transition-colors font-headline font-light tracking-tight transition-all duration-300"
-                    href="{{ url('/shop?category=starter-kits') }}">Bộ kit</a>
-                <a class="text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d] transition-colors font-headline font-light tracking-tight transition-all duration-300"
-                    href="{{ url('/shop?category=candle-supplies') }}">Nguyên liệu</a>
-                <a class="{{ request()->is('blog*') ? 'text-[#53644d] dark:text-[#ecffe1] border-b border-[#53644d] pb-1' : 'text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d]' }} font-headline font-light tracking-tight transition-all duration-300"
-                    href="{{ url('/blog') }}">Tin tức</a>
-                <a class="{{ request()->is('about') ? 'text-[#53644d] dark:text-[#ecffe1] border-b border-[#53644d] pb-1' : 'text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d]' }} font-headline font-light tracking-tight transition-all duration-300"
-                    href="{{ url('/about') }}">Về chúng tôi</a>
+            <a class="flex items-center gap-3" href="{{ url('/') }}">
+                @if($brandLogo)
+                    <img src="{{ $brandLogo }}" alt="{{ $brandName }}" class="h-11 w-11 rounded-2xl object-cover shadow-sm">
+                @endif
+                <span class="flex flex-col">
+                    <span class="font-headline text-2xl text-slate-950">{{ $brandName }}</span>
+                    <span class="text-[10px] font-semibold uppercase tracking-[0.25em] text-primary">{{ $brandTagline }}</span>
+                </span>
+            </a>
+            <div class="hidden items-center gap-8 md:flex">
+                @foreach($primaryMenuItems as $item)
+                    @php
+                        $children = $item['children'] ?? [];
+                        $itemUrl = $item['url'] ?? '#';
+                        $isExternal = str_starts_with($itemUrl, 'http');
+                        $isActive = !$isExternal && ltrim(parse_url($itemUrl, PHP_URL_PATH) ?? '', '/') !== ''
+                            ? request()->is(ltrim(parse_url($itemUrl, PHP_URL_PATH) ?? '', '/').'*')
+                            : false;
+                    @endphp
+                    <div class="relative group">
+                        <a
+                            href="{{ $itemUrl }}"
+                            @if(!empty($item['open_in_new_tab'])) target="_blank" rel="noreferrer" @endif
+                            class="{{ $isActive ? 'text-primary' : 'text-slate-600 hover:text-primary' }} {{ !empty($item['is_highlight']) ? 'rounded-full border border-blue-200 bg-blue-50 px-4 py-2' : '' }} text-sm font-medium transition-colors"
+                        >
+                            {{ $item['label'] ?? 'Menu item' }}
+                        </a>
+
+                        @if(!empty($children))
+                            <div class="invisible absolute left-0 top-full z-20 mt-4 min-w-[220px] rounded-2xl border border-slate-200 bg-white p-3 opacity-0 shadow-xl shadow-slate-200/80 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                                @include('partials.header-menu-children', [
+                                    'items' => $children,
+                                    'level' => 0,
+                                ])
+                            </div>
+                        @endif
+                    </div>
+                @endforeach
             </div>
         </div>
-        <div class="flex items-center gap-6">
-            <!-- @if($isLoggedIn)
-                <a
-                    href="{{ url('/admin') }}"
-                    class="inline-flex items-center gap-2 text-[#53644d] dark:text-[#ecffe1] hover:opacity-80 transition-all duration-300"
-                    title="Tài khoản của bạn"
-                >
-                    <span class="material-symbols-outlined">person</span>
-                    <span class="hidden lg:inline text-xs font-medium max-w-[110px] truncate">{{ $user?->name }}</span>
-                </a>
-            @else
-                <a
-                    href="{{ url('/admin/login') }}"
-                    class="material-symbols-outlined text-[#53644d] dark:text-[#ecffe1] hover:opacity-80 transition-all duration-300 active:scale-95"
-                    title="Đăng nhập"
-                >person</a>
-            @endif -->
-
-            <a href="{{ url('/shop') }}" class="relative group" title="Yêu thích">
-                <span
-                    class="material-symbols-outlined text-[#53644d] dark:text-[#ecffe1] hover:opacity-80 transition-all duration-300 active:scale-95"
-                >favorite</span>
-                <span
-                    class="absolute -top-1 -right-1 flex h-4 min-w-4 px-1 items-center justify-center rounded-full bg-primary text-[10px] text-on-primary font-bold"
-                >
-                    {{ $wishlistCount }}
-                </span>
+        <div class="flex items-center gap-4">
+            <a href="{{ $headerCtaUrl }}" class="hidden rounded-full border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 transition hover:border-blue-200 hover:text-primary lg:inline-flex">
+                {{ $headerCtaLabel }}
             </a>
             <livewire:cart-icon />
         </div>

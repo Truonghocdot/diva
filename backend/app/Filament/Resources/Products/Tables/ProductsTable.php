@@ -15,36 +15,33 @@ class ProductsTable
     {
         return $table
             ->columns([
-                TextColumn::make('category_id')
+                TextColumn::make('category.name')
                     ->label('Danh mục')
-                    ->numeric()
+                    ->searchable()
                     ->sortable(),
+                TextColumn::make('sku')
+                    ->label('SKU')
+                    ->searchable(),
                 TextColumn::make('name')
                     ->label('Tên sản phẩm')
                     ->searchable(),
-                TextColumn::make('slug')
-                    ->label('Slug')
-                    ->searchable(),
                 TextColumn::make('price')
-                    ->label('Giá bán')
+                    ->label('Giá sỉ')
                     ->money()
                     ->sortable(),
-                TextColumn::make('sale_price')
-                    ->label('Giá khuyến mãi')
-                    ->money()
+                TextColumn::make('unit')
+                    ->label('Đơn vị')
+                    ->searchable(),
+                TextColumn::make('min_order_quantity')
+                    ->label('MOQ')
+                    ->numeric()
                     ->sortable(),
                 TextColumn::make('stock')
                     ->label('Tồn kho')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('wax_type')
-                    ->label('Loại sáp')
-                    ->searchable(),
-                TextColumn::make('burn_time')
-                    ->label('Thời gian cháy')
-                    ->searchable(),
-                TextColumn::make('weight')
-                    ->label('Khối lượng')
+                TextColumn::make('origin')
+                    ->label('Xuất xứ')
                     ->searchable(),
                 IconColumn::make('is_featured')
                     ->label('Nổi bật')

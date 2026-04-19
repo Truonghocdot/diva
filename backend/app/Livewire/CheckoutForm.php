@@ -14,11 +14,17 @@ use Livewire\Component;
 
 class CheckoutForm extends Component
 {
+    public string $companyName = '';
+
     public string $customerName = '';
+
+    public string $contactPosition = '';
 
     public string $customerEmail = '';
 
     public string $customerPhone = '';
+
+    public string $taxCode = '';
 
     public string $shippingAddressLine1 = '';
 
@@ -53,9 +59,12 @@ class CheckoutForm extends Component
     protected function rules(): array
     {
         return [
+            'companyName' => ['nullable', 'string', 'max:255'],
             'customerName' => ['required', 'string', 'max:255'],
+            'contactPosition' => ['nullable', 'string', 'max:255'],
             'customerEmail' => ['required', 'email', 'max:255'],
             'customerPhone' => ['required', 'string', 'max:30'],
+            'taxCode' => ['nullable', 'string', 'max:50'],
             'shippingAddressLine1' => ['required', 'string', 'max:255'],
             'shippingAddressLine2' => ['nullable', 'string', 'max:255'],
             'shippingCity' => ['required', 'string', 'max:120'],
@@ -172,9 +181,12 @@ class CheckoutForm extends Component
                 'user_id' => auth()->id(),
                 'cart_id' => $cart->id,
                 'order_number' => $this->generateOrderNumber(),
+                'company_name' => $validated['companyName'] ?: null,
                 'customer_name' => $validated['customerName'],
+                'contact_position' => $validated['contactPosition'] ?: null,
                 'customer_email' => $validated['customerEmail'],
                 'customer_phone' => $validated['customerPhone'],
+                'tax_code' => $validated['taxCode'] ?: null,
                 'shipping_address_line1' => $validated['shippingAddressLine1'],
                 'shipping_address_line2' => $validated['shippingAddressLine2'] ?: null,
                 'shipping_city' => $validated['shippingCity'],

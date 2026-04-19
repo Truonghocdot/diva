@@ -13,6 +13,7 @@ class OrdersTable
         return $table
             ->columns([
                 TextColumn::make('order_number')->label('Mã đơn')->searchable(),
+                TextColumn::make('company_name')->label('Doanh nghiep')->searchable(),
                 TextColumn::make('customer_name')->label('Khách hàng')->searchable(),
                 TextColumn::make('customer_email')->label('Email')->searchable(),
                 TextColumn::make('total_amount')->label('Tổng tiền')->money('VND')->sortable(),

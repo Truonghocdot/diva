@@ -1,59 +1,66 @@
-<!-- Footer -->
-<footer class="bg-[#f1f4f4] dark:bg-[#1a1e1e] w-full">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-20 max-w-screen-2xl mx-auto">
+@php
+    $brandName = $siteSettings['site_name'] ?? 'Diva Materials';
+    $footerAbout = $siteSettings['footer_about'] ?? 'Nen tang cung ung nguyen lieu va phu lieu cho nha may, workshop va thuong mai voi quy trinh bao gia nhanh, MOQ ro rang va ho tro tai lieu ky thuat.';
+    $footerCtaLabel = $siteSettings['footer_cta_label'] ?? 'Gui yeu cau mua si';
+    $footerCtaUrl = $siteSettings['footer_cta_url'] ?? '/checkout';
+    $footerBottomText = $siteSettings['footer_bottom_text'] ?? ('© 2026 ' . $brandName . '. Wholesale supply for makers.');
+    $contactEmail = $siteSettings['contact_email'] ?? 'sales@divamaterials.vn';
+    $contactPhone = $siteSettings['sales_phone'] ?? ($siteSettings['contact_phone'] ?? '+84 28 7300 8899');
+    $address = $siteSettings['address'] ?? '123 Nguyen Luong Bang, Quan 7, TP. HCM';
+    $footerCompanyHeading = $siteSettings['footer_company_heading'] ?? 'Dieu huong';
+    $footerCatalogHeading = $siteSettings['footer_catalog_heading'] ?? 'Danh muc';
+    $footerSupportHeading = $siteSettings['footer_support_heading'] ?? 'Ho tro';
+    $footerResourcesHeading = $siteSettings['footer_resources_heading'] ?? 'Tai nguyen';
+    $footerContactHeading = $siteSettings['footer_contact_heading'] ?? 'Lien he';
+    $footerCompanyMenu = $siteMenus['footer_company']->items ?? [
+        ['label' => 'Trang chu', 'url' => '/'],
+        ['label' => 'Ve chung toi', 'url' => '/about'],
+        ['label' => 'Tin tuc', 'url' => '/blog'],
+    ];
+    $footerCatalogMenu = $siteMenus['footer_catalog']->items ?? [
+        ['label' => 'Catalog nguyen lieu', 'url' => '/shop'],
+        ['label' => 'Dat mua si', 'url' => '/checkout'],
+    ];
+    $footerSupportMenu = $siteMenus['footer_support']->items ?? [];
+    $footerResourcesMenu = $siteMenus['footer_resources']->items ?? [];
+@endphp
+
+<footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto grid max-w-screen-2xl gap-12 px-12 py-20 md:grid-cols-2 xl:grid-cols-6">
         <div class="space-y-6">
-            <span class="font-headline text-lg text-[#2d3434] dark:text-[#f8faf9]">Diva</span>
-            <p
-                class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 text-xs leading-relaxed font-body uppercase tracking-[0.1em]">
-                Nơi nghệ thuật và mùi hương hòa quyện để tạo nên không gian sống bình yên.</p>
-            <div class="flex gap-4">
-                <a class="text-[#53644d] hover:opacity-80 transition-all" href="#"><span
-                        class="material-symbols-outlined">public</span></a>
-                <a class="text-[#53644d] hover:opacity-80 transition-all" href="#"><span
-                        class="material-symbols-outlined">camera</span></a>
-                <a class="text-[#53644d] hover:opacity-80 transition-all" href="#"><span
-                        class="material-symbols-outlined">mail</span></a>
+            <div>
+                <span class="font-headline text-2xl text-slate-950">{{ $brandName }}</span>
+                <p class="mt-3 text-sm leading-7 text-slate-600">{{ $footerAbout }}</p>
             </div>
+            <a href="{{ $footerCtaUrl }}" class="inline-flex rounded-full bg-primary px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">{{ $footerCtaLabel }}</a>
         </div>
         <div class="flex flex-col gap-4">
-            <span class="font-label text-xs uppercase tracking-[0.1em] text-[#53644d]">Khám Phá</span>
-            <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
-                href="{{ url('/about') }}">Về chúng tôi</a>
-            <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
-                href="{{ url('/shop?category=signature-collection') }}">Bộ sưu tập đặc trưng</a>
-            <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
-                href="{{ url('/shop?category=starter-kits') }}">Bộ kit khởi đầu</a>
-            <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
-                href="{{ url('/shop?category=candle-supplies') }}">Nguyên liệu làm nến</a>
+            <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{{ $footerCompanyHeading }}</span>
+            @include('partials.footer-menu-tree', ['items' => $footerCompanyMenu, 'level' => 0])
         </div>
         <div class="flex flex-col gap-4">
-            <span class="font-label text-xs uppercase tracking-[0.1em] text-[#53644d]">Tài Khoản</span>
-            <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
-                href="#">Đăng nhập</a>
-            <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
-                href="#">Đơn hàng</a>
-            <a class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 hover:text-[#2d3434] text-xs uppercase tracking-[0.1em] underline decoration-[#adb3b3]/30 underline-offset-4 transition-all"
-                href="#">Danh sách yêu thích</a>
+            <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{{ $footerCatalogHeading }}</span>
+            @include('partials.footer-menu-tree', ['items' => $footerCatalogMenu, 'level' => 0])
         </div>
         <div class="flex flex-col gap-4">
-            <span class="font-label text-xs uppercase tracking-[0.1em] text-[#53644d]">Liên Hệ</span>
-            <p class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 text-xs leading-relaxed uppercase tracking-[0.1em]">
-                123 Đường Sáng Tạo, Quận 1<br />TP. Hồ Chí Minh, Việt Nam</p>
-            <p class="text-[#2d3434]/50 dark:text-[#f8faf9]/50 text-xs leading-relaxed uppercase tracking-[0.1em]">
-                hello@tactilesanctuary.com</p>
+            <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{{ $footerSupportHeading }}</span>
+            @include('partials.footer-menu-tree', ['items' => $footerSupportMenu, 'level' => 0])
+        </div>
+        <div class="flex flex-col gap-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{{ $footerResourcesHeading }}</span>
+            @include('partials.footer-menu-tree', ['items' => $footerResourcesMenu, 'level' => 0])
+        </div>
+        <div class="flex flex-col gap-4">
+            <span class="text-xs font-semibold uppercase tracking-[0.2em] text-primary">{{ $footerContactHeading }}</span>
+            <p class="text-sm leading-7 text-slate-600">{{ $address }}</p>
+            <p class="text-sm text-slate-600">{{ $contactEmail }}</p>
+            <p class="text-sm text-slate-600">{{ $contactPhone }}</p>
         </div>
     </div>
-    <div
-        class="border-t border-outline-variant/10 px-12 py-8 max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-        <span class="font-body text-xs uppercase tracking-[0.1em] text-[#2d3434]/50 dark:text-[#f8faf9]/50">© 2024
-            Diva. Chế tác cho sự an yên.</span>
-        <div class="flex gap-8">
-            <img alt="PayPal" class="h-4 grayscale opacity-50"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPc8t2CO9PfrngCihp2nRCFq_SHFV4h0v0WW_KPbBpYYs8PhqGclHMH3pUWHR34lqNiTYnHN6yXDcGfzi4lhxyp-CzKmAI4LVoqFeUDvHpQG0HdZBv6gLBHpVKzJRqduh4Ep5z_YrvihXd4n5yVMCrQmYHM0Eps3y_7-NcoMiIRSvVzUiIVJPzp84HWbxyaL6cuFlQ8X2D009iUMEIV-Xo-nGt1RWXjaP-MKwDy91bXqcM2AJ7816VjhUcC7VTg3xBBeVFmbh7Uq4" />
-            <img alt="Visa" class="h-4 grayscale opacity-50"
-                src="https://lh3.googleusercontent.com/a3TtI4h972YY5hEj7C9OF7X0LjRSekk8UVeH6mBmRcaYJ7eV8JQwBXET8bGdcaKBbxasnoHFgt-032LDVVV7EsXZXUmuF6U7bTr7cYBEeKcPHuu5zY6zP7il_-rhat2lav099LC1mcK4OhuwcUQNk8qEXnXcoRRD5NkKUb1yGpdWPfyM-VMJvCPkbI9JWoDquPXU84GuUuYv2uEjnePTHQpQlmO31_mF-xbT3lA3-3N9bV5nan89cLdEmzdaz5Ho5Woij8uGuVxvQ" />
-            <img alt="Mastercard" class="h-6 grayscale opacity-50"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNcWSj5sagbwSBdzBvPoWW6F1kRm0h4loyye98UR37t6PeFVPqPQ2adohJJSaQqjDwsuIAZxw0rj6r8l0drjLusqvIabaVuY7gUH9kbMC3T3xechqyPR88DfhbwHR-1GiYhDZsivMAslPrMyTqjAEjFtiJWlAWifC7bbQKsXUGX_RgG5Z1jiQfIReb0Rc6mB2av3ouJlvLTCHy-pmca0nUXXuMfFPn2_Nj0c2utYScnwPLg3wm_KGmcHu0NaAHK7519FJZ8zQZoqg" />
+    <div class="border-t border-slate-200">
+        <div class="mx-auto flex max-w-screen-2xl flex-col items-center justify-between gap-4 px-12 py-8 text-xs uppercase tracking-[0.15em] text-slate-400 md:flex-row">
+            <span>{{ $footerBottomText }}</span>
+            <span>MOQ minh bach. Bao gia nhanh. Ho tro tai lieu ky thuat.</span>
         </div>
     </div>
 </footer>
