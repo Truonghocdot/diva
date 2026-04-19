@@ -1,0 +1,36 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Post extends Model
+{
+    protected $fillable = [
+        'category_id',
+        'author_id',
+        'title',
+        'slug',
+        'image',
+        'excerpt',
+        'content',
+        'status',
+        'published_at',
+        'meta_title',
+        'meta_description',
+    ];
+
+    protected $casts = [
+        'published_at' => 'datetime',
+    ];
+
+    public function category()
+    {
+        return $this->belongsTo(PostCategory::class, 'category_id');
+    }
+
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'author_id');
+    }
+}

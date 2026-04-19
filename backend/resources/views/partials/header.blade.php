@@ -15,6 +15,8 @@
                     href="{{ url('/shop?category=starter-kits') }}">Bộ kit</a>
                 <a class="text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d] transition-colors font-headline font-light tracking-tight transition-all duration-300"
                     href="{{ url('/shop?category=candle-supplies') }}">Nguyên liệu</a>
+                <a class="{{ request()->is('blog*') ? 'text-[#53644d] dark:text-[#ecffe1] border-b border-[#53644d] pb-1' : 'text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d]' }} font-headline font-light tracking-tight transition-all duration-300"
+                    href="{{ url('/blog') }}">Tin tức</a>
                 <a class="{{ request()->is('about') ? 'text-[#53644d] dark:text-[#ecffe1] border-b border-[#53644d] pb-1' : 'text-[#2d3434]/70 dark:text-[#f8faf9]/70 hover:text-[#53644d]' }} font-headline font-light tracking-tight transition-all duration-300"
                     href="{{ url('/about') }}">Về chúng tôi</a>
             </div>
