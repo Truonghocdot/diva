@@ -16,15 +16,59 @@ class MenuSeeder extends Seeder
                 'location' => 'primary',
                 'is_active' => true,
                 'items' => [
-                    ['label' => 'Catalog', 'url' => '/shop', 'open_in_new_tab' => false, 'is_highlight' => false, 'children' => [
-                        ['label' => 'Sap nen', 'url' => '/shop?category=soy-wax', 'open_in_new_tab' => false, 'children' => []],
-                        ['label' => 'Huong lieu', 'url' => '/shop?category=fragrance-oils', 'open_in_new_tab' => false, 'children' => [
-                            ['label' => 'Dong signature', 'url' => '/shop?category=fragrance-oils', 'open_in_new_tab' => false],
-                        ]],
-                    ]],
-                    ['label' => 'Ve chung toi', 'url' => '/about', 'open_in_new_tab' => false, 'is_highlight' => false, 'children' => []],
-                    ['label' => 'Tin tuc', 'url' => '/blog', 'open_in_new_tab' => false, 'is_highlight' => false, 'children' => []],
-                    ['label' => 'Dat mua si', 'url' => '/checkout', 'open_in_new_tab' => false, 'is_highlight' => true, 'children' => []],
+                    [
+                        'label' => 'Về chúng tôi',
+                        'url' => '/about',
+                        'open_in_new_tab' => false,
+                        'is_highlight' => false,
+                        'children' => [
+                            ['label' => 'Hồ sơ năng lực', 'url' => '/about', 'open_in_new_tab' => false, 'children' => []],
+                            ['label' => 'Năng lực cung ứng', 'url' => '/about', 'open_in_new_tab' => false, 'children' => []],
+                            ['label' => 'Bài viết & cập nhật', 'url' => '/blog', 'open_in_new_tab' => false, 'children' => []],
+                        ],
+                    ],
+                    [
+                        'label' => 'Dịch vụ B2B',
+                        'url' => '/about',
+                        'open_in_new_tab' => false,
+                        'is_highlight' => false,
+                        'children' => [
+                            ['label' => 'Gia công mùi hương', 'url' => '/about', 'open_in_new_tab' => false, 'children' => []],
+                            ['label' => 'Tư vấn công thức', 'url' => '/about', 'open_in_new_tab' => false, 'children' => []],
+                            ['label' => 'Thiết kế landing page nội dung', 'url' => '/about', 'open_in_new_tab' => false, 'children' => []],
+                        ],
+                    ],
+                    [
+                        'label' => 'Nguyên liệu',
+                        'url' => '/shop',
+                        'open_in_new_tab' => false,
+                        'is_highlight' => false,
+                        'children' => [
+                            ['label' => 'Sáp nến soy', 'url' => '/shop?category=soy-wax', 'open_in_new_tab' => false, 'children' => []],
+                            [
+                                'label' => 'Hương liệu',
+                                'url' => '/shop?category=fragrance-oils',
+                                'open_in_new_tab' => false,
+                                'children' => [
+                                    ['label' => 'Dòng signature', 'url' => '/shop?category=fragrance-oils', 'open_in_new_tab' => false],
+                                    ['label' => 'Room spray & diffuser', 'url' => '/shop?category=fragrance-oils', 'open_in_new_tab' => false],
+                                ],
+                            ],
+                            ['label' => 'Bấc và dụng cụ', 'url' => '/shop?category=wick-and-tools', 'open_in_new_tab' => false, 'children' => []],
+                            ['label' => 'Bao bì', 'url' => '/shop?category=packaging', 'open_in_new_tab' => false, 'children' => []],
+                        ],
+                    ],
+                    [
+                        'label' => 'Tài nguyên',
+                        'url' => '/blog',
+                        'open_in_new_tab' => false,
+                        'is_highlight' => false,
+                        'children' => [
+                            ['label' => 'Kiến thức nguyên liệu', 'url' => '/blog', 'open_in_new_tab' => false, 'children' => []],
+                            ['label' => 'Hướng dẫn mua sỉ', 'url' => '/checkout', 'open_in_new_tab' => false, 'children' => []],
+                        ],
+                    ],
+                    ['label' => 'Gửi yêu cầu', 'url' => '/checkout', 'open_in_new_tab' => false, 'is_highlight' => true, 'children' => []],
                 ],
             ],
         );
@@ -36,9 +80,12 @@ class MenuSeeder extends Seeder
                 'location' => 'footer_company',
                 'is_active' => true,
                 'items' => [
-                    ['label' => 'Trang chu', 'url' => '/', 'open_in_new_tab' => false],
-                    ['label' => 'Ve chung toi', 'url' => '/about', 'open_in_new_tab' => false],
-                    ['label' => 'Tin tuc', 'url' => '/blog', 'open_in_new_tab' => false],
+                    ['label' => 'Trang chủ', 'url' => '/', 'open_in_new_tab' => false],
+                    ['label' => 'Về chúng tôi', 'url' => '/about', 'open_in_new_tab' => false, 'children' => [
+                        ['label' => 'Hồ sơ năng lực', 'url' => '/about', 'open_in_new_tab' => false],
+                        ['label' => 'Đội ngũ & quy trình', 'url' => '/about', 'open_in_new_tab' => false],
+                    ]],
+                    ['label' => 'Bài viết', 'url' => '/blog', 'open_in_new_tab' => false],
                 ],
             ],
         );
@@ -50,10 +97,14 @@ class MenuSeeder extends Seeder
                 'location' => 'footer_catalog',
                 'is_active' => true,
                 'items' => [
-                    ['label' => 'Catalog nguyen lieu', 'url' => '/shop', 'open_in_new_tab' => false],
-                    ['label' => 'Sap nen', 'url' => '/shop?category=soy-wax', 'open_in_new_tab' => false],
-                    ['label' => 'Huong lieu', 'url' => '/shop?category=fragrance-oils', 'open_in_new_tab' => false],
-                    ['label' => 'Bao bi', 'url' => '/shop?category=packaging', 'open_in_new_tab' => false],
+                    ['label' => 'Catalog nguyên liệu', 'url' => '/shop', 'open_in_new_tab' => false],
+                    ['label' => 'Sáp nến soy', 'url' => '/shop?category=soy-wax', 'open_in_new_tab' => false],
+                    ['label' => 'Hương liệu', 'url' => '/shop?category=fragrance-oils', 'open_in_new_tab' => false, 'children' => [
+                        ['label' => 'Dòng signature', 'url' => '/shop?category=fragrance-oils', 'open_in_new_tab' => false],
+                        ['label' => 'Diffuser & room spray', 'url' => '/shop?category=fragrance-oils', 'open_in_new_tab' => false],
+                    ]],
+                    ['label' => 'Bấc và dụng cụ', 'url' => '/shop?category=wick-and-tools', 'open_in_new_tab' => false],
+                    ['label' => 'Bao bì', 'url' => '/shop?category=packaging', 'open_in_new_tab' => false],
                 ],
             ],
         );
@@ -65,9 +116,9 @@ class MenuSeeder extends Seeder
                 'location' => 'footer_support',
                 'is_active' => true,
                 'items' => [
-                    ['label' => 'Chinh sach giao hang', 'url' => '/about', 'open_in_new_tab' => false],
-                    ['label' => 'Bao gia va cong no', 'url' => '/checkout', 'open_in_new_tab' => false],
-                    ['label' => 'Lien he sales', 'url' => '/checkout', 'open_in_new_tab' => false],
+                    ['label' => 'Hướng dẫn đặt mua sỉ', 'url' => '/checkout', 'open_in_new_tab' => false],
+                    ['label' => 'Báo giá và công nợ', 'url' => '/checkout', 'open_in_new_tab' => false],
+                    ['label' => 'Liên hệ kinh doanh', 'url' => '/checkout', 'open_in_new_tab' => false],
                 ],
             ],
         );
@@ -79,9 +130,9 @@ class MenuSeeder extends Seeder
                 'location' => 'footer_resources',
                 'is_active' => true,
                 'items' => [
-                    ['label' => 'Blog nganh', 'url' => '/blog', 'open_in_new_tab' => false],
-                    ['label' => 'Huong dan dat mua si', 'url' => '/checkout', 'open_in_new_tab' => false],
-                    ['label' => 'Trang gioi thieu', 'url' => '/about', 'open_in_new_tab' => false],
+                    ['label' => 'Kiến thức nguyên liệu', 'url' => '/blog', 'open_in_new_tab' => false],
+                    ['label' => 'Kinh nghiệm vận hành B2B', 'url' => '/blog', 'open_in_new_tab' => false],
+                    ['label' => 'Trang giới thiệu', 'url' => '/about', 'open_in_new_tab' => false],
                 ],
             ],
         );

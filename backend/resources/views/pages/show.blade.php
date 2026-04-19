@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', $page->meta_title ?: ($page->title . ' | Diva Materials'))
-@section('meta_description', $page->meta_description ?: ($page->summary ?: 'Nha cung cap nguyen lieu, phu lieu va giai phap mua si cho doanh nghiep san xuat.'))
+@section('meta_description', $page->meta_description ?: ($page->summary ?: 'Nhà cung cấp nguyên liệu, phụ liệu và giải pháp mua sỉ cho doanh nghiệp sản xuất.'))
 @section('canonical_url', $page->is_homepage ? url('/') : url('/' . $page->slug))
 @if(($isPreview ?? false) === true)
     @section('meta_robots', 'noindex,nofollow')
@@ -15,7 +15,7 @@
     <main class="overflow-hidden">
         @if(($isPreview ?? false) === true)
             <div class="border-b border-amber-200 bg-amber-50 px-8 py-3 text-sm text-amber-900">
-                Dang xem ban preview cua page draft. Link nay co thoi han va khong duoc index.
+                Bạn đang xem bản preview của trang nháp. Liên kết này có thời hạn và sẽ không được lập chỉ mục.
             </div>
         @endif
         @forelse($page->content ?? [] as $block)
@@ -54,10 +54,10 @@
             @endswitch
         @empty
             <section class="px-8 pb-24 pt-40">
-                <div class="mx-auto max-w-4xl rounded-[2rem] border border-slate-200 bg-white p-10 shadow-xl shadow-slate-200/70">
-                    <h1 class="font-headline text-5xl text-slate-950">{{ $page->title }}</h1>
+                <div class="panel-soft mx-auto max-w-4xl rounded-[2rem] p-10">
+                    <h1 class="font-headline text-6xl leading-none text-primary">{{ $page->title }}</h1>
                     @if($page->summary)
-                        <p class="mt-6 text-lg leading-8 text-slate-600">{{ $page->summary }}</p>
+                        <p class="mt-6 text-lg leading-8 text-on-surface-variant">{{ $page->summary }}</p>
                     @endif
                 </div>
             </section>

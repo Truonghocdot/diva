@@ -13,34 +13,34 @@ class PageRevisionsRelationManager extends RelationManager
 {
     protected static string $relationship = 'revisions';
 
-    protected static ?string $title = 'Lich su revision';
+    protected static ?string $title = 'Lịch sử revision';
 
     public function table(Table $table): Table
     {
         return $table
             ->columns([
                 TextColumn::make('created_at')
-                    ->label('Thoi diem')
+                    ->label('Thời điểm')
                     ->dateTime()
                     ->sortable(),
                 TextColumn::make('user.name')
-                    ->label('Nguoi sua')
-                    ->default('System')
+                    ->label('Người sửa')
+                    ->default('Hệ thống')
                     ->searchable(),
                 IconColumn::make('is_published')
-                    ->label('Published')
+                    ->label('Đã xuất bản')
                     ->boolean(),
                 IconColumn::make('is_homepage')
-                    ->label('Trang chu')
+                    ->label('Trang chủ')
                     ->boolean(),
                 TextColumn::make('title')
-                    ->label('Tieu de')
+                    ->label('Tiêu đề')
                     ->limit(40),
             ])
             ->defaultSort('created_at', 'desc')
             ->recordActions([
                 Action::make('restore')
-                    ->label('Khoi phuc')
+                    ->label('Khôi phục')
                     ->requiresConfirmation()
                     ->action(function (PageRevision $record): void {
                         $page = $this->getOwnerRecord();

@@ -53,9 +53,9 @@ class PageForm
                                     ->required()
                                     ->columnSpanFull(),
                                 Toggle::make('is_published')
-                                    ->label('Published')
+                                    ->label('Đã xuất bản')
                                     ->default(false)
-                                    ->helperText('Tat de giu trang o che do draft va xem bang preview an toan.')
+                                    ->helperText('Tắt để giữ trang ở chế độ nháp và xem bằng preview an toàn.')
                                     ->columnSpanFull(),
                                 Toggle::make('is_homepage')
                                     ->label('Đặt làm trang chủ')
@@ -63,14 +63,14 @@ class PageForm
                             ]),
                     ]),
 
-                Section::make('Page Builder')
+                Section::make('Trình dựng trang')
                     ->description('Xây dựng landing page, trang giới thiệu, trang chính sách hoặc nội dung bán sỉ bằng các khối linh hoạt.')
                     ->schema([
                         Builder::make('content')
                             ->label('Khối nội dung')
                             ->blocks([
                                 Block::make('hero')
-                                    ->label('Hero')
+                                    ->label('Khối mở đầu')
                                     ->schema([
                                         TextInput::make('eyebrow')->label('Nhãn nhỏ')->columnSpanFull(),
                                         TextInput::make('title')->label('Tiêu đề')->required()->columnSpanFull(),
@@ -85,7 +85,7 @@ class PageForm
                                         TextInput::make('image')->label('Ảnh nền / ảnh minh họa')->columnSpanFull(),
                                     ]),
                                 Block::make('rich_text')
-                                    ->label('Rich Text')
+                                    ->label('Nội dung văn bản')
                                     ->schema([
                                         TextInput::make('heading')->label('Tiêu đề')->columnSpanFull(),
                                         RichEditor::make('content')
@@ -152,7 +152,7 @@ class PageForm
                                             ->columnSpanFull(),
                                     ]),
                                 Block::make('call_to_action')
-                                    ->label('Call To Action')
+                                    ->label('Khối kêu gọi hành động')
                                     ->schema([
                                         TextInput::make('heading')->label('Tiêu đề')->required()->columnSpanFull(),
                                         Textarea::make('content')->label('Mô tả')->rows(4)->columnSpanFull(),
@@ -171,10 +171,10 @@ class PageForm
                     ->collapsed()
                     ->schema([
                         TextInput::make('meta_title')
-                            ->label('SEO Title')
+                            ->label('Tiêu đề SEO')
                             ->columnSpanFull(),
                         Textarea::make('meta_description')
-                            ->label('SEO Description')
+                            ->label('Mô tả SEO')
                             ->rows(3)
                             ->columnSpanFull(),
                     ]),

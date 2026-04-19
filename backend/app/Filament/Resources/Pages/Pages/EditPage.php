@@ -16,7 +16,7 @@ class EditPage extends EditRecord
     {
         return [
             Action::make('preview')
-                ->label('Preview')
+                ->label('Xem trước')
                 ->icon('heroicon-o-eye')
                 ->url(fn (): string => URL::temporarySignedRoute('pages.preview', now()->addMinutes(30), [
                     'page' => $this->getRecord(),

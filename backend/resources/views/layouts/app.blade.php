@@ -4,12 +4,12 @@
 <head>
     @php
     $brandName = $siteSettings['site_name'] ?? 'Diva Materials';
-    $brandTagline = $siteSettings['site_tagline'] ?? 'B2B Supply Hub';
-    $defaultTitle = ($siteSettings['site_title'] ?? null) ?: ($brandName . ' | Nguyen Lieu Va Phu Lieu Mua Si');
-    $defaultDescription = 'Nha cung cap nguyen lieu, huong lieu, sap, bao bi va phu lieu cho doanh nghiep san xuat, workshop va thuong mai.';
+    $brandTagline = $siteSettings['site_tagline'] ?? 'Nền tảng nguyên liệu B2B';
+    $defaultTitle = ($siteSettings['site_title'] ?? null) ?: ($brandName . ' | Nguyên liệu và phụ liệu mua sỉ');
+    $defaultDescription = 'Nhà cung cấp nguyên liệu, hương liệu, sáp, bao bì và phụ liệu cho doanh nghiệp sản xuất, workshop và thương mại.';
     $seoTitle = trim($__env->yieldContent('title', $defaultTitle));
     $seoDescription = trim($__env->yieldContent('meta_description', $defaultDescription));
-    $seoKeywords = trim($__env->yieldContent('meta_keywords', 'nguyen lieu, phu lieu, sap, huong lieu, bao bi, mua si, b2b, diva materials'));
+    $seoKeywords = trim($__env->yieldContent('meta_keywords', 'nguyên liệu, phụ liệu, sáp, hương liệu, bao bì, mua sỉ, b2b, diva materials'));
     $seoCanonical = trim($__env->yieldContent('canonical_url', request()->fullUrl()));
     $seoRobots = trim($__env->yieldContent('meta_robots', 'index,follow,max-image-preview:large'));
     $ogType = trim($__env->yieldContent('og_type', 'website'));
@@ -39,7 +39,7 @@
     <meta name="twitter:title" content="{{ $seoTitle }}" />
     <meta name="twitter:description" content="{{ $seoDescription }}" />
     <meta name="twitter:image" content="{{ $ogImage }}" />
-    <meta name="theme-color" content="#2563eb" />
+    <meta name="theme-color" content="#213868" />
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}" />
@@ -85,7 +85,7 @@
     @endif
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries,line-clamp"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,300;0,400;0,700;1,300&amp;family=Manrope:wght@300;400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;family=Cormorant+Garamond:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
 
     <script id="tailwind-config">
@@ -94,81 +94,128 @@
             theme: {
                 extend: {
                     colors: {
-                        "surface-tint": "#2563eb",
-                        "inverse-on-surface": "#94a3b8",
+                        "surface-tint": "#1a7efb",
+                        "inverse-on-surface": "#d7e4f6",
                         "on-error-container": "#7f1d1d",
-                        "tertiary-fixed": "#eff6ff",
+                        "tertiary-fixed": "#eef6ff",
                         "surface-container-lowest": "#ffffff",
-                        "background": "#f5f9ff",
+                        "background": "#f8fbff",
                         "error-container": "#fee2e2",
-                        "primary-fixed-dim": "#bfdbfe",
-                        "on-primary-fixed": "#172554",
-                        "outline-variant": "#cbd5e1",
-                        "tertiary-container": "#eff6ff",
-                        "on-primary-container": "#1d4ed8",
-                        "surface-container-low": "#f8fbff",
-                        "inverse-surface": "#0f172a",
-                        "on-background": "#0f172a",
-                        "secondary-fixed": "#dbeafe",
-                        "tertiary": "#1e40af",
-                        "on-surface-variant": "#475569",
-                        "on-tertiary-fixed": "#1e3a8a",
-                        "surface-dim": "#e2e8f0",
-                        "surface-container-highest": "#eaf2ff",
-                        "outline": "#94a3b8",
-                        "inverse-primary": "#bfdbfe",
-                        "surface-variant": "#eff6ff",
-                        "on-secondary-container": "#1e3a8a",
-                        "secondary-container": "#dbeafe",
+                        "primary-fixed-dim": "#d8e6f7",
+                        "on-primary-fixed": "#213868",
+                        "outline-variant": "#d6e2f1",
+                        "tertiary-container": "#eef6ff",
+                        "on-primary-container": "#213868",
+                        "surface-container-low": "#fcfdff",
+                        "inverse-surface": "#13213f",
+                        "on-background": "#1a2d53",
+                        "secondary-fixed": "#dfeefe",
+                        "tertiary": "#6f8fb6",
+                        "on-surface-variant": "#5a6f92",
+                        "on-tertiary-fixed": "#213868",
+                        "surface-dim": "#dae5f2",
+                        "surface-container-highest": "#dfeafa",
+                        "outline": "#9cb0c8",
+                        "inverse-primary": "#bfd7f8",
+                        "surface-variant": "#eef5fc",
+                        "on-secondary-container": "#213868",
+                        "secondary-container": "#e7f1ff",
                         "on-error": "#ffffff",
-                        "on-secondary-fixed": "#1e3a8a",
-                        "on-tertiary-container": "#1e40af",
-                        "on-tertiary-fixed-variant": "#1d4ed8",
-                        "secondary": "#3b82f6",
+                        "on-secondary-fixed": "#213868",
+                        "on-tertiary-container": "#213868",
+                        "on-tertiary-fixed-variant": "#355b91",
+                        "secondary": "#1a7efb",
                         "surface": "#ffffff",
                         "error": "#dc2626",
-                        "on-primary-fixed-variant": "#1d4ed8",
-                        "surface-container": "#eff6ff",
-                        "on-tertiary": "#eff6ff",
-                        "tertiary-dim": "#1d4ed8",
-                        "on-surface": "#0f172a",
-                        "primary-fixed": "#dbeafe",
+                        "on-primary-fixed-variant": "#355b91",
+                        "surface-container": "#f0f7fe",
+                        "on-tertiary": "#f8fbff",
+                        "tertiary-dim": "#4a74a8",
+                        "on-surface": "#1a2d53",
+                        "primary-fixed": "#edf4fb",
                         "error-dim": "#b91c1c",
                         "surface-bright": "#ffffff",
-                        "surface-container-high": "#f1f7ff",
+                        "surface-container-high": "#e7f0fb",
                         "on-primary": "#ffffff",
-                        "secondary-fixed-dim": "#bfdbfe",
-                        "primary-dim": "#1d4ed8",
-                        "primary": "#2563eb",
-                        "on-secondary-fixed-variant": "#1d4ed8",
-                        "tertiary-fixed-dim": "#dbeafe",
-                        "secondary-dim": "#2563eb",
+                        "secondary-fixed-dim": "#cae2ff",
+                        "primary-dim": "#2f4c81",
+                        "primary": "#213868",
+                        "on-secondary-fixed-variant": "#355b91",
+                        "tertiary-fixed-dim": "#d9e6f8",
+                        "secondary-dim": "#0f72e9",
                         "on-secondary": "#ffffff",
-                        "primary-container": "#dbeafe"
+                        "primary-container": "#edf4fb"
                     },
                     fontFamily: {
-                        "headline": ["Noto Serif"],
-                        "body": ["Manrope"],
-                        "label": ["Manrope"]
+                        "headline": ["Cormorant Garamond"],
+                        "body": ["Be Vietnam Pro"],
+                        "label": ["Be Vietnam Pro"]
                     },
                     borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
                         "full": "9999px"
                     },
+                    boxShadow: {
+                        "panel": "0 24px 60px rgba(26, 45, 83, 0.10)",
+                        "soft": "0 18px 40px rgba(26, 45, 83, 0.08)"
+                    }
                 },
             },
         }
     </script>
     <style>
+        :root {
+            color-scheme: light;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
         }
 
         .glass-nav {
-            background-color: rgba(255, 255, 255, 0.84);
-            backdrop-filter: blur(22px);
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(18px);
+        }
+
+        body {
+            background:
+                radial-gradient(circle at top right, rgba(26, 126, 251, 0.10), transparent 28%),
+                radial-gradient(circle at left center, rgba(33, 56, 104, 0.08), transparent 22%),
+                #f8fbff;
+        }
+
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(156, 176, 200, 0.12) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(156, 176, 200, 0.12) 1px, transparent 1px);
+            background-size: 42px 42px;
+        }
+
+        .panel-soft {
+            border: 1px solid rgba(214, 226, 241, 0.95);
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 50px rgba(26, 45, 83, 0.08);
+        }
+
+        .panel-tint {
+            border: 1px solid rgba(214, 226, 241, 0.95);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(240, 247, 254, 0.96) 100%);
+            box-shadow: 0 18px 40px rgba(26, 45, 83, 0.08);
+        }
+
+        .section-shell {
+            position: relative;
+        }
+
+        .section-shell::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 2rem;
+            border: 1px solid rgba(214, 226, 241, 0.8);
+            pointer-events: none;
         }
     </style>
     @php

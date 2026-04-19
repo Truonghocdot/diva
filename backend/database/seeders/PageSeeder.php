@@ -13,21 +13,21 @@ class PageSeeder extends Seeder
             ['slug' => 'home'],
             [
                 'title' => 'Diva Materials',
-                'summary' => 'Nen tang cung ung nguyen lieu va phu lieu mua si cho doanh nghiep san xuat.',
+                'summary' => 'Nền tảng cung ứng nguyên liệu và phụ liệu mua sỉ cho doanh nghiệp sản xuất.',
                 'is_published' => true,
                 'is_homepage' => true,
-                'meta_title' => 'Diva Materials | Wholesale raw materials for makers',
-                'meta_description' => 'Cung cap sap, huong lieu, bao bi, bac va dung cu cho nha may, workshop va doi mua hang B2B.',
+                'meta_title' => 'Diva Materials | Nguyên liệu và giải pháp B2B cho thương hiệu mùi hương',
+                'meta_description' => 'Cung cấp sáp, hương liệu, bao bì, bấc và dụng cụ cho nhà máy, workshop và đội mua hàng B2B.',
                 'content' => [
                     [
                         'type' => 'hero',
                         'data' => [
-                            'eyebrow' => 'Wholesale supply for makers',
-                            'title' => 'Nguon cung nguyen lieu on dinh cho san xuat va thuong mai',
-                            'content' => 'Diva Materials giup doi mua hang va workshop dat nguyen lieu nhanh hon voi catalog ro rang, MOQ minh bach va trang noi dung co the quan tri linh hoat tu admin.',
+                            'eyebrow' => 'Wholesale materials & scent solutions',
+                            'title' => 'Hệ sinh thái nguyên liệu dành cho thương hiệu, workshop và đội mua hàng',
+                            'content' => 'Diva Materials giúp doanh nghiệp tra cứu catalog nhanh hơn với bố cục sáng, thông tin mua sỉ rõ ràng và hệ CMS cho phép chỉnh sửa từng page như WordPress.',
                             'primary_button_label' => 'Xem catalog',
                             'primary_button_url' => '/shop',
-                            'secondary_button_label' => 'Dat mua si',
+                            'secondary_button_label' => 'Gửi yêu cầu',
                             'secondary_button_url' => '/checkout',
                             'image' => 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=1400&auto=format&fit=crop',
                         ],
@@ -35,39 +35,39 @@ class PageSeeder extends Seeder
                     [
                         'type' => 'stats',
                         'data' => [
-                            'heading' => 'Nang luc van hanh huong toi mua si',
+                            'heading' => 'Năng lực vận hành hướng tới mua sỉ',
                             'items' => [
-                                ['value' => '100+', 'label' => 'SKU vat tu', 'description' => 'Tu sap, huong lieu den bao bi va dung cu san xuat.'],
-                                ['value' => '24h', 'label' => 'Phan hoi bao gia', 'description' => 'Xu ly nhanh cho don mau va don lap ke hoach san xuat.'],
-                                ['value' => 'MOQ linh hoat', 'label' => 'Dat theo nhu cau', 'description' => 'Ho tro tu workshop nho den don tai cung ung dinh ky.'],
-                                ['value' => 'CMS noi dung', 'label' => 'Quan tri landing page', 'description' => 'Tu chu sua trang gioi thieu, landing page, chinh sach va CTA.'],
+                                ['value' => '120+', 'label' => 'Mã vật tư', 'description' => 'Từ sáp, hương liệu, bao bì đến bấc và dụng cụ sản xuất.'],
+                                ['value' => '24h', 'label' => 'Phản hồi báo giá', 'description' => 'Phù hợp cho đội mua hàng cần chốt mẫu và kế hoạch nhập lô.'],
+                                ['value' => 'MOQ rõ', 'label' => 'Dễ lập đơn', 'description' => 'Quy cách, đơn vị tính và tồn kho tham chiếu hiển thị trực tiếp trên web.'],
+                                ['value' => 'CMS thật', 'label' => 'Quản trị nội dung', 'description' => 'Page builder, preview, draft và revision history nằm ngay trong admin.'],
                             ],
                         ],
                     ],
                     [
                         'type' => 'feature_cards',
                         'data' => [
-                            'heading' => 'Toi uu cho doanh nghiep mua si',
-                            'intro' => 'Khong chi ban hang, giao dien moi tap trung vao trinh bay quy cach, tai lieu ky thuat va luong thong tin can cho doi mua hang.',
+                            'heading' => 'Thiết kế lại để phục vụ doanh nghiệp mua sỉ',
+                            'intro' => 'Không còn là storefront bán lẻ. Phiên bản mới tập trung vào nhịp nội dung rõ ràng, màu sắc trắng xanh và khả năng quản trị sâu giống một CMS thực thụ.',
                             'items' => [
-                                ['title' => 'Thong tin mua si ro rang', 'content' => 'San pham hien gia tham chieu, don vi tinh, MOQ, quy cach dong goi, xuat xu va lead time ngay tren trang chi tiet.'],
-                                ['title' => 'Dat hang theo doanh nghiep', 'content' => 'Checkout duoc chuyen thanh luong dat mua si voi ten cong ty, ma so thue, dau moi lien he va ghi chu don hang.'],
-                                ['title' => 'Noi dung quan tri nhu landing page', 'content' => 'Filament duoc nang cap bang page builder block-based de sua trang chu, gioi thieu va trang noi dung khac nhanh nhu WordPress page.'],
+                                ['title' => 'Thông tin mua sỉ có cấu trúc', 'content' => 'Trang sản phẩm hiển thị giá tham chiếu, MOQ, đơn vị tính, quy cách đóng gói, lead time và xuất xứ một cách dễ quét.'],
+                                ['title' => 'Header, footer và menu nhiều cấp', 'content' => 'Menu builder hỗ trợ nhiều tầng hơn, footer tách theo từng cột để đội nội dung chủ động cập nhật từng nhóm liên kết.'],
+                                ['title' => 'CMS linh hoạt như WordPress', 'content' => 'Đội vận hành có thể chỉnh sửa từng page, xem trước bản nháp, theo dõi revision và giữ chất lượng nội dung đồng bộ toàn site.'],
                             ],
                         ],
                     ],
                     [
                         'type' => 'category_grid',
                         'data' => [
-                            'heading' => 'Danh muc nguyen lieu chinh',
-                            'intro' => 'Bat dau tu nhom vat tu ma doi mua hang hay lap lai nhat: sap, huong lieu, bac, dung cu va bao bi.',
+                            'heading' => 'Danh mục nguyên liệu chính',
+                            'intro' => 'Bắt đầu từ các nhóm mà doanh nghiệp mua hàng truy cập nhiều nhất: sáp nến, hương liệu, bấc, dụng cụ và bao bì.',
                         ],
                     ],
                     [
                         'type' => 'product_showcase',
                         'data' => [
-                            'heading' => 'San pham b2b noi bat',
-                            'intro' => 'Mau du lieu da duoc doi tu retail candle sang nguyen lieu va phu lieu de phu hop voi mo hinh thuong mai mua si.',
+                            'heading' => 'Sản phẩm B2B nổi bật',
+                            'intro' => 'Dữ liệu mẫu đã được chuyển sang ngôn ngữ nguyên liệu và phụ liệu, phù hợp với mô hình thương mại mua sỉ.',
                             'source' => 'featured',
                             'limit' => 6,
                         ],
@@ -75,9 +75,9 @@ class PageSeeder extends Seeder
                     [
                         'type' => 'call_to_action',
                         'data' => [
-                            'heading' => 'Can bang gia theo quy cach rieng?',
-                            'content' => 'Gui don mua si de doi ngu Diva Materials kiem tra ton kho, quy cach dong goi va de xuat gia cho ke hoach san xuat cua ban.',
-                            'button_label' => 'Gui yeu cau ngay',
+                            'heading' => 'Cần báo giá theo quy cách riêng?',
+                            'content' => 'Gửi đơn mua sỉ để đội ngũ Diva Materials kiểm tra tồn kho, quy cách đóng gói và đề xuất giá cho kế hoạch sản xuất của bạn.',
+                            'button_label' => 'Gửi yêu cầu ngay',
                             'button_url' => '/checkout',
                         ],
                     ],
@@ -88,22 +88,22 @@ class PageSeeder extends Seeder
         Page::updateOrCreate(
             ['slug' => 'about'],
             [
-                'title' => 'Ve chung toi',
-                'summary' => 'Diva Materials chuyen cung ung nguyen lieu va phu lieu cho he sinh thai nha san xuat quy mo vua va nho.',
+                'title' => 'Về chúng tôi',
+                'summary' => 'Diva Materials chuyên cung ứng nguyên liệu và phụ liệu cho hệ sinh thái nhà sản xuất quy mô vừa và nhỏ.',
                 'is_published' => true,
                 'is_homepage' => false,
-                'meta_title' => 'Ve chung toi | Diva Materials',
-                'meta_description' => 'Tim hieu cach Diva Materials xay dung nen tang cung ung B2B linh hoat cho workshop va doanh nghiep san xuat.',
+                'meta_title' => 'Về chúng tôi | Diva Materials',
+                'meta_description' => 'Tìm hiểu cách Diva Materials xây dựng nền tảng cung ứng B2B linh hoạt cho workshop và doanh nghiệp sản xuất.',
                 'content' => [
                     [
                         'type' => 'hero',
                         'data' => [
                             'eyebrow' => 'About Diva Materials',
-                            'title' => 'Tu showroom cam hung den he thong cung ung B2B',
-                            'content' => 'Du an duoc chuyen doi de phuc vu doanh nghiep mua si: giao dien sach hon, thong tin ky thuat day du hon va admin quan tri noi dung linh hoat hon.',
+                            'title' => 'Từ cảm hứng mùi hương đến hệ thống cung ứng B2B hoàn chỉnh',
+                            'content' => 'Dự án được tái cấu trúc để phục vụ đội mua hàng doanh nghiệp: giao diện sạch hơn, dữ liệu kỹ thuật rõ hơn và quyền quản trị nội dung linh hoạt hơn.',
                             'primary_button_label' => 'Xem catalog',
                             'primary_button_url' => '/shop',
-                            'secondary_button_label' => 'Doc tin tuc',
+                            'secondary_button_label' => 'Đọc bài viết',
                             'secondary_button_url' => '/blog',
                             'image' => 'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1400&auto=format&fit=crop',
                         ],
@@ -111,19 +111,19 @@ class PageSeeder extends Seeder
                     [
                         'type' => 'rich_text',
                         'data' => [
-                            'heading' => 'Mo hinh van hanh',
-                            'content' => '<p>Diva Materials huong toi vai tro mot <strong>B2B supply hub</strong> cho workshop, nha may nho va doi thuong mai. Moi trang san pham can co du lieu mua si ro rang: gia tham chieu, don vi, MOQ, lead time, quy cach va thong tin xuat xu.</p><p>Song song voi do, bo phan kinh doanh can mot he thong de sua cac trang gioi thieu, landing page va CTA nhanh ma khong can chinh code. Vi vay, admin Filament duoc bo sung page builder theo block de xu ly tinh huong nay.</p>',
+                            'heading' => 'Mô hình vận hành',
+                            'content' => '<p>Diva Materials hướng tới vai trò một <strong>B2B supply hub</strong> cho workshop, nhà máy nhỏ và đội thương mại. Mỗi trang sản phẩm đều ưu tiên dữ liệu quyết định mua hàng như giá tham chiếu, đơn vị, MOQ, lead time, quy cách và thông tin xuất xứ.</p><p>Song song với đó, bộ phận kinh doanh và marketing cần một hệ thống để sửa các trang giới thiệu, landing page và CTA nhanh mà không phụ thuộc đội kỹ thuật. Vì vậy, phần admin được mở rộng với page builder theo block, preview an toàn cho bản nháp và lịch sử chỉnh sửa đầy đủ.</p>',
                         ],
                     ],
                     [
                         'type' => 'feature_cards',
                         'data' => [
-                            'heading' => 'Nhung gi chung toi uu tien',
-                            'intro' => 'Ba tru cot cua phien ban moi la cung ung, du lieu mua si va tu chu noi dung.',
+                            'heading' => 'Những gì chúng tôi ưu tiên',
+                            'intro' => 'Ba trụ cột của phiên bản mới là cung ứng, dữ liệu mua sỉ và tự chủ nội dung.',
                             'items' => [
-                                ['title' => 'Thong tin co cau hoa', 'content' => 'Du lieu san pham duoc bo sung SKU, don vi, MOQ, quy cach dong goi, xuat xu va lead time.'],
-                                ['title' => 'Trinh bay phu hop mua hang', 'content' => 'Storefront duoc doi sang gam trang xanh duong de mang cam giac sach, ky thuat va tin cay hon cho B2B.'],
-                                ['title' => 'Page builder trong admin', 'content' => 'Noi dung landing page duoc quan tri theo block, giup doi content van hanh nhanh nhu WordPress page.'],
+                                ['title' => 'Thông tin có cấu trúc', 'content' => 'Dữ liệu sản phẩm được bổ sung SKU, đơn vị, MOQ, quy cách đóng gói, xuất xứ và lead time.'],
+                                ['title' => 'Ngôn ngữ giao diện doanh nghiệp', 'content' => 'Storefront được tái thiết kế với gam trắng xanh, khoảng thở lớn và bố cục gợi tinh thần catalogue của Catchers.'],
+                                ['title' => 'CMS mạnh cho đội nội dung', 'content' => 'Header, footer, page builder, preview và revision giúp đội vận hành chủ động triển khai nội dung như một hệ CMS thực thụ.'],
                             ],
                         ],
                     ],

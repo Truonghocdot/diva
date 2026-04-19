@@ -19,10 +19,10 @@ class StorefrontPagesTest extends TestCase
     {
         $this->seed(DatabaseSeeder::class);
 
-        $this->get('/')->assertOk()->assertSee('Diva Materials')->assertSee('Catalog')->assertSee('Quan tri noi dung');
-        $this->get('/about')->assertOk()->assertSee('Ve chung toi');
-        $this->get('/shop')->assertOk()->assertSee('Wholesale catalog');
-        $this->get('/checkout')->assertOk()->assertSee('Dat mua si');
+        $this->get('/')->assertOk()->assertSee('Diva Materials')->assertSee('Nguyên liệu')->assertSee('Quản trị nội dung');
+        $this->get('/about')->assertOk()->assertSee('Về chúng tôi');
+        $this->get('/shop')->assertOk()->assertSee('Catalog mua sỉ');
+        $this->get('/checkout')->assertOk()->assertSee('Đặt mua sỉ');
     }
 
     public function test_cart_service_rejects_quantities_below_moq(): void
@@ -54,7 +54,7 @@ class StorefrontPagesTest extends TestCase
 
         $this->get($previewUrl)
             ->assertOk()
-            ->assertSee('Dang xem ban preview cua page draft');
+            ->assertSee('Bạn đang xem bản preview của trang nháp');
     }
 
     public function test_page_saves_revision_history(): void

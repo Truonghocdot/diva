@@ -22,9 +22,9 @@ class PagesTable
                     ->label('Đường dẫn')
                     ->searchable(),
                 TextColumn::make('is_published')
-                    ->label('Trang thai')
+                    ->label('Trạng thái')
                     ->badge()
-                    ->formatStateUsing(fn (bool $state): string => $state ? 'Published' : 'Draft')
+                    ->formatStateUsing(fn (bool $state): string => $state ? 'Đã xuất bản' : 'Bản nháp')
                     ->color(fn (bool $state): string => $state ? 'success' : 'gray'),
                 IconColumn::make('is_homepage')
                     ->label('Trang chủ')

@@ -1,4 +1,4 @@
-<a href="{{ url('/checkout') }}" class="relative flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white shadow-sm transition hover:border-blue-200 hover:text-primary">
+<a href="{{ url('/checkout') }}" class="relative flex h-12 w-12 items-center justify-center rounded-full border border-outline-variant bg-white shadow-sm transition hover:border-secondary hover:text-primary">
     <span class="material-symbols-outlined text-slate-700">
         shopping_bag
     </span>
