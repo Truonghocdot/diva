@@ -16,19 +16,21 @@ class UserForm
             Section::make('Thông tin người dùng')
                 ->columns(2)
                 ->schema([
-                    TextInput::make('name')->label('Họ tên')->required()->maxLength(255),
-                    TextInput::make('email')->label('Email')->required()->email()->unique(ignoreRecord: true),
+                    TextInput::make('name')->label('Họ tên')->required()->maxLength(255)->columnSpanFull(),
+                    TextInput::make('email')->label('Email')->required()->email()->unique(ignoreRecord: true)->columnSpanFull(),
                     TextInput::make('password')
                         ->label('Mật khẩu')
                         ->password()
                         ->dehydrated(fn ($state) => filled($state))
                         ->required(fn (string $operation) => $operation === 'create')
-                        ->minLength(8),
+                        ->minLength(8)
+                        ->columnSpanFull(),
                     Select::make('role')
                         ->label('Vai trò')
                         ->required()
                         ->options(UserRole::labels())
-                        ->default(UserRole::CLIENT),
+                        ->default(UserRole::CLIENT)
+                        ->columnSpanFull(),
                 ]),
         ]);
     }

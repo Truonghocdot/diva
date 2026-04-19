@@ -14,10 +14,12 @@ class CategoryForm
             ->components([
                 TextInput::make('name')
                     ->label('Tên danh mục')
-                    ->required(),
+                    ->required()
+                    ->columnSpanFull(),
                 TextInput::make('slug')
                     ->label('Slug')
-                    ->required(),
+                    ->required()
+                    ->columnSpanFull(),
                 Textarea::make('description')
                     ->label('Mô tả')
                     ->columnSpanFull(),

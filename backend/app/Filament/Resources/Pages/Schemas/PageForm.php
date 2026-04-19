@@ -30,11 +30,13 @@ class PageForm
                                     ->label('Tiêu đề trang')
                                     ->required()
                                     ->live(onBlur: true)
-                                    ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                                    ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
+                                    ->columnSpanFull(),
                                 TextInput::make('slug')
                                     ->label('Đường dẫn')
                                     ->required()
-                                    ->unique(ignoreRecord: true),
+                                    ->unique(ignoreRecord: true)
+                                    ->columnSpanFull(),
                                 Textarea::make('summary')
                                     ->label('Mô tả ngắn')
                                     ->rows(3)
@@ -48,13 +50,16 @@ class PageForm
                                         'default' => 'Mặc định',
                                     ])
                                     ->default('default')
-                                    ->required(),
+                                    ->required()
+                                    ->columnSpanFull(),
                                 Toggle::make('is_published')
                                     ->label('Published')
                                     ->default(false)
-                                    ->helperText('Tat de giu trang o che do draft va xem bang preview an toan.'),
+                                    ->helperText('Tat de giu trang o che do draft va xem bang preview an toan.')
+                                    ->columnSpanFull(),
                                 Toggle::make('is_homepage')
-                                    ->label('Đặt làm trang chủ'),
+                                    ->label('Đặt làm trang chủ')
+                                    ->columnSpanFull(),
                             ]),
                     ]),
 
@@ -67,22 +72,22 @@ class PageForm
                                 Block::make('hero')
                                     ->label('Hero')
                                     ->schema([
-                                        TextInput::make('eyebrow')->label('Nhãn nhỏ'),
-                                        TextInput::make('title')->label('Tiêu đề')->required(),
-                                        Textarea::make('content')->label('Mô tả')->rows(4),
+                                        TextInput::make('eyebrow')->label('Nhãn nhỏ')->columnSpanFull(),
+                                        TextInput::make('title')->label('Tiêu đề')->required()->columnSpanFull(),
+                                        Textarea::make('content')->label('Mô tả')->rows(4)->columnSpanFull(),
                                         Grid::make(2)
                                             ->schema([
-                                                TextInput::make('primary_button_label')->label('Nút chính'),
-                                                TextInput::make('primary_button_url')->label('Link nút chính'),
-                                                TextInput::make('secondary_button_label')->label('Nút phụ'),
-                                                TextInput::make('secondary_button_url')->label('Link nút phụ'),
+                                                TextInput::make('primary_button_label')->label('Nút chính')->columnSpanFull(),
+                                                TextInput::make('primary_button_url')->label('Link nút chính')->columnSpanFull(),
+                                                TextInput::make('secondary_button_label')->label('Nút phụ')->columnSpanFull(),
+                                                TextInput::make('secondary_button_url')->label('Link nút phụ')->columnSpanFull(),
                                             ]),
-                                        TextInput::make('image')->label('Ảnh nền / ảnh minh họa'),
+                                        TextInput::make('image')->label('Ảnh nền / ảnh minh họa')->columnSpanFull(),
                                     ]),
                                 Block::make('rich_text')
                                     ->label('Rich Text')
                                     ->schema([
-                                        TextInput::make('heading')->label('Tiêu đề'),
+                                        TextInput::make('heading')->label('Tiêu đề')->columnSpanFull(),
                                         RichEditor::make('content')
                                             ->label('Nội dung')
                                             ->required()
@@ -91,44 +96,44 @@ class PageForm
                                 Block::make('stats')
                                     ->label('Chỉ số nổi bật')
                                     ->schema([
-                                        TextInput::make('heading')->label('Tiêu đề'),
+                                        TextInput::make('heading')->label('Tiêu đề')->columnSpanFull(),
                                         Repeater::make('items')
                                             ->label('Danh sách chỉ số')
                                             ->minItems(1)
                                             ->defaultItems(3)
                                             ->schema([
-                                                TextInput::make('value')->label('Giá trị')->required(),
-                                                TextInput::make('label')->label('Nhãn')->required(),
-                                                Textarea::make('description')->label('Mô tả')->rows(2),
+                                                TextInput::make('value')->label('Giá trị')->required()->columnSpanFull(),
+                                                TextInput::make('label')->label('Nhãn')->required()->columnSpanFull(),
+                                                Textarea::make('description')->label('Mô tả')->rows(2)->columnSpanFull(),
                                             ])
                                             ->columnSpanFull(),
                                     ]),
                                 Block::make('feature_cards')
                                     ->label('Thẻ lợi thế')
                                     ->schema([
-                                        TextInput::make('heading')->label('Tiêu đề'),
-                                        Textarea::make('intro')->label('Giới thiệu')->rows(3),
+                                        TextInput::make('heading')->label('Tiêu đề')->columnSpanFull(),
+                                        Textarea::make('intro')->label('Giới thiệu')->rows(3)->columnSpanFull(),
                                         Repeater::make('items')
                                             ->label('Thẻ nội dung')
                                             ->minItems(1)
                                             ->defaultItems(3)
                                             ->schema([
-                                                TextInput::make('title')->label('Tiêu đề')->required(),
-                                                Textarea::make('content')->label('Mô tả')->rows(3),
+                                                TextInput::make('title')->label('Tiêu đề')->required()->columnSpanFull(),
+                                                Textarea::make('content')->label('Mô tả')->rows(3)->columnSpanFull(),
                                             ])
                                             ->columnSpanFull(),
                                     ]),
                                 Block::make('category_grid')
                                     ->label('Danh mục nguyên liệu')
                                     ->schema([
-                                        TextInput::make('heading')->label('Tiêu đề')->required(),
-                                        Textarea::make('intro')->label('Mô tả')->rows(3),
+                                        TextInput::make('heading')->label('Tiêu đề')->required()->columnSpanFull(),
+                                        Textarea::make('intro')->label('Mô tả')->rows(3)->columnSpanFull(),
                                     ]),
                                 Block::make('product_showcase')
                                     ->label('Danh sách sản phẩm')
                                     ->schema([
-                                        TextInput::make('heading')->label('Tiêu đề')->required(),
-                                        Textarea::make('intro')->label('Mô tả')->rows(3),
+                                        TextInput::make('heading')->label('Tiêu đề')->required()->columnSpanFull(),
+                                        Textarea::make('intro')->label('Mô tả')->rows(3)->columnSpanFull(),
                                         Select::make('source')
                                             ->label('Nguồn dữ liệu')
                                             ->options([
@@ -137,22 +142,24 @@ class PageForm
                                                 'all' => 'Toàn bộ sản phẩm',
                                             ])
                                             ->default('featured')
-                                            ->required(),
+                                            ->required()
+                                            ->columnSpanFull(),
                                         TextInput::make('limit')
                                             ->label('Số lượng hiển thị')
                                             ->numeric()
                                             ->default(6)
-                                            ->required(),
+                                            ->required()
+                                            ->columnSpanFull(),
                                     ]),
                                 Block::make('call_to_action')
                                     ->label('Call To Action')
                                     ->schema([
-                                        TextInput::make('heading')->label('Tiêu đề')->required(),
-                                        Textarea::make('content')->label('Mô tả')->rows(4),
+                                        TextInput::make('heading')->label('Tiêu đề')->required()->columnSpanFull(),
+                                        Textarea::make('content')->label('Mô tả')->rows(4)->columnSpanFull(),
                                         Grid::make(2)
                                             ->schema([
-                                                TextInput::make('button_label')->label('Nội dung nút'),
-                                                TextInput::make('button_url')->label('Link nút'),
+                                                TextInput::make('button_label')->label('Nội dung nút')->columnSpanFull(),
+                                                TextInput::make('button_url')->label('Link nút')->columnSpanFull(),
                                             ]),
                                     ]),
                             ])
@@ -164,10 +171,12 @@ class PageForm
                     ->collapsed()
                     ->schema([
                         TextInput::make('meta_title')
-                            ->label('SEO Title'),
+                            ->label('SEO Title')
+                            ->columnSpanFull(),
                         Textarea::make('meta_description')
                             ->label('SEO Description')
-                            ->rows(3),
+                            ->rows(3)
+                            ->columnSpanFull(),
                     ]),
             ]);
     }

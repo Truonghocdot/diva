@@ -24,43 +24,54 @@ class ProductForm
                             ->label('Tên nguyên liệu / SKU')
                             ->required()
                             ->live(onBlur: true)
-                            ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                            ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
+                            ->columnSpanFull(),
                         TextInput::make('slug')
                             ->label('Slug')
                             ->required()
-                            ->unique(ignoreRecord: true),
+                            ->unique(ignoreRecord: true)
+                            ->columnSpanFull(),
                         TextInput::make('sku')
-                            ->label('Mã SKU'),
+                            ->label('Mã SKU')
+                            ->columnSpanFull(),
                         Select::make('category_id')
                             ->label('Danh mục')
                             ->relationship('category', 'name')
                             ->required()
                             ->searchable()
-                            ->preload(),
+                            ->preload()
+                            ->columnSpanFull(),
                         TextInput::make('price')
                             ->label('Giá sỉ tham chiếu')
                             ->required()
                             ->numeric()
-                            ->prefix('đ'),
+                            ->prefix('đ')
+                            ->columnSpanFull(),
                         TextInput::make('unit')
                             ->label('Đơn vị tính')
-                            ->placeholder('kg, lít, chai, bao, thùng'),
+                            ->placeholder('kg, lít, chai, bao, thùng')
+                            ->columnSpanFull(),
                         TextInput::make('min_order_quantity')
                             ->label('MOQ')
                             ->numeric()
-                            ->default(1),
+                            ->default(1)
+                            ->columnSpanFull(),
                         TextInput::make('pack_size')
-                            ->label('Quy cách đóng gói'),
+                            ->label('Quy cách đóng gói')
+                            ->columnSpanFull(),
                         TextInput::make('lead_time_days')
                             ->label('Lead time (ngày)')
-                            ->numeric(),
+                            ->numeric()
+                            ->columnSpanFull(),
                         TextInput::make('origin')
-                            ->label('Xuất xứ'),
+                            ->label('Xuất xứ')
+                            ->columnSpanFull(),
                         TextInput::make('stock')
                             ->label('Tồn kho')
                             ->required()
                             ->numeric()
-                            ->default(0),
+                            ->default(0)
+                            ->columnSpanFull(),
                     ]),
 
                 Section::make('Mô tả & Hình ảnh')
@@ -88,7 +99,7 @@ class ProductForm
                         TagsInput::make('applications')
                             ->label('Ứng dụng')
                             ->placeholder('Nến thơm, mỹ phẩm, tẩy rửa...')
-                            ->columnSpan(2),
+                            ->columnSpanFull(),
                         Textarea::make('specifications')
                             ->label('Thông số / tiêu chuẩn kỹ thuật')
                             ->rows(5)
@@ -99,9 +110,11 @@ class ProductForm
                     ->columns(2)
                     ->schema([
                         Toggle::make('is_featured')
-                            ->label('Nổi bật'),
+                            ->label('Nổi bật')
+                            ->columnSpanFull(),
                         Toggle::make('is_new')
-                            ->label('Mới'),
+                            ->label('Mới')
+                            ->columnSpanFull(),
                     ]),
             ]);
     }

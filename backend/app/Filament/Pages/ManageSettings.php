@@ -38,17 +38,23 @@ class ManageSettings extends Page implements HasSchemas
                     ->schema([
                         TextInput::make('site_name')
                             ->label('Tên website')
-                            ->required(),
+                            ->required()
+                            ->columnSpanFull(),
                         TextInput::make('site_tagline')
-                            ->label('Tagline'),
+                            ->label('Tagline')
+                            ->columnSpanFull(),
                         TextInput::make('site_title')
-                            ->label('Tiêu đề SEO mặc định'),
+                            ->label('Tiêu đề SEO mặc định')
+                            ->columnSpanFull(),
                         TextInput::make('logo_url')
-                            ->label('URL Logo'),
+                            ->label('URL Logo')
+                            ->columnSpanFull(),
                         TextInput::make('header_cta_label')
-                            ->label('Nhãn CTA header'),
+                            ->label('Nhãn CTA header')
+                            ->columnSpanFull(),
                         TextInput::make('header_cta_url')
-                            ->label('Link CTA header'),
+                            ->label('Link CTA header')
+                            ->columnSpanFull(),
                     ]),
 
                 Section::make('Thông tin liên hệ')
@@ -56,11 +62,14 @@ class ManageSettings extends Page implements HasSchemas
                     ->schema([
                         TextInput::make('contact_email')
                             ->label('Email liên hệ')
-                            ->email(),
+                            ->email()
+                            ->columnSpanFull(),
                         TextInput::make('contact_phone')
-                            ->label('Số điện thoại'),
+                            ->label('Số điện thoại')
+                            ->columnSpanFull(),
                         TextInput::make('sales_phone')
-                            ->label('Số hotline sales'),
+                            ->label('Số hotline sales')
+                            ->columnSpanFull(),
                         TextInput::make('address')
                             ->label('Địa chỉ')
                             ->columnSpanFull(),
@@ -74,17 +83,23 @@ class ManageSettings extends Page implements HasSchemas
                             ->rows(4)
                             ->columnSpanFull(),
                         TextInput::make('footer_company_heading')
-                            ->label('Tên cột footer doanh nghiệp'),
+                            ->label('Tên cột footer doanh nghiệp')
+                            ->columnSpanFull(),
                         TextInput::make('footer_catalog_heading')
-                            ->label('Tên cột footer catalog'),
+                            ->label('Tên cột footer catalog')
+                            ->columnSpanFull(),
                         TextInput::make('footer_support_heading')
-                            ->label('Tên cột footer hỗ trợ'),
+                            ->label('Tên cột footer hỗ trợ')
+                            ->columnSpanFull(),
                         TextInput::make('footer_resources_heading')
-                            ->label('Tên cột footer tài nguyên'),
+                            ->label('Tên cột footer tài nguyên')
+                            ->columnSpanFull(),
                         TextInput::make('footer_cta_label')
-                            ->label('Nhãn CTA footer'),
+                            ->label('Nhãn CTA footer')
+                            ->columnSpanFull(),
                         TextInput::make('footer_cta_url')
-                            ->label('Link CTA footer'),
+                            ->label('Link CTA footer')
+                            ->columnSpanFull(),
                         TextInput::make('footer_bottom_text')
                             ->label('Dòng copyright / slogan')
                             ->columnSpanFull(),
@@ -97,13 +112,17 @@ class ManageSettings extends Page implements HasSchemas
                     ->columns(2)
                     ->schema([
                         TextInput::make('facebook_url')
-                            ->label('Facebook'),
+                            ->label('Facebook')
+                            ->columnSpanFull(),
                         TextInput::make('instagram_url')
-                            ->label('Instagram'),
+                            ->label('Instagram')
+                            ->columnSpanFull(),
                         TextInput::make('linkedin_url')
-                            ->label('LinkedIn'),
+                            ->label('LinkedIn')
+                            ->columnSpanFull(),
                         TextInput::make('zalo_url')
-                            ->label('Zalo / chat link'),
+                            ->label('Zalo / chat link')
+                            ->columnSpanFull(),
                     ]),
             ])
             ->statePath('data');

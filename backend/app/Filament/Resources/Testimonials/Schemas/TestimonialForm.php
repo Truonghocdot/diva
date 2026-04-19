@@ -14,9 +14,11 @@ class TestimonialForm
             ->components([
                 TextInput::make('user_name')
                     ->label('Tên khách hàng')
-                    ->required(),
+                    ->required()
+                    ->columnSpanFull(),
                 TextInput::make('location')
-                    ->label('Khu vực'),
+                    ->label('Khu vực')
+                    ->columnSpanFull(),
                 Textarea::make('content')
                     ->label('Nội dung đánh giá')
                     ->required()
@@ -25,7 +27,8 @@ class TestimonialForm
                     ->label('Số sao')
                     ->required()
                     ->numeric()
-                    ->default(5),
+                    ->default(5)
+                    ->columnSpanFull(),
             ]);
     }
 }

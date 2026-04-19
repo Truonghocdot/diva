@@ -17,11 +17,13 @@ class PostCategoryForm
                     ->label('Tên danh mục')
                     ->required()
                     ->live(onBlur: true)
-                    ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                    ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
+                    ->columnSpanFull(),
                 TextInput::make('slug')
                     ->label('Đường dẫn (Slug)')
                     ->required()
-                    ->unique(ignoreRecord: true),
+                    ->unique(ignoreRecord: true)
+                    ->columnSpanFull(),
                 Textarea::make('description')
                     ->label('Mô tả')
                     ->default(null)

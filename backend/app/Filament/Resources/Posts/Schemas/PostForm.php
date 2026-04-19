@@ -29,11 +29,13 @@ class PostForm
                                     ->label('Tiêu đề bài viết')
                                     ->required()
                                     ->live(onBlur: true)
-                                    ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                                    ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
+                                    ->columnSpanFull(),
                                 TextInput::make('slug')
                                     ->label('Đường dẫn (Slug)')
                                     ->required()
-                                    ->unique(ignoreRecord: true),
+                                    ->unique(ignoreRecord: true)
+                                    ->columnSpanFull(),
                                 RichEditor::make('content')
                                     ->label('Nội dung')
                                     ->required()
@@ -54,7 +56,8 @@ class PostForm
                                             ->relationship('category', 'name')
                                             ->required()
                                             ->searchable()
-                                            ->preload(),
+                                            ->preload()
+                                            ->columnSpanFull(),
                                         Select::make('status')
                                             ->label('Trạng thái')
                                             ->options([
@@ -62,15 +65,18 @@ class PostForm
                                                 'published' => 'Xuất bản',
                                             ])
                                             ->required()
-                                            ->default('draft'),
+                                            ->default('draft')
+                                            ->columnSpanFull(),
                                         DateTimePicker::make('published_at')
-                                            ->label('Ngày xuất bản'),
+                                            ->label('Ngày xuất bản')
+                                            ->columnSpanFull(),
                                         Select::make('author_id')
                                             ->label('Tác giả')
                                             ->relationship('author', 'name')
                                             ->default(fn () => auth()->id())
                                             ->required()
-                                            ->searchable(),
+                                            ->searchable()
+                                            ->columnSpanFull(),
                                     ]),
 
                                 Section::make('Hình ảnh đại diện')
@@ -87,7 +93,8 @@ class PostForm
                                             ->directory('posts')
                                             ->disk('public')
                                             ->visibility('public')
-                                            ->saveUploadedFileUsing(fn ($component, $file): string => WebpImageUpload::store($file, $component)),
+                                            ->saveUploadedFileUsing(fn ($component, $file): string => WebpImageUpload::store($file, $component))
+                                            ->columnSpanFull(),
                                     ]),
                             ]),
                     ]),
@@ -97,10 +104,12 @@ class PostForm
                     ->schema([
                         TextInput::make('meta_title')
                             ->label('SEO Title')
-                            ->placeholder('Mặc định lấy từ tiêu đề bài viết'),
+                            ->placeholder('Mặc định lấy từ tiêu đề bài viết')
+                            ->columnSpanFull(),
                         Textarea::make('meta_description')
                             ->label('SEO Description')
-                            ->rows(3),
+                            ->rows(3)
+                            ->columnSpanFull(),
                     ]),
             ]);
     }

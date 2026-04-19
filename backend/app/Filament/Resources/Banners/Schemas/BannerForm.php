@@ -15,25 +15,31 @@ class BannerForm
             ->components([
                 TextInput::make('title')
                     ->label('Tiêu đề')
-                    ->required(),
+                    ->required()
+                    ->columnSpanFull(),
                 TextInput::make('subtitle')
-                    ->label('Phụ đề'),
+                    ->label('Phụ đề')
+                    ->columnSpanFull(),
                 Textarea::make('image')
                     ->label('Ảnh banner')
                     ->required()
                     ->columnSpanFull(),
                 TextInput::make('link')
-                    ->label('Liên kết'),
+                    ->label('Liên kết')
+                    ->columnSpanFull(),
                 TextInput::make('button_text')
-                    ->label('Nội dung nút'),
+                    ->label('Nội dung nút')
+                    ->columnSpanFull(),
                 Toggle::make('is_active')
                     ->label('Đang hiển thị')
-                    ->required(),
+                    ->required()
+                    ->columnSpanFull(),
                 TextInput::make('sort_order')
                     ->label('Thứ tự hiển thị')
                     ->required()
                     ->numeric()
-                    ->default(0),
+                    ->default(0)
+                    ->columnSpanFull(),
             ]);
     }
 }

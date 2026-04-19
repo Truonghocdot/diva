@@ -23,11 +23,13 @@ class MenuForm
                             ->label('Tên menu')
                             ->required()
                             ->live(onBlur: true)
-                            ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null),
+                            ->afterStateUpdated(fn (string $operation, $state, $set) => $operation === 'create' ? $set('slug', Str::slug($state)) : null)
+                            ->columnSpanFull(),
                         TextInput::make('slug')
                             ->label('Slug')
                             ->required()
-                            ->unique(ignoreRecord: true),
+                            ->unique(ignoreRecord: true)
+                            ->columnSpanFull(),
                         Select::make('location')
                             ->label('Vị trí hiển thị')
                             ->options([
@@ -37,10 +39,12 @@ class MenuForm
                                 'footer_support' => 'Footer cột hỗ trợ',
                                 'footer_resources' => 'Footer cột tài nguyên',
                             ])
-                            ->required(),
+                            ->required()
+                            ->columnSpanFull(),
                         Toggle::make('is_active')
                             ->label('Đang hoạt động')
-                            ->default(true),
+                            ->default(true)
+                            ->columnSpanFull(),
                     ]),
 
                 Section::make('Cấu trúc menu')
@@ -61,14 +65,18 @@ class MenuForm
         $schema = [
             TextInput::make('label')
                 ->label('Nhãn')
-                ->required(),
+                ->required()
+                ->columnSpanFull(),
             TextInput::make('url')
                 ->label('Đường dẫn / URL')
-                ->required(),
+                ->required()
+                ->columnSpanFull(),
             Toggle::make('open_in_new_tab')
-                ->label('Mở tab mới'),
+                ->label('Mở tab mới')
+                ->columnSpanFull(),
             Toggle::make('is_highlight')
-                ->label('Nút nổi bật'),
+                ->label('Nút nổi bật')
+                ->columnSpanFull(),
         ];
 
         if ($remainingDepth > 1) {
